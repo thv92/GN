@@ -1,0 +1,33 @@
+{
+    "HeroTagID": "1234",
+    "Series": "Grimm Notes",
+    "ClassType": "Attacker | Defender | Healer | Shooter",
+    "WeaponType": "One-handed sword | Large Sword (Great Sword) | Glove (Fist) | Spear Shield (Spear) | Hammer Shield (Hammer) | Book of Magic (Book?) | One handed cane (One Handed Staff) | Bow | Two-handed cane | Cannon",
+    "Stats": "Reference Using Hero Tag ID in HeroStats.json",
+    "Ultimate": {
+        "Name": "UltimateName",
+        "Cost": 2,
+        "Description": "Description of ultimate",
+        "isStatusEffect": true,
+        "isDamage": false,
+        "StatusEffect" : {
+            "Type": "Increase | Decrease",
+            "Effect": "Attack | Defense | Speed | Resistance Type",
+            "Target": "Ally | Enemy",
+            "TargetNum": "All | 1 | 2 | 3 | Nearest/Farthest Ally | Nearest/Farthest Enemy"
+        }
+    },
+    "Attributes": {
+        "Damage": {
+
+        },
+        "Resistance": {
+            
+        }
+    },
+    "PassiveSkills": {
+
+    }
+}
+
+

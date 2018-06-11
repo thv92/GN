@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Script-Type" content="text/javascript">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="SQUARE ENIX CO., LTD." />
+        <meta name="google-site-verification" content="0WjIKCgH9awReYpjHpAKu3dDi3VfoZwlzLtjkK4Pq94" />
+        <link rel="shortcut icon" type="image/x-icon" href="http://portal.cache.grimmsnotes.jp/201806061740/themes/grimms/images/favicon.ico">
+        <link rel="stylesheet" href="http://www.jp.square-enix.com/common/templates/css/reset.css">
+        <link rel="stylesheet" href="http://www.jp.square-enix.com/common/templates/css/template_rsp3.css">
+        <script type="text/javascript" src="http://www.jp.square-enix.com/common/templates/js/gcse.js"></script>
+        <script type="text/javascript" src="http://www.jp.square-enix.com/common/templates/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="http://www.jp.square-enix.com/js/html5.js"></script>
+        <script type="text/javascript" src="http://www.jp.square-enix.com/common/templates/js/sqexHeader-black_rsp.js"></script>
+        <script type="text/javascript" src="http://www.jp.square-enix.com/common/templates/js/footer/sp_grimms-portal.js"></script>
+        <script type="text/javascript" src="http://www.jp.square-enix.com/common/templates/js/analytics/sp_grimms-portal.js"></script>
+        <title>シャルロット・バルヒェット | グリムノーツ攻略ポータル</title>
+        <!-- All in One SEO Pack 2.3.9.2 by Michael Torbert of Semper Fi Web Design[1414,1455] -->
+        <meta name="description"  content="ステータス 職種 ディフェンダー 武器 槌盾 シリーズ グリムノーツ ★4 ★5" />
+        <link rel="canonical" href="http://portal.grimmsnotes.jp/hero/%e3%82%b7%e3%83%a3%e3%83%ab%e3%83%ad%e3%83%83%e3%83%88%e3%83%bb%e3%83%90%e3%83%ab%e3%83%92%e3%82%a7%e3%83%83%e3%83%88/" />
+        <!-- /all in one seo pack -->
+        <link rel='dns-prefetch' href='//portal.cache.grimmsnotes.jp' />
+        <link rel='dns-prefetch' href='//s.w.org' />
+        <link rel="alternate" type="application/rss+xml" title="グリムノーツ攻略ポータル &raquo; フィード" href="http://portal.grimmsnotes.jp/feed/" />
+        <link rel='stylesheet' id='ajax-load-more-css'  href='http://portal.cache.grimmsnotes.jp/201806061740/plugins/ajax-load-more/core/css/ajax-load-more.min.css?ver=4.6.1' type='text/css' media='all' />
+        <link rel='stylesheet' id='wp-postratings-css'  href='http://portal.cache.grimmsnotes.jp/201806061740/plugins/wp-postratings/postratings-css.css?ver=1.83' type='text/css' media='all' />
+        <link rel='stylesheet' id='grimms-style-css'  href='http://portal.cache.grimmsnotes.jp/201806061740/themes/grimms/css/style.css?ver=0.1.0' type='text/css' media='all' />
+        <script type='text/javascript' src='http://portal.cache.grimmsnotes.jp/201806061740/themes/grimms/js/jquery.min.js?ver=0.1.0'></script>
+        <link rel='https://api.w.org/' href='http://portal.grimmsnotes.jp/wp-json/' />
+        <link rel='prev' title='サンチョ・パンサ' href='http://portal.grimmsnotes.jp/hero/%e3%82%b5%e3%83%b3%e3%83%81%e3%83%a7%e3%83%bb%e3%83%91%e3%83%b3%e3%82%b5/' />
+        <link rel='next' title='ドン・キホーテ' href='http://portal.grimmsnotes.jp/hero/%e3%83%89%e3%83%b3%e3%83%bb%e3%82%ad%e3%83%9b%e3%83%bc%e3%83%86/' />
+        <link rel='shortlink' href='http://portal.grimmsnotes.jp/?p=37725' />
+        <link rel="alternate" type="application/json+oembed" href="http://portal.grimmsnotes.jp/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fportal.grimmsnotes.jp%2Fhero%2F%25e3%2582%25b7%25e3%2583%25a3%25e3%2583%25ab%25e3%2583%25ad%25e3%2583%2583%25e3%2583%2588%25e3%2583%25bb%25e3%2583%2590%25e3%2583%25ab%25e3%2583%2592%25e3%2582%25a7%25e3%2583%2583%25e3%2583%2588%2F" />
+        <link rel="alternate" type="text/xml+oembed" href="http://portal.grimmsnotes.jp/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fportal.grimmsnotes.jp%2Fhero%2F%25e3%2582%25b7%25e3%2583%25a3%25e3%2583%25ab%25e3%2583%25ad%25e3%2583%2583%25e3%2583%2588%25e3%2583%25bb%25e3%2583%2590%25e3%2583%25ab%25e3%2583%2592%25e3%2582%25a7%25e3%2583%2583%25e3%2583%2588%2F&#038;format=xml" />
+    </head>
+    <body class="single single-post postid-37725 single-format-standard"  >
+        <header id="sqexHeader-black_rsp">
+            <!-- pcHeader -->
+            <hgroup id="header-title" class="clearfix">
+                <div class="logo">
+                    <a href="http://www.jp.square-enix.com/">
+                        <img src="http://www.jp.square-enix.com/common/templates/images/logo-black.gif" alt="SQUARE ENIX">
+                    </a>
+                </div>
+                <!-- Googleカスタム検索 -->
+                <gcse:search></gcse:search>
+                <!-- /Googleカスタム検索 -->
+		
+            </hgroup>
+            <!-- /pcHeader -->
+            <!-- spHeader -->
+            <div id="spOnly">
+                <hgroup id="phone-title">
+                    <div class="logo">
+                        <a href="http://www.jp.square-enix.com/">
+                            <img src="http://www.jp.square-enix.com/common/templates/images/logo_ipn_b.gif" alt="SQUARE ENIX">
+                        </a>
+                    </div>
+                </hgroup>
+            </div>
+            <!-- /spHeader -->
+	
+        </header>
+        <div id="page" class="site">
+            <a class="skip-link screen-reader-text" href="#content">コンテンツへスキップ</a>
+            <div id="content-wrap" class="container">
+                <div class="row">
+                    <header id="masthead" class="site-header" role="banner">
+                        <div class="site-branding header-bar">
+                            <a href="http://portal.grimmsnotes.jp/" class="header-bar__app-icon" rel="home">
+                                <img src="http://portal.cache.grimmsnotes.jp/201806061740/themes/grimms/images/app_icon.png" alt="グリムノーツ公式 攻略ポータル">
+          
+                            </a>
+                            <p class="site-title header-bar__title">
+                                <a href="http://portal.grimmsnotes.jp/" rel="home">
+                                    <img src="http://portal.cache.grimmsnotes.jp/201806061740/themes/grimms/images/site_title@2x.png" alt="グリムノーツ公式 攻略ポータル">
+            
+                                </a>
+                            </p>
+                            <p class="site-description">公式攻略サイト</p>
+                            <nav id="site-navigation" class="main-navigation" role="navigation">
+                                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">メインメニュー</button>
+                            </nav>
+                            <!-- #site-navigation -->
+
+  		    
+                        </div>
+                    </header>
+                    <!-- #masthead -->
+                    <div id="content" class="site-content container">
+                        <div class="breadcrumbs row">
+                            <!-- Breadcrumb NavXT 5.5.1 -->
+                            <span property="itemListElement" typeof="ListItem">
+                                <a property="item" typeof="WebPage" title="グリムノーツ攻略ポータルへ移動" href="http://portal.grimmsnotes.jp" class="home">
+                                    <span property="name">TOP</span>
+                                </a>
+                                <meta property="position" content="1">
+                            </span> &gt;
+                            <span property="itemListElement" typeof="ListItem">
+                                <a property="item" typeof="WebPage" title="ヒーローのカテゴリーアーカイブへ移動" href="http://portal.grimmsnotes.jp/category/hero/" class="taxonomy category">
+                                    <span property="name">ヒーロー</span>
+                                </a>
+                                <meta property="position" content="2">
+                            </span> &gt;
+                            <span property="itemListElement" typeof="ListItem">
+                                <span property="name">シャルロット・バルヒェット</span>
+                                <meta property="position" content="3">
+                            </span>
+                        </div>
+                        <div class="col-wrap row">
+                            <div id="primary" class="content-area col-md-9">
+                                <main id="main" class="site-main" role="main">
+                                    <article id="post-37725" class="post-37725 post type-post status-publish format-standard has-post-thumbnail hentry category-hero tag-hero-" >
+                                        <h1 class="entry-title">
+                                            <div class="page-title">シャルロット・バルヒェット</div>
+                                        </h1>
+                                        <div class="entry-meta">
+                  </div>
+                                        <!-- .entry-meta -->
+                                        <div class="entry-content">
+                                            <div class="hero-bnr">
+                                                <img class="alignnone size-full" src="http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_hero_hero_medium_A00020_20.png" alt="シャルロット・バルヒェット" width="885" height="270" data-pinit="registered" />
+                                            </div>
+                                            <span id="post-ratings-37725" class="post-ratings" data-nonce="64d567a06e">
+                                                <h2>評価</h2>
+                                                <div class="rating">
+                                                    <span class="rating__star">
+                                                        <img id="rating_37725_1" src="http://portal.cache.grimmsnotes.jp/201806061740/plugins/wp-postratings/images/grimms_stars/rating_on.gif" alt="1" title="1" onmouseover="current_rating(37725, 1, '1');" onmouseout="ratings_off(3.7, 4, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" />
+                                                        <img id="rating_37725_2" src="http://portal.cache.grimmsnotes.jp/201806061740/plugins/wp-postratings/images/grimms_stars/rating_on.gif" alt="2" title="2" onmouseover="current_rating(37725, 2, '2');" onmouseout="ratings_off(3.7, 4, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" />
+                                                        <img id="rating_37725_3" src="http://portal.cache.grimmsnotes.jp/201806061740/plugins/wp-postratings/images/grimms_stars/rating_on.gif" alt="3" title="3" onmouseover="current_rating(37725, 3, '3');" onmouseout="ratings_off(3.7, 4, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" />
+                                                        <img id="rating_37725_4" src="http://portal.cache.grimmsnotes.jp/201806061740/plugins/wp-postratings/images/grimms_stars/rating_half.gif" alt="4" title="4" onmouseover="current_rating(37725, 4, '4');" onmouseout="ratings_off(3.7, 4, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" />
+                                                        <img id="rating_37725_5" src="http://portal.cache.grimmsnotes.jp/201806061740/plugins/wp-postratings/images/grimms_stars/rating_off.gif" alt="5" title="5" onmouseover="current_rating(37725, 5, '5');" onmouseout="ratings_off(3.7, 4, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" />
+                                                    </span>
+                                                    <span class="rating__msg">
+  (
+                                                        <strong>11</strong>投票)
+                                                    </span>
+                                                    <span class="rating__user">
+                                                        <span>総合評価</span>
+                                                        <strong>3.73/5</strong>
+                                                    </span>
+                                                </div>
+                                                <p class="text-right text-sm">
+  ユーザーが評価した値の平均値です。
+                                                    <br />星をクリックすることで評価出来ます。
+                                                </p>
+                                            </span>
+                                            <span id="post-ratings-37725-loading" class="post-ratings-loading">
+                                                <img src="http://portal.cache.grimmsnotes.jp/201806061740/plugins/wp-postratings/images/loading.gif" width="16" height="16" class="post-ratings-image" />Loading...
+                                            </span>
+                                            <!--ステータス-->
+                                            <h2>ステータス</h2>
+                                            <table class="flex">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>職種</th>
+                                                        <td>ディフェンダー</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>武器</th>
+                                                        <td>槌盾</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>シリーズ</th>
+                                                        <td>グリムノーツ</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="tab-group">
+                                                <ul class="tabs">
+                                                    <li class="tab active">
+                                                        <a href="">★4</a>
+                                                    </li>
+                                                    <li class="tab">
+                                                        <a href="">★5</a>
+                                                    </li>
+                                                    <li class="tab">
+                                                        <a href="">★6</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    <div class="tabpanel active">
+                                                        <table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Lv</th>
+                                                                    <th>HP</th>
+                                                                    <th>攻撃力</th>
+                                                                    <th>防御力</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>594</td>
+                                                                    <td>54</td>
+                                                                    <td>83</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>40</td>
+                                                                    <td>1182</td>
+                                                                    <td>108</td>
+                                                                    <td>165</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>50※</td>
+                                                                    <td>1333</td>
+                                                                    <td>122</td>
+                                                                    <td>186</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>60※</td>
+                                                                    <td>1485</td>
+                                                                    <td>136</td>
+                                                                    <td>208</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="tabpanel">
+                                                        <table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Lv</th>
+                                                                    <th>HP</th>
+                                                                    <th>攻撃力</th>
+                                                                    <th>防御力</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>1484</td>
+                                                                    <td>116</td>
+                                                                    <td>179</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>50</td>
+                                                                    <td>2187</td>
+                                                                    <td>172</td>
+                                                                    <td>264</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>60※</td>
+                                                                    <td>2331</td>
+                                                                    <td>183</td>
+                                                                    <td>281</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>70※</td>
+                                                                    <td>2475</td>
+                                                                    <td>195</td>
+                                                                    <td>299</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="tabpanel">
+                                                        <table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Lv</th>
+                                                                    <th>HP</th>
+                                                                    <th>攻撃力</th>
+                                                                    <th>防御力</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>2078</td>
+                                                                    <td>152</td>
+                                                                    <td>233</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>60</td>
+                                                                    <td>3113</td>
+                                                                    <td>229</td>
+                                                                    <td>350</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>70※</td>
+                                                                    <td>3289</td>
+                                                                    <td>242</td>
+                                                                    <td>370</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>80※</td>
+                                                                    <td>3465</td>
+                                                                    <td>255</td>
+                                                                    <td>390</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p>※限界突破後のステータスとなります</p>
+                                            <!--必殺技-->
+                                            <h2>必殺技</h2>
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>技名</th>
+                                                        <td>雷豪堕天</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>消費</th>
+                                                        <td>2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>効果</th>
+                                                        <td>落雷の如き一撃で相手を屠る、雷の国伝統の大技。
+歴史上、女性で会得したのはシャルロットのみである。
+[効果]敵に接近し、スタンを伴う一打を放つ。</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!--属性-->
+                                            <h2>属性</h2>
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>属性効果値</th>
+                                                        <th>属性耐性値</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <i class="icon-elm-1"></i>
+                                                        </td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <i class="icon-elm-2"></i>
+                                                        </td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <i class="icon-elm-3"></i>
+                                                        </td>
+                                                        <td>10</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <i class="icon-elm-4"></i>
+                                                        </td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <i class="icon-elm-5"></i>
+                                                        </td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!--スキル-->
+                                            <h2>スキル</h2>
+                                            <div class="auto-width">
+                                                <table>
+                                                    <caption>
+      レベル10で覚えるスキル
+    </caption>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>ガード</th>
+                                                            <td>静止時、移動時、攻撃後、ステップの前後、
+前方からのダメージを軽減します。</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table>
+                                                    <caption>
+      レベル30で覚えるスキル
+    </caption>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>雷効果↑中</th>
+                                                            <td>雷属性の攻撃力が10%増加します。</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <!--進化素材-->
+                                            <h2>進化素材</h2>
+                                            <div class="tab-group">
+                                                <ul class="tabs">
+                                                    <li class="tab active">
+                                                        <a href="">★4→★5</a>
+                                                    </li>
+                                                    <li class="tab">
+                                                        <a href="">★5→★6</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    <div class="tabpanel active">
+                                                        <div class="panel-inner">
+                                                            <ul class="evol">
+                                                                <li>
+                                                                    <img src="http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_hero_hero_large_A00020_1_20.png" alt="">
+                                                                </li>
+                                                                <li class="arrow"></li>
+                                                                <li>
+                                                                    <img src="http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_hero_hero_large_A00020_22_20.png" alt="">
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="panel-inner">
+                                                            <ul class="line-list">
+                                                                <li>
+                                                                    <img src="http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_substance_substance_medium_S00006_6.png" alt="">
+                                                                    <p>正義のオーブ(微)
+                                                                        <br>×15
+                                                                    </p>
+                                                                </li>
+                                                                <li>
+                                                                    <img src="http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_substance_substance_medium_S00007_7.png" alt="">
+                                                                    <p>正義のオーブ(小)
+                                                                        <br>×10
+                                                                    </p>
+                                                                </li>
+                                                                <li>
+                                                                    <img src="http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_substance_substance_medium_S00021_21.png" alt="">
+                                                                    <p>慈愛のオーブ(微)
+                                                                        <br>×15
+                                                                    </p>
+                                                                </li>
+                                                                <li>
+                                                                    <img src="http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_substance_substance_medium_S00031_31.png" alt="">
+                                                                    <p>希望のオーブ(微)
+                                                                        <br>×15
+                                                                    </p>
+                                                                </li>
+                                                                <li>
+                                                                    <img src="http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_substance_substance_medium_S00032_32.png" alt="">
+                                                                    <p>希望のオーブ(小)
+                                                                        <br>×10
+                                                                    </p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tabpanel">
+                                                        <div class="panel-inner">
+                                                            <ul class="evol">
+                                                                <li>
+                                                                    <img src="http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_hero_hero_large_A00020_22_20.png" alt="">
+                                                                </li>
+                                                                <li class="arrow"></li>
+                                                                <li>
+                                                                    <img src="http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_hero_hero_large_A00020_333_20.png" alt="">
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="panel-inner">
+                                                            <ul class="line-list">
+                                                                <li>
+                                                                    <img src="http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_substance_substance_medium_S00007_7.png" alt="">
+                                                                    <p>正義のオーブ(小)
+                                                                        <br>×15
+                                                                    </p>
+                                                                </li>
+                                                                <li>
+                                                                    <img src="http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_substance_substance_medium_S00008_8.png" alt="">
+                                                                    <p>正義のオーブ(中)
+                                                                        <br>×10
+                                                                    </p>
+                                                                </li>
+                                                                <li>
+                                                                    <img src="http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_substance_substance_medium_S00022_22.png" alt="">
+                                                                    <p>慈愛のオーブ(小)
+                                                                        <br>×15
+                                                                    </p>
+                                                                </li>
+                                                                <li>
+                                                                    <img src="http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_substance_substance_medium_S00032_32.png" alt="">
+                                                                    <p>希望のオーブ(小)
+                                                                        <br>×15
+                                                                    </p>
+                                                                </li>
+                                                                <li>
+                                                                    <img src="http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_substance_substance_medium_S00033_33.png" alt="">
+                                                                    <p>希望のオーブ(中)
+                                                                        <br>×10
+                                                                    </p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- .entry-content -->
+                                        <div class="grm-list-footer">
+                                            <footer class="entry-footer">
+                                                <span class="tags-links">タグ: グリムノーツ,槌盾</span>
+                                                <p class="cat-links">No.20</p>
+                                            </footer>
+                                            <!-- .entry-footer -->
+  
+                                        </div>
+                                    </article>
+                                    <!-- #post-## -->
+                                    <div class="navigation">
+                                        <a href="http://portal.grimmsnotes.jp/category/hero/" class="btn btn-secondary btn-arrow-left">
+                                            <i class="arrow"></i> 一覧に戻る
+                                        </a>
+                                    </div>
+                                </main>
+                                <!-- #main -->
+      
+                            </div>
+                            <!-- #primary -->
+                            <aside id="secondary" class="widget-area col-md-3" role="complementary">
+                                <div id="secondary-page-top" class="page-top" >PAGE TOP</div>
+                                <section id="search-2" class="widget widget_search">
+                                    <form role="search" method="get" class="search-form" action="http://portal.grimmsnotes.jp/">
+                                        <label>
+                                            <span class="screen-reader-text">検索:</span>
+                                            <input type="search" class="search-field" placeholder="検索 &hellip;" value="" name="s" />
+                                        </label>
+                                        <input type="submit" class="search-submit" value="検索" />
+                                    </form>
+                                </section>
+                                <section class="widget widget_text">
+                                    <h2 class="widget-title">メニュー一覧</h2>
+                                    <div class="textwidget">
+                                        <h3>
+                                            <a href="/category/hero/">ヒーロー</a>
+                                        </h3>
+                                        <h3>
+                                            <a href="/category/weapon/">武器</a>
+                                        </h3>
+                                        <h3>
+                                            <a href="/category/skill-core/">スキルコア</a>
+                                        </h3>
+                                        <h3>
+                                            <a href="/category/dress">衣装</a>
+                                        </h3>
+                                        <h3>
+                                            <a href="/help/">ヘルプ</a>
+                                        </h3>
+                                        <h3>
+                                            <a href="/history/">グリムノーツ年表</a>
+                                        </h3>
+                                    </div>
+                                </section>
+                                <div id="sp-menu-page-top" class="page-top" >PAGE TOP</div>
+                                <div id="sp-menu-logo">
+                                    <a href="/">
+                                        <img src="http://portal.cache.grimmsnotes.jp/201806061740/themes/grimms/images/logo.png?v2">
+                                    </a>
+                                </div>
+                            </aside>
+                        </div>
+                        <!-- row -->
+
+
+    
+                    </div>
+                    <!-- #content-wrap -->
+  
+                </div>
+                <!-- row -->
+
+
+            </div>
+            <!-- #page -->
+            <!-- === footerArea === -->
+            <div id="sqexFooter" class="sqex-footer-black">
+                <!-- デフォルトフッター -->
+                <div id="sqex-footer-contents">
+                    <ul>
+                        <li class="sqex-footer-first">
+                            <a href="http://www.jp.square-enix.com/caution.html" target="_blank">著作権について</a>
+                        </li>
+                        <li>
+                            <a href="http://www.jp.square-enix.com/privacy/">プライバシーポリシー</a>
+                        </li>
+                        <li>
+                            <a href="http://support.jp.square-enix.com/jump.php">サポートセンター</a>
+                        </li>
+                    </ul>
+                    <p class="sqex-footer-copyright">&copy; SQUARE ENIX CO., LTD. All Rights Reserved.</p>
+                </div>
+            </div>
+            <!-- === /footerArea === -->
+            <script type='text/javascript'>
+/* 
+                <![CDATA[ */
+var ratingsL10n = {"plugin_url":"http:\/\/portal.cache.grimmsnotes.jp\/201806061740\/plugins\/wp-postratings","ajax_url":"http:\/\/portal.grimmsnotes.jp\/wp-admin\/admin-ajax.php","text_wait":"Please rate only 1 post at a time.","image":"grimms_stars","image_ext":"gif","max":"5","show_loading":"1","show_fading":"1","custom":"0"};
+var ratings_mouseover_image=new Image();ratings_mouseover_image.src=ratingsL10n.plugin_url+"/images/"+ratingsL10n.image+"/rating_over."+ratingsL10n.image_ext;;
+/* ]]> */
+
+            </script>
+            <script type='text/javascript' src='http://portal.cache.grimmsnotes.jp/201806061740/plugins/wp-postratings/postratings-js.js?ver=1.83'></script>
+            <script type='text/javascript' src='http://portal.cache.grimmsnotes.jp/201806061740/themes/grimms/js/navigation.js?ver=20120206'></script>
+            <script type='text/javascript' src='http://portal.cache.grimmsnotes.jp/201806061740/themes/grimms/js/skip-link-focus-fix.js?ver=20130115'></script>
+            <script type='text/javascript' src='http://portal.cache.grimmsnotes.jp/201806061740/themes/grimms/js/slick.min.js?ver=20160905'></script>
+            <script type='text/javascript' src='http://portal.cache.grimmsnotes.jp/201806061740/themes/grimms/js/lazysizes.min.js?ver=20180126'></script>
+            <script type='text/javascript' src='http://portal.cache.grimmsnotes.jp/201806061740/themes/grimms/js/grimms.js?ver=0.1.0'></script>
+            <script type='text/javascript' src='http://portal.grimmsnotes.jp/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+            <div style="display:none;">
+                <script type="text/javascript">
+/* 
+                    <![CDATA[ */
+var google_conversion_id = 996876087;
+var google_conversion_label = "J9ENCLaImmoQt76s2wM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+
+                </script>
+                <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+                <noscript>
+                    <div style="display:inline;">
+                        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/996876087/?value=1.00&amp;currency_code=JPY&amp;label=J9ENCLaImmoQt76s2wM&amp;guid=ON&amp;script=0"/>
+                    </div>
+                </noscript>
+            </div>
+        </body>
+    </html>

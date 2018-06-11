@@ -1,0 +1,37 @@
+{
+    "HeroTagID": "1234",
+    "5": [
+        {   
+            "Level": 1,
+            "HP": -1,
+            "Attack": -1,
+            "Defense": -1
+        },
+        {   
+            "Level": 40,
+            "HP": -1,
+            "Attack": -1,
+            "Defense": -1
+        },
+        {   
+            "Level": 50,
+            "HP": -1,
+            "Attack": -1,
+            "Defense": -1,
+            "isLimitBreak": true
+        },
+        {   
+            "Level": 60,
+            "HP": -1,
+            "Attack": -1,
+            "Defense": -1,
+            "isLimitBreak": true
+        }
+    ],
+    "6": {
+
+    },
+    "7": {
+
+    }
+}

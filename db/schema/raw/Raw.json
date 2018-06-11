@@ -1,0 +1,82 @@
+[{
+    "HeroID": "Footer Tag No",
+    "Metadata": {
+        "Role": "Defender",
+        "WeaponType": "Hammer Shield",
+        "Series:" "Grimm Notes"
+    },
+    "Stats": {
+        "4" : [
+            {
+                "Level": 1,
+                "HP": 594,
+                "Attack": 54,
+                "Defense": 83,
+                "isTranscendance": false
+            },
+            {
+                "Level": 50,
+                "HP": 594,
+                "Attack": 54,
+                "Defense": 83,
+                "isTranscendance": false
+            }
+        ],
+        "5" : [],
+        "6" : []
+    },
+    "Ultimate": {
+        "Name": "Thunder Australia",
+        "Cost": "2",
+        "Description": "Description",
+    },
+    "Attribute": {
+        "Damage": {
+            "Fire": 0,
+            "Ice" : 0,
+            "Lightning": 0,
+            "Light": 0,
+            "Dark": 0
+        },
+        "Resistance": {
+            "Fire": 0,
+            "Ice" : 0,
+            "Lightning": 0,
+            "Light": 0,
+            "Dark": 0
+        }
+    }, 
+    "Passives": [
+        {
+            "Caption": 10,
+            "Name": "guard",
+            "Description": "description"
+        }
+    ],
+    "Evolution": [
+        {
+            "from": 4,
+            "to": 5,
+            "Materials": {
+                "Name": "Quantity"
+            }
+        }
+    ],
+    "Images": [
+        {
+            "Category": "Banner",
+            "url": "url"
+        },
+        {
+            "Category": "Evolution",
+            "Type": "Sprite",
+            "Name": 4,
+            "url": "url"
+        },
+        {
+            "Category": "Thumbnail",
+            "Type": "Character",
+            "url": "url"
+        }
+    ]
+}]
