@@ -44,8 +44,7 @@ end
 rawData[gf::MD] = metadataDict
 
 # Stats Table
-# puts doc.xpath("//div[@class='tab-group'][1]")
-
+#TODO: Put max stats?
 statsDict = {}
 statTable = doc.xpath("//div[@class='tab-group'][1]")
 #Prepare Evo Nums
@@ -108,8 +107,8 @@ attributeDict[gf::DMG] = {}
 attributeDict[gf::RESIST] = {}
 index = 1
 doc.xpath("//h2[contains(text(), '#{gfp::ULT}')]/following-sibling::table[2]/tbody/tr[position() > 1]").each do |row|
-    damageValue = row.xpath('./td[2]').text.to_i
-    resistValue = row.xpath('./td[3]').text.to_i
+    damageValue = row.xpath('./td[2]').text.strip.to_i
+    resistValue = row.xpath('./td[3]').text.strip.to_i
 
     if (index == 1) #fire
         attributeDict[gf::DMG][att::FIRE] = damageValue
@@ -148,9 +147,68 @@ rawData[gf::PASSIVES] = passives
 
 
 # Evo Table
-puts doc.xpath("//div[@class='tab-group'][2]")
+# puts doc.xpath("//div[@class='tab-group'][2]")
+index = 1
+evoDict = {}
+evoMats = []
+evoSection = doc.xpath("//div[@class='tab-group'][2]")
+evoSection.xpath("./ul/li").each do |li| 
+    matchData =  li.text.strip.match(/.(\d)..(\d)/)
+    base = matchData[1].to_i
+    to = matchData[2].to_i
+    
+    #process sprite images
+    image = {}
+    tabPanel = evoSection.xpath("./div[@class='tab-content']/div[contains(@class, 'tabpanel')][#{index}]")
+    tabPanelCharaImageBase = tabPanel.xpath("./div[@class='panel-inner'][1]/ul[@class='evol']/li[1]/img/@src").text
+    tabPanelCharaImageTo   = tabPanel.xpath("./div[@class='panel-inner'][1]/ul[@class='evol']/li[3]/img/@src").text
+    
+    images.push({
+        imgf::CAT => "Hero",
+        imgf::TYPE => "Sprite",
+        gf::NAME => base.to_s,
+        imgf::URL => tabPanelCharaImageBase
+    }) unless index == 2  #ignore repeat on second evo
 
-# rawData[gf::IMGS] = images
+    images.push({
+        imgf::CAT => "Hero",
+        imgf::TYPE => "Sprite",
+        gf::NAME => to.to_s,
+        imgf::URL => tabPanelCharaImageTo
+    })
+
+    #process evo mats
+    evoDict[gf::BASE] = base
+    evoDict[gf::TO] = to
+
+    tabPanelInner = tabPanel.xpath("./div[@class='panel-inner'][2]/ul[@class='line-list']")
+    tabPanelInner.xpath("./li").each do |evoMatItem|
+        evoMat = {}
+        matImage = {}
+        
+        evoMatImage = evoMatItem.xpath("./img/@src").text.strip
+        evoMatMatchData = evoMatItem.xpath("./p").text.gsub!(/\n|\s/, "").match(/(.+)\((.)\).(\d*)/)
+        evoMatName = evoMatMatchData[1]
+        evoMatSize = evoMatMatchData[2]
+        evoMatAmt = evoMatMatchData[3]
+        puts "evoMatMatchData: #{evoMatName} | #{evoMatSize} | #{evoMatAmt}"
+
+        evoMat[gf::NAME] = evoMatName
+        evoMat[gf::SIZE] = evoMatSize
+        evoMat[gf::AMT] = evoMatAmt
+        evoMats.push(evoMat)
+    end
+
+
+
+    index += 1
+end
+
+
+
+
+rawData[gf::IMGS] = images
+# puts images.inspect
 # puts rawData.inspect
 # Close file
 file.close()

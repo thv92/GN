@@ -17,5 +17,9 @@ module GeneralFieldsJP
     ATTR_RESIST = '属性耐性値'
     PASSIVES = 'スキル'
     EVOLUTION = 'レベル10で覚えるスキル'
-
+    XS = '微'
+    S = '小'
+    M = '中'
+    L = '大'
+    XL = '超'
 end
