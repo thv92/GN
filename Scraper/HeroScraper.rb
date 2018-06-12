@@ -54,7 +54,7 @@ doc.xpath("//div[@class='tab-group'][1]/ul[@class='tabs']//a").each do |a|
     evoStageNum = a.text.match(/\d+/)[0]
     stat = statTable.xpath("./div/div[contains(@class, 'tabpanel')][#{index}]")
     
-    puts evoStageNum
+    # puts evoStageNum
     trIndex = 2
     statTR = stat.xpath('./table/tbody/tr')
 
@@ -71,39 +71,65 @@ doc.xpath("//div[@class='tab-group'][1]/ul[@class='tabs']//a").each do |a|
         #Remove TRANS_SYMBOL
         level = level.match(/\d+/)[0]
 
-        stat[sf::LEVEL] = level
-        stat[sf::HP] = hp
-        stat[sf::ATK] = atk
-        stat[sf::DEF] = defense
+        stat[sf::LEVEL] = level.to_i
+        stat[sf::HP] = hp.to_i
+        stat[sf::ATK] = atk.to_i
+        stat[sf::DEF] = defense.to_i
         stat[sf::IS_TRANS] = isTrans
-        puts "Level: #{level} HP: #{hp} Attack: #{atk} Defense: #{defense} isTranscendance: #{isTrans}"
+        # puts "Level: #{level} HP: #{hp} Attack: #{atk} Defense: #{defense} isTranscendance: #{isTrans}"
         stats.push(stat)
     end
     #add into statsDict
     statsDict[evoStageNum] = stats 
     index+=1
 end
-
+rawData[gf::STATS] = statsDict
 
 # Ultimate Table
 ultDict = {}
-ultTable = doc.xpath("//h2[contains(text(), '#{gfp::ULT}')]/following-sibling::table[1]/tbody/tr")
-ultTable.each do |row| 
-    puts row
+doc.xpath("//h2[contains(text(), '#{gfp::ULT}')]/following-sibling::table[1]/tbody/tr"). each do |row|
+    # puts row
     header = row.xpath('./th').text
     data = row.xpath('./td').text
-    puts "#{header} | #{data}"
     if (header === gfp::ULT_NAME)
         ultDict[gf::NAME] = data
     elsif (header === gfp::ULT_COST)
-        ultDict[gf::COST] = data
+        ultDict[gf::COST] = data.to_i
     elsif (header === gfp::ULT_DESC)
         ultDict[gf::DESC] = data.match(/\[#{gfp::ULT_DESC}\]/).post_match
     end
 end
+rawData[gf::ULT] = ultDict
+
 
 # Attribute Table
-# puts doc.xpath("//h2[contains(text(), '#{gfp::ULT}')]/following-sibling::table[2]")
+attributeDict = {}
+attributeDict[gf::DMG] = {}
+attributeDict[gf::RESIST] = {}
+index = 1
+doc.xpath("//h2[contains(text(), '#{gfp::ULT}')]/following-sibling::table[2]/tbody/tr[position() > 1]").each do |row|
+    damageValue = row.xpath('./td[2]').text.to_i
+    resistValue = row.xpath('./td[3]').text.to_i
+
+    if (index == 1) #fire
+        attributeDict[gf::DMG][att::FIRE] = damageValue
+        attributeDict[gf::RESIST][att::FIRE] = resistValue
+    elsif (index == 2) #ice
+        attributeDict[gf::DMG][att::ICE] = damageValue
+        attributeDict[gf::RESIST][att::ICE] = resistValue
+    elsif (index == 3) #thunder
+        attributeDict[gf::DMG][att::THR] = damageValue
+        attributeDict[gf::RESIST][att::THR] = resistValue    
+    elsif (index == 4) #light
+        attributeDict[gf::DMG][att::LIGHT] = damageValue
+        attributeDict[gf::RESIST][att::LIGHT] = resistValue
+    elsif (index == 5) #dark
+        attributeDict[gf::DMG][att::DARK] = damageValue
+        attributeDict[gf::RESIST][att::DARK] = resistValue
+    end
+    index += 1
+end
+rawData[gf::ATTR] = attributeDict
 
 # Passives Table
 # puts doc.xpath("//div[@class='auto-width']")
@@ -112,6 +138,6 @@ end
 # puts doc.xpath("//div[@class='tab-group'][2]")
 
 # rawData[gf::IMGS] = images
-# puts rawData.inspect
+puts rawData.inspect
 # Close file
 file.close()

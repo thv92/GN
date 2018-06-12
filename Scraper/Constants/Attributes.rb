@@ -1,7 +1,7 @@
 module Attributes
     FIRE = 'fire'
     ICE = 'ice'
-    LNG = 'lightning'
+    THR = 'thunder'
     LIGHT = 'light'
     DARK = 'dark'
 end
