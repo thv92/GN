@@ -18,21 +18,21 @@ file = File.open('./test.html')
 doc = Nokogiri::HTML(file)
 
 #Character Name
-rawData[gf::NAME] = doc.xpath("//div[@class=\'page-title\']").text
+rawData[gf::NAME] = doc.xpath("//div[@class=\'page-title\']").text.strip
 
 #Banner Image URL
 bannerImageDict = {}
 bannerImageDict[imgf::CAT] = "Banner"
 bannerImageDict[gf::NAME] = "Banner"
-bannerImageDict[imgf::URL] = doc.xpath("//div[@class='hero-bnr']/img/@src").text
+bannerImageDict[imgf::URL] = doc.xpath("//div[@class='hero-bnr']/img/@src").text.strip
 images.push(bannerImageDict)
 
 #Metadata Table
 metadataDict = {}
 metadataTable = doc.xpath("//table[@class='flex']")
 metadataTable.xpath('./tbody/tr').each do |tr| 
-    header =  tr.xpath('./th').text
-    data = tr.xpath('./td').text
+    header =  tr.xpath('./th').text.strip
+    data = tr.xpath('./td').text.strip
     if(header === gfp::ROLE)
         metadataDict[gf::ROLE] = data
     elsif (header === gfp::WT)
@@ -63,10 +63,10 @@ doc.xpath("//div[@class='tab-group'][1]/ul[@class='tabs']//a").each do |a|
     1.upto(statTR.length - 1) do |i|
         stat = {}
         tr = statTR[i]
-        level = tr.xpath('./td[1]').text
-        hp = tr.xpath('./td[2]').text
-        atk = tr.xpath('./td[3]').text
-        defense = tr.xpath('./td[4]').text
+        level = tr.xpath('./td[1]').text.strip
+        hp = tr.xpath('./td[2]').text.strip
+        atk = tr.xpath('./td[3]').text.strip
+        defense = tr.xpath('./td[4]').text.strip
         isTrans = level.include?(gfp::TRANS_SYMBOL)
         #Remove TRANS_SYMBOL
         level = level.match(/\d+/)[0]
@@ -89,8 +89,8 @@ rawData[gf::STATS] = statsDict
 ultDict = {}
 doc.xpath("//h2[contains(text(), '#{gfp::ULT}')]/following-sibling::table[1]/tbody/tr"). each do |row|
     # puts row
-    header = row.xpath('./th').text
-    data = row.xpath('./td').text
+    header = row.xpath('./th').text.strip
+    data = row.xpath('./td').text.strip
     if (header === gfp::ULT_NAME)
         ultDict[gf::NAME] = data
     elsif (header === gfp::ULT_COST)
@@ -132,12 +132,25 @@ end
 rawData[gf::ATTR] = attributeDict
 
 # Passives Table
-# puts doc.xpath("//div[@class='auto-width']")
+passives = []
+doc.xpath("//div[@class='auto-width']/table").each do |table|
+    passiveSkill = {}
+    level = table.xpath('./caption').text.strip.match(/\d+/)[0].to_i
+    passiveName = table.xpath('./tbody/tr/th').text.strip
+    passiveDesc = table.xpath('./tbody/tr/td').text.strip
+    # puts "Caption: #{caption} Passive Name: #{passiveName} Passive Desc: #{passiveDesc}"
+    passiveSkill[sf::LEVEL] = level
+    passiveSkill[gf::NAME] = passiveName
+    passiveSkill[gf::DESC] = passiveDesc
+    passives.push(passiveSkill)
+end
+rawData[gf::PASSIVES] = passives
+
 
 # Evo Table
-# puts doc.xpath("//div[@class='tab-group'][2]")
+puts doc.xpath("//div[@class='tab-group'][2]")
 
 # rawData[gf::IMGS] = images
-puts rawData.inspect
+# puts rawData.inspect
 # Close file
 file.close()

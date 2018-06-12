@@ -19,4 +19,5 @@ module GeneralFields
     MATS = 'materials'
     IMGS = 'images'
     CAPTION = 'caption'
+    BUFF_SYMBOL = '↑'
 end
