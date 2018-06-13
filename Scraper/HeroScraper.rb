@@ -88,8 +88,8 @@ rawData[gf::STATS] = statsDict
 ultDict = {}
 doc.xpath("//h2[contains(text(), '#{gfp::ULT}')]/following-sibling::table[1]/tbody/tr"). each do |row|
     # puts row
-    header = row.xpath('./th').text.strip
-    data = row.xpath('./td').text.strip
+    header = row.xpath('./th').text.strip.gsub(/\n/, "")
+    data = row.xpath('./td').text.strip.gsub(/\n/, "")
     if (header === gfp::ULT_NAME)
         ultDict[gf::NAME] = data
     elsif (header === gfp::ULT_COST)
@@ -131,19 +131,30 @@ end
 rawData[gf::ATTR] = attributeDict
 
 # Passives Table
-#TODO: separate level with skill name
 passives = []
 doc.xpath("//div[@class='auto-width']/table").each do |table|
     level = table.xpath('./caption').text.strip.match(/\d+/)[0].to_i
-    passiveName = table.xpath('./tbody/tr/th').text.strip
-    passiveDesc = table.xpath('./tbody/tr/td').text.strip
+    passiveName = table.xpath('./tbody/tr/th').text.strip.gsub(/\n/, "")
+    passiveDesc = table.xpath('./tbody/tr/td').text.strip.gsub(/\n/, "")
+    matchData = passiveName.match(/(.{2,})(.)(.)/)
+    symbol = nil
+    tier = nil
+    # passiveName = matchData[1]
+    if (matchData != nil)
+        passiveName = matchData[1]
+        symbol = matchData[2]
+        tier = matchData[3]
+    end
     # puts "Caption: #{caption} Passive Name: #{passiveName} Passive Desc: #{passiveDesc}"
     passives.push({
         sf::LEVEL => level,
         gf::NAME => passiveName,
-        gf::DESC => passiveDesc
+        gf::DESC => passiveDesc,
+        gf::TIER => tier,
+        gf::SYMBOL => symbol
     })
 end
+puts passives.inspect
 rawData[gf::PASSIVES] = passives
 
 
@@ -163,21 +174,20 @@ evoSection.xpath("./ul/li").each do |li|
     evoDict[gf::TO] = to
     
     #process sprite images
-    image = {}
     tabPanel = evoSection.xpath("./div[@class='tab-content']/div[contains(@class, 'tabpanel')][#{index}]")
     tabPanelCharaImageBase = tabPanel.xpath("./div[@class='panel-inner'][1]/ul[@class='evol']/li[1]/img/@src").text
     tabPanelCharaImageTo   = tabPanel.xpath("./div[@class='panel-inner'][1]/ul[@class='evol']/li[3]/img/@src").text
     
     images.push({
-        imgf::CAT => "Hero",
-        imgf::TYPE => "Sprite",
+        imgf::CAT => "hero",
+        imgf::TYPE => "sprite",
         gf::NAME => base.to_s,
         imgf::URL => tabPanelCharaImageBase
     }) unless index == 2  #ignore repeat on second evo
 
     images.push({
-        imgf::CAT => "Hero",
-        imgf::TYPE => "Sprite",
+        imgf::CAT => "hero",
+        imgf::TYPE => "sprite",
         gf::NAME => to.to_s,
         imgf::URL => tabPanelCharaImageTo
     })
@@ -217,6 +227,6 @@ rawData[gf::EVO] = evolutions
 rawData[gf::IMGS] = images
 # puts images.inspect
 # puts rawData.inspect
-puts JSON.pretty_generate(rawData)
+# puts JSON.pretty_generate(rawData)
 # Close file
 file.close()

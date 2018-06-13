@@ -23,4 +23,6 @@ module GeneralFields
     BUFF_SYMBOL = '↑'
     SIZE = 'size'
     AMT = 'amount'
+    TIER = 'tier'
+    SYMBOL = 'symbol'
 end
