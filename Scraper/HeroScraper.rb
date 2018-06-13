@@ -1,4 +1,5 @@
 require 'nokogiri'
+require 'json'
 require './Constants/GeneralFields'
 require './Constants/ImageFields'
 require './Constants/Attributes'
@@ -60,7 +61,6 @@ doc.xpath("//div[@class='tab-group'][1]/ul[@class='tabs']//a").each do |a|
     #level hp attack def
     stats = []
     1.upto(statTR.length - 1) do |i|
-        stat = {}
         tr = statTR[i]
         level = tr.xpath('./td[1]').text.strip
         hp = tr.xpath('./td[2]').text.strip
@@ -69,14 +69,14 @@ doc.xpath("//div[@class='tab-group'][1]/ul[@class='tabs']//a").each do |a|
         isTrans = level.include?(gfp::TRANS_SYMBOL)
         #Remove TRANS_SYMBOL
         level = level.match(/\d+/)[0]
-
-        stat[sf::LEVEL] = level.to_i
-        stat[sf::HP] = hp.to_i
-        stat[sf::ATK] = atk.to_i
-        stat[sf::DEF] = defense.to_i
-        stat[sf::IS_TRANS] = isTrans
         # puts "Level: #{level} HP: #{hp} Attack: #{atk} Defense: #{defense} isTranscendance: #{isTrans}"
-        stats.push(stat)
+        stats.push({
+            sf::LEVEL => level.to_i,
+            sf::HP => hp.to_i,
+            sf::ATK => atk.to_i,
+            sf::DEF => defense.to_i,
+            sf::IS_TRANS => isTrans
+        })
     end
     #add into statsDict
     statsDict[evoStageNum] = stats 
@@ -131,31 +131,36 @@ end
 rawData[gf::ATTR] = attributeDict
 
 # Passives Table
+#TODO: separate level with skill name
 passives = []
 doc.xpath("//div[@class='auto-width']/table").each do |table|
-    passiveSkill = {}
     level = table.xpath('./caption').text.strip.match(/\d+/)[0].to_i
     passiveName = table.xpath('./tbody/tr/th').text.strip
     passiveDesc = table.xpath('./tbody/tr/td').text.strip
     # puts "Caption: #{caption} Passive Name: #{passiveName} Passive Desc: #{passiveDesc}"
-    passiveSkill[sf::LEVEL] = level
-    passiveSkill[gf::NAME] = passiveName
-    passiveSkill[gf::DESC] = passiveDesc
-    passives.push(passiveSkill)
+    passives.push({
+        sf::LEVEL => level,
+        gf::NAME => passiveName,
+        gf::DESC => passiveDesc
+    })
 end
 rawData[gf::PASSIVES] = passives
 
 
 # Evo Table
 # puts doc.xpath("//div[@class='tab-group'][2]")
+evolutions = []
 index = 1
-evoDict = {}
-evoMats = []
 evoSection = doc.xpath("//div[@class='tab-group'][2]")
 evoSection.xpath("./ul/li").each do |li| 
+    evoDict = {}
+    evoMats = []
     matchData =  li.text.strip.match(/.(\d)..(\d)/)
     base = matchData[1].to_i
     to = matchData[2].to_i
+    
+    evoDict[gf::BASE] = base
+    evoDict[gf::TO] = to
     
     #process sprite images
     image = {}
@@ -178,37 +183,40 @@ evoSection.xpath("./ul/li").each do |li|
     })
 
     #process evo mats
-    evoDict[gf::BASE] = base
-    evoDict[gf::TO] = to
-
     tabPanelInner = tabPanel.xpath("./div[@class='panel-inner'][2]/ul[@class='line-list']")
     tabPanelInner.xpath("./li").each do |evoMatItem|
-        evoMat = {}
-        matImage = {}
-        
-        evoMatImage = evoMatItem.xpath("./img/@src").text.strip
+        #Mat Image Processing
+        evoMatImageURL = evoMatItem.xpath("./img/@src").text.strip
+        #Mat Data Processing
         evoMatMatchData = evoMatItem.xpath("./p").text.gsub!(/\n|\s/, "").match(/(.+)\((.)\).(\d*)/)
         evoMatName = evoMatMatchData[1]
         evoMatSize = evoMatMatchData[2]
         evoMatAmt = evoMatMatchData[3]
-        puts "evoMatMatchData: #{evoMatName} | #{evoMatSize} | #{evoMatAmt}"
+        
+        images.push({
+            imgf::NAME => "#{evoMatName} (#{evoMatSize})",
+            imgf::CAT => "material",
+            imgf::TYPE => "evolution",
+            imgf::DESC => "no background",
+            imgf::URL => evoMatImageURL,
+            imgf::SIZE => "medium"
+        })
+        evoMats.push({
+            gf::NAME => evoMatName,
+            gf::SIZE => evoMatSize,
+            gf::AMT => evoMatAmt
+        })
 
-        evoMat[gf::NAME] = evoMatName
-        evoMat[gf::SIZE] = evoMatSize
-        evoMat[gf::AMT] = evoMatAmt
-        evoMats.push(evoMat)
+        # puts "evoMatMatchData: #{evoMatName} | #{evoMatSize} | #{evoMatAmt}"
     end
-
-
-
+    evoDict[gf::MATS] = evoMats
+    evolutions.push(evoDict)
     index += 1
 end
-
-
-
-
+rawData[gf::EVO] = evolutions
 rawData[gf::IMGS] = images
 # puts images.inspect
 # puts rawData.inspect
+puts JSON.pretty_generate(rawData)
 # Close file
 file.close()
