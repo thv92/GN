@@ -25,4 +25,6 @@ module GeneralFields
     AMT = 'amount'
     TIER = 'tier'
     SYMBOL = 'symbol'
+    SUMMARY = 'summary'
+    MAX = 'max'
 end

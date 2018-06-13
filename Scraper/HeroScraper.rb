@@ -26,6 +26,7 @@ bannerImageDict = {}
 bannerImageDict[imgf::CAT] = "Banner"
 bannerImageDict[gf::NAME] = "Banner"
 bannerImageDict[imgf::URL] = doc.xpath("//div[@class='hero-bnr']/img/@src").text.strip
+rawData[gf::HEROID] = bannerImageDict[imgf::URL].match(/[A-Z]\d{5,}/)[0]
 images.push(bannerImageDict)
 
 #Metadata Table
@@ -67,7 +68,7 @@ doc.xpath("//div[@class='tab-group'][1]/ul[@class='tabs']//a").each do |a|
         atk = tr.xpath('./td[3]').text.strip
         defense = tr.xpath('./td[4]').text.strip
         isTrans = level.include?(gfp::TRANS_SYMBOL)
-        #Remove TRANS_SYMBOL
+        #Removed TRANS_SYMBOL
         level = level.match(/\d+/)[0]
         # puts "Level: #{level} HP: #{hp} Attack: #{atk} Defense: #{defense} isTranscendance: #{isTrans}"
         stats.push({
@@ -82,6 +83,9 @@ doc.xpath("//div[@class='tab-group'][1]/ul[@class='tabs']//a").each do |a|
     statsDict[evoStageNum] = stats 
     index+=1
 end
+
+puts statsDict[index.to_s]
+
 rawData[gf::STATS] = statsDict
 
 # Ultimate Table
@@ -139,7 +143,6 @@ doc.xpath("//div[@class='auto-width']/table").each do |table|
     matchData = passiveName.match(/(.{2,})(.)(.)/)
     symbol = nil
     tier = nil
-    # passiveName = matchData[1]
     if (matchData != nil)
         passiveName = matchData[1]
         symbol = matchData[2]
@@ -154,7 +157,6 @@ doc.xpath("//div[@class='auto-width']/table").each do |table|
         gf::SYMBOL => symbol
     })
 end
-puts passives.inspect
 rawData[gf::PASSIVES] = passives
 
 
@@ -201,18 +203,22 @@ evoSection.xpath("./ul/li").each do |li|
         evoMatMatchData = evoMatItem.xpath("./p").text.gsub!(/\n|\s/, "").match(/(.+)\((.)\).(\d*)/)
         evoMatName = evoMatMatchData[1]
         evoMatSize = evoMatMatchData[2]
-        evoMatAmt = evoMatMatchData[3]
-        
+        evoMatAmt = evoMatMatchData[3].to_i
+        evoMatID = evoMatImageURL.match(/[A-Z]\d{5,}/)[0]
+
+
         images.push({
             imgf::NAME => "#{evoMatName} (#{evoMatSize})",
+            imgf::MATID => evoMatID,
             imgf::CAT => "material",
             imgf::TYPE => "evolution",
             imgf::DESC => "no background",
             imgf::URL => evoMatImageURL,
             imgf::SIZE => "medium"
-        })
+        }) unless images.any? { |image| image[imgf::MATID] === evoMatID}
         evoMats.push({
             gf::NAME => evoMatName,
+            gf::MATID => evoMatID,
             gf::SIZE => evoMatSize,
             gf::AMT => evoMatAmt
         })
@@ -225,6 +231,8 @@ evoSection.xpath("./ul/li").each do |li|
 end
 rawData[gf::EVO] = evolutions
 rawData[gf::IMGS] = images
+
+
 # puts images.inspect
 # puts rawData.inspect
 # puts JSON.pretty_generate(rawData)

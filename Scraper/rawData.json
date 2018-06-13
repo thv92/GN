@@ -1,5 +1,7 @@
+
 {
   "name": "シャルロット・バルヒェット",
+  "heroID": "A00020",
   "metadata": {
     "role": "ディフェンダー",
     "weaponType": "槌盾",
@@ -122,12 +124,16 @@
     {
       "level": 10,
       "name": "ガード",
-      "description": "静止時、移動時、攻撃後、ステップの前後、\n前方からのダメージを軽減します。"
+      "description": "静止時、移動時、攻撃後、ステップの前後、前方からのダメージを軽減します。",
+      "tier": null,
+      "symbol": null
     },
     {
       "level": 30,
-      "name": "雷効果↑中",
-      "description": "雷属性の攻撃力が10%増加します。"
+      "name": "雷効果",
+      "description": "雷属性の攻撃力が10%増加します。",
+      "tier": "中",
+      "symbol": "↑"
     }
   ],
   "evolutions": [
@@ -137,28 +143,33 @@
       "materials": [
         {
           "name": "正義のオーブ",
+          "materialID": "S00006",
           "size": "微",
-          "amount": "15"
+          "amount": 15
         },
         {
           "name": "正義のオーブ",
+          "materialID": "S00007",
           "size": "小",
-          "amount": "10"
+          "amount": 10
         },
         {
           "name": "慈愛のオーブ",
+          "materialID": "S00021",
           "size": "微",
-          "amount": "15"
+          "amount": 15
         },
         {
           "name": "希望のオーブ",
+          "materialID": "S00031",
           "size": "微",
-          "amount": "15"
+          "amount": 15
         },
         {
           "name": "希望のオーブ",
+          "materialID": "S00032",
           "size": "小",
-          "amount": "10"
+          "amount": 10
         }
       ]
     },
@@ -168,28 +179,33 @@
       "materials": [
         {
           "name": "正義のオーブ",
+          "materialID": "S00007",
           "size": "小",
-          "amount": "15"
+          "amount": 15
         },
         {
           "name": "正義のオーブ",
+          "materialID": "S00008",
           "size": "中",
-          "amount": "10"
+          "amount": 10
         },
         {
           "name": "慈愛のオーブ",
+          "materialID": "S00022",
           "size": "小",
-          "amount": "15"
+          "amount": 15
         },
         {
           "name": "希望のオーブ",
+          "materialID": "S00032",
           "size": "小",
-          "amount": "15"
+          "amount": 15
         },
         {
           "name": "希望のオーブ",
+          "materialID": "S00033",
           "size": "中",
-          "amount": "10"
+          "amount": 10
         }
       ]
     }
@@ -201,19 +217,20 @@
       "url": "http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_hero_hero_medium_A00020_20.png"
     },
     {
-      "category": "Hero",
-      "type": "Sprite",
+      "category": "hero",
+      "type": "sprite",
       "name": "4",
       "url": "http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_hero_hero_large_A00020_1_20.png"
     },
     {
-      "category": "Hero",
-      "type": "Sprite",
+      "category": "hero",
+      "type": "sprite",
       "name": "5",
       "url": "http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_hero_hero_large_A00020_22_20.png"
     },
     {
       "name": "正義のオーブ (微)",
+      "materialID": "S00006",
       "category": "material",
       "type": "evolution",
       "description": "no background",
@@ -222,6 +239,7 @@
     },
     {
       "name": "正義のオーブ (小)",
+      "materialID": "S00007",
       "category": "material",
       "type": "evolution",
       "description": "no background",
@@ -230,6 +248,7 @@
     },
     {
       "name": "慈愛のオーブ (微)",
+      "materialID": "S00021",
       "category": "material",
       "type": "evolution",
       "description": "no background",
@@ -238,6 +257,7 @@
     },
     {
       "name": "希望のオーブ (微)",
+      "materialID": "S00031",
       "category": "material",
       "type": "evolution",
       "description": "no background",
@@ -246,6 +266,7 @@
     },
     {
       "name": "希望のオーブ (小)",
+      "materialID": "S00032",
       "category": "material",
       "type": "evolution",
       "description": "no background",
@@ -253,21 +274,14 @@
       "size": "medium"
     },
     {
-      "category": "Hero",
-      "type": "Sprite",
+      "category": "hero",
+      "type": "sprite",
       "name": "6",
       "url": "http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_hero_hero_large_A00020_333_20.png"
     },
     {
-      "name": "正義のオーブ (小)",
-      "category": "material",
-      "type": "evolution",
-      "description": "no background",
-      "url": "http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_substance_substance_medium_S00007_7.png",
-      "size": "medium"
-    },
-    {
       "name": "正義のオーブ (中)",
+      "materialID": "S00008",
       "category": "material",
       "type": "evolution",
       "description": "no background",
@@ -276,6 +290,7 @@
     },
     {
       "name": "慈愛のオーブ (小)",
+      "materialID": "S00022",
       "category": "material",
       "type": "evolution",
       "description": "no background",
@@ -283,15 +298,8 @@
       "size": "medium"
     },
     {
-      "name": "希望のオーブ (小)",
-      "category": "material",
-      "type": "evolution",
-      "description": "no background",
-      "url": "http://portal.cache.grimmsnotes.jp/201805081510/uploads/2018/05/images_94edb29abe60_substance_substance_medium_S00032_32.png",
-      "size": "medium"
-    },
-    {
       "name": "希望のオーブ (中)",
+      "materialID": "S00033",
       "category": "material",
       "type": "evolution",
       "description": "no background",

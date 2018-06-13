@@ -5,4 +5,6 @@ module ImageFields
     URL = 'url'
     DESC = 'description'
     SIZE = 'size'
+    HEROID = 'heroID'
+    MATID = 'materialID'
 end
