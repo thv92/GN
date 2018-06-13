@@ -28,7 +28,7 @@
     "Ultimate": {
         "Name": "Thunder Australia",
         "Cost": "2",
-        "Description": "Description",
+        "Description": "Description"
     },
     "Attribute": {
         "Damage": {
@@ -48,7 +48,7 @@
     }, 
     "Passives": [
         {
-            "Caption": 10,
+            "Level": 10,
             "Name": "guard",
             "Description": "description"
         }
@@ -57,26 +57,42 @@
         {
             "from": 4,
             "to": 5,
-            "Materials": {
-                "Name": "Quantity"
-            }
+            "Materials": [
+                {
+                    "Name": "Name",
+                    "Size": "XS",
+                    "Amount": 2
+                }
+            ]
         }
     ],
     "Images": [
-        {
-            "Category": "Banner",
+        {   
+            "HeroID": 2123,
+            "Category": "Hero",
+            "Type": "Banner",
             "url": "url"
         },
         {
-            "Category": "Evolution",
+            "HeroID": 2123,
+            "Category": "Hero",
             "Type": "Sprite",
             "Name": 4,
             "url": "url"
         },
         {
-            "Category": "Thumbnail",
-            "Type": "Character",
+            "HeroID": 2123,
+            "Category": "Hero",
+            "Type": "Thumbnail",
             "url": "url"
+        },
+        {
+            "MaterialID": 23423423,
+            "Category": "Material",
+            "Type": "Sprite",
+            "Description": "no background", //(Optional)
+            "url": "url",
+            "Size?": "large"
         }
     ]
 }]
