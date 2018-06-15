@@ -27,4 +27,4 @@ module GeneralFields
     SYMBOL = 'symbol'
     SUMMARY = 'summary'
     MAX = 'max'
-end
+    end
