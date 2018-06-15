@@ -250,7 +250,6 @@ module HeroScraper
                     evoMatAmt = evoMatMatchData[3].to_i
                     evoMatID = evoMatImageURL.match(/[A-Z]\d{5,}/)[0]
 
-
                     images.push({
                         @imgf::NAME => "#{evoMatName} (#{evoMatSize})",
                         @imgf::MATID => evoMatID,
@@ -266,7 +265,6 @@ module HeroScraper
                         @gf::SIZE => evoMatSize,
                         @gf::AMT => evoMatAmt
                     })
-
                     # puts "evoMatMatchData: #{evoMatName} | #{evoMatSize} | #{evoMatAmt}"
                 end
                 evoDict[@gf::MATS] = evoMats
