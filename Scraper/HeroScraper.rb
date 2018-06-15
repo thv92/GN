@@ -52,6 +52,7 @@ module HeroScraper
             rawData
         end
         
+        private
         #Scrape banner image URL
         def scrapeBannerImageURL
             #Banner Image URL
