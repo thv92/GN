@@ -27,4 +27,5 @@ module CommonFields
     SYMBOL = 'symbol'
     SUMMARY = 'summary'
     MAX = 'max'
+    IS_ORIGIN = 'isOrigin'
     end

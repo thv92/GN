@@ -25,7 +25,7 @@ module HeroScraper
             elsif (linkToHero)
                 @doc = Nokogiri::HTML(open(linkToHero))
             else
-                raise 'Invalid Param. Both are null'
+                raise 'Invalid Params. Both are null'
             end
         end
 
@@ -33,10 +33,11 @@ module HeroScraper
         def scrapeHero
             rawData = {}
             images = []
+            @heroID = @doc.xpath("//div[@class='hero-bnr']/img/@src").text.strip.match(/[A-Z]\d{5,}/)[0]
 
             evoData = scrapeEvo
             rawData[@gf::NAME] = @doc.xpath("//div[@class=\'page-title\']").text.strip
-            rawData[@gf::HEROID] = @doc.xpath("//div[@class='hero-bnr']/img/@src").text.strip.match(/[A-Z]\d{5,}/)[0]
+            rawData[@gf::HEROID] = @heroID
             rawData[@gf::MD] = scrapeMetadata
             rawData[@gf::STATS] = scrapeStats
             rawData[@gf::ULT] = scrapeUltimate
@@ -225,6 +226,7 @@ module HeroScraper
                 tabPanelCharaImageTo   = tabPanel.xpath("./div[@class='panel-inner'][1]/ul[@class='evol']/li[3]/img/@src").text
                 
                 images.push({
+                    @imgf::HEROID => @heroID,
                     @imgf::CAT => "hero",
                     @imgf::TYPE => "sprite",
                     @gf::NAME => base.to_s,
@@ -232,6 +234,7 @@ module HeroScraper
                 }) unless index == 2  #ignore repeat on second evo
 
                 images.push({
+                    @imgf::HEROID => @heroID,
                     @imgf::CAT => "hero",
                     @imgf::TYPE => "sprite",
                     @gf::NAME => to.to_s,
@@ -244,15 +247,23 @@ module HeroScraper
                     #Mat Image Processing
                     evoMatImageURL = evoMatItem.xpath("./img/@src").text.strip
                     #Mat Data Processing
-                    evoMatMatchData = evoMatItem.xpath("./p").text.gsub(/\n|\s/, "").match(/(.+)\((.)\).(\d*)/)
-                    evoMatName = evoMatMatchData[1]
-                    evoMatSize = evoMatMatchData[2]
-                    evoMatAmt = evoMatMatchData[3].to_i
-                    evoMatID = evoMatImageURL.match(/[A-Z]\d{5,}/)[0]
+                    evoMatText = evoMatItem.xpath("./p").text.gsub(/\n|\s/, "")
+                    if(evoMatText.include? "(")
+                        evoMatMatchData = evoMatText.match(/(.+)\((.)\)?.(\d+)/)
+                        evoMatName = evoMatMatchData[1]
+                        evoMatSize = evoMatMatchData[2]
+                        evoMatAmt = evoMatMatchData[3].to_i
+                    else
+                        evoMatMatchData = evoMatText.match(/(.+).(\d+)/)
+                        evoMatName = evoMatMatchData[1]
+                        evoMatSize = nil
+                        evoMatAmt = evoMatMatchData[2].to_i
+                    end
 
+                    evoMatID = evoMatImageURL.match(/[A-Z]\d{5,}/)[0]
                     images.push({
-                        @imgf::NAME => "#{evoMatName} (#{evoMatSize})",
                         @imgf::MATID => evoMatID,
+                        @imgf::NAME => evoMatSize == nil ? evoMatName : "#{evoMatName} (#{evoMatSize})",
                         @imgf::CAT => "material",
                         @imgf::TYPE => "evolution",
                         @imgf::DESC => "no background",
@@ -260,8 +271,8 @@ module HeroScraper
                         @imgf::SIZE => "medium"
                     }) unless images.any? { |image| image[@imgf::MATID] === evoMatID}
                     evoMats.push({
-                        @gf::NAME => evoMatName,
                         @gf::MATID => evoMatID,
+                        @gf::NAME => evoMatName,
                         @gf::SIZE => evoMatSize,
                         @gf::AMT => evoMatAmt
                     })

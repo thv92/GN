@@ -1,0 +1,210 @@
+{
+  "name": "山賊の娘タチアナ(天空)",
+  "heroID": "A00485",
+  "metadata": {
+    "role": "ヒーラー",
+    "weaponType": "片手杖",
+    "series": "グリムノーツ"
+  },
+  "stats": {
+    "summary": {
+      "5": [
+        {
+          "level": 1,
+          "hp": 808,
+          "attack": 86,
+          "defense": 91,
+          "isTranscendance": false
+        },
+        {
+          "level": 50,
+          "hp": 1631,
+          "attack": 174,
+          "defense": 184,
+          "isTranscendance": false
+        },
+        {
+          "level": 60,
+          "hp": 1963,
+          "attack": 210,
+          "defense": 222,
+          "isTranscendance": true
+        },
+        {
+          "level": 70,
+          "hp": 2295,
+          "attack": 246,
+          "defense": 260,
+          "isTranscendance": true
+        }
+      ],
+      "6": [
+        {
+          "level": 1,
+          "hp": 1818,
+          "attack": 186,
+          "defense": 197,
+          "isTranscendance": false
+        },
+        {
+          "level": 60,
+          "hp": 2677,
+          "attack": 274,
+          "defense": 290,
+          "isTranscendance": false
+        },
+        {
+          "level": 70,
+          "hp": 3059,
+          "attack": 313,
+          "defense": 332,
+          "isTranscendance": true
+        },
+        {
+          "level": 80,
+          "hp": 3442,
+          "attack": 353,
+          "defense": 374,
+          "isTranscendance": true
+        }
+      ],
+      "7": [
+        {
+          "level": 1,
+          "hp": 2424,
+          "attack": 242,
+          "defense": 257,
+          "isTranscendance": false
+        },
+        {
+          "level": 70,
+          "hp": 3672,
+          "attack": 368,
+          "defense": 389,
+          "isTranscendance": false
+        },
+        {
+          "level": 80,
+          "hp": 4131,
+          "attack": 414,
+          "defense": 438,
+          "isTranscendance": true
+        },
+        {
+          "level": 90,
+          "hp": 4590,
+          "attack": 460,
+          "defense": 487,
+          "isTranscendance": true
+        }
+      ]
+    },
+    "max": {
+      "level": 90,
+      "hp": 4590,
+      "attack": 460,
+      "defense": 487,
+      "isTranscendance": true
+    }
+  },
+  "ultimate": {
+    "name": "キューティー・エクスプロード",
+    "cost": 3,
+    "description": "味方を回復する爆発を伴う強力な一投(麻痺)。"
+  },
+  "attribute": {
+    "damage": {
+      "fire": 0,
+      "ice": 0,
+      "thunder": 0,
+      "light": 0,
+      "dark": 0
+    },
+    "resistance": {
+      "fire": 0,
+      "ice": 0,
+      "thunder": 0,
+      "light": 0,
+      "dark": 0
+    }
+  },
+  "passives": [
+    {
+      "level": 10,
+      "name": "リジェネ",
+      "description": "静止時と移動時のみ、周囲の仲間のHPを1秒毎に中回復します。",
+      "tier": "中",
+      "symbol": "・"
+    },
+    {
+      "level": 30,
+      "name": "攻撃HP回復",
+      "description": "通常攻撃がヒットした時、HPが大回復します。",
+      "tier": "大",
+      "symbol": "・"
+    }
+  ],
+  "evolutions": [
+    {
+      "base": 5,
+      "to": 6,
+      "materials": [
+        {
+          "materialID": "I00009",
+          "name": "進化の種",
+          "size": null,
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "base": 6,
+      "to": 7,
+      "materials": [
+        {
+          "materialID": "I00009",
+          "name": "進化の種",
+          "size": null,
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "category": "Banner",
+      "name": "Banner",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_medium_A00485_000085.png"
+    },
+    {
+      "heroID": "A00485",
+      "category": "hero",
+      "type": "sprite",
+      "name": "5",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_large_A00485_1_000085.png"
+    },
+    {
+      "heroID": "A00485",
+      "category": "hero",
+      "type": "sprite",
+      "name": "6",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_large_A00485_22_000085.png"
+    },
+    {
+      "materialID": "I00009",
+      "name": "進化の種",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_event_item_event_item_EI00009_9.png",
+      "size": "medium"
+    },
+    {
+      "heroID": "A00485",
+      "category": "hero",
+      "type": "sprite",
+      "name": "7",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_large_A00485_333_000085.png"
+    }
+  ]
+}
