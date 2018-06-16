@@ -28,4 +28,6 @@ module CommonFields
     SUMMARY = 'summary'
     MAX = 'max'
     IS_ORIGIN = 'isOrigin'
+    DOT_SYMBOL = '・'
+    FULLNAME = 'fullName'
     end

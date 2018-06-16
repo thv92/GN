@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
+require 'json'
 require './constants/common_fields'
 require './constants/image_fields'
 require './constants/attributes'
@@ -56,11 +57,12 @@ module HeroScraper
         #Scrape banner image URL
         def scrapeBannerImageURL
             #Banner Image URL
-            bannerImageDict = {}
-            bannerImageDict[@imgf::CAT] = "Banner"
-            bannerImageDict[@gf::NAME] = "Banner"
-            bannerImageDict[@imgf::URL] = @doc.xpath("//div[@class='hero-bnr']/img/@src").text.strip
-            bannerImageDict
+            {
+                @imgf::HEROID => @heroID,
+                @imgf::CAT => "banner",
+                @gf::NAME => "banner",
+                @imgf::URL => @doc.xpath("//div[@class='hero-bnr']/img/@src").text.strip
+            }
         end
 
         #Metadata Table
@@ -182,25 +184,27 @@ module HeroScraper
             passives = []
             @doc.xpath("//div[@class='auto-width']/table").each do |table|
                 level = table.xpath('./caption').text.strip.match(/\d+/)[0].to_i
-                passiveName = table.xpath('./tbody/tr/th').text.strip.gsub(/\n/, "")
+                passiveFullName = table.xpath('./tbody/tr/th').text.strip.gsub(/\n/, "")
                 passiveDesc = table.xpath('./tbody/tr/td').text.strip.gsub(/\n/, "")
-                matchData = passiveName.match(/(.{2,})(.)(.)/)
+                matchData = passiveFullName.match(/(.{2,})(#{@gf::BUFF_SYMBOL}|#{@gf::DOT_SYMBOL})(.)/)
                 symbol = nil
                 tier = nil
                 if (matchData != nil)
-                    passiveName = matchData[1]
-                    symbol = matchData[2]
-                    tier = matchData[3]
+                    passiveName = matchData[1].strip
+                    symbol = matchData[2].strip
+                    tier = matchData[3].strip
                 end
                 # puts "Caption: #{caption} Passive Name: #{passiveName} Passive Desc: #{passiveDesc}"
                 passives.push({
-                    @sf::LEVEL => level,
+                    @gf::FULLNAME => passiveFullName,
                     @gf::NAME => passiveName,
+                    @sf::LEVEL => level,
                     @gf::DESC => passiveDesc,
                     @gf::TIER => tier,
                     @gf::SYMBOL => symbol
                 })
             end
+            # puts passives
             passives
         end
 

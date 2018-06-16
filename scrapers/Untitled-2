@@ -1,0 +1,23 @@
+Passive Name Forms
+    UP and DOT symbol + tier
+    UP Symbol and no tier
+    Joint passives (Keep it unique, don't have to separate)
+
+
+
+Passive Skill Classification
+    Elemental buff
+    Status effect
+    Regeneration | Wave Regeneration
+    Ultimate | Wave Ultimate Generation
+    Attack/Defense buff for self/teammates
+    Guard
+
+
+Ultimate Skill Classification
+    Heal
+    Damage to Enemies
+    Attack/Defense Buff for Team + self (Attack | Defense - Buff | Debuff - Allies | Enemies)
+    Attack/Defense Debuff for Enemies
+    Status Effect on enemies (Poison/Stun/Paralysis)
+    Elemental Damage
