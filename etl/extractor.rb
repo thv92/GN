@@ -26,7 +26,7 @@ module Extractor
                     heroID = thumbnailURL.match(/[A-Z]\d{5,}/)[0]
                     isOrigin = heroDiv.xpath('@class').text.strip.include? "origin"
                     thumbnail = {
-                        imgf::HEROID => heroID,
+                        imgf::HERO_ID => heroID,
                         imgf::NAME => 'thumbnail',
                         imgf::CAT => 'hero',
                         imgf::TYPE => 'thumbnail',

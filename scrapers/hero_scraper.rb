@@ -38,7 +38,7 @@ module HeroScraper
 
             evoData = scrapeEvo
             rawData[@cf::NAME] = @doc.xpath("//div[@class=\'page-title\']").text.strip
-            rawData[@cf::HEROID] = @heroID
+            rawData[@cf::HERO_ID] = @heroID
             rawData[@cf::MD] = scrapeMetadata
             rawData[@cf::STATS] = scrapeStats
             rawData[@cf::ULT] = scrapeUltimate
@@ -58,7 +58,7 @@ module HeroScraper
         def scrapeBannerImageURL
             #Banner Image URL
             {
-                @imgf::HEROID => @heroID,
+                @imgf::HERO_ID => @heroID,
                 @imgf::CAT => "banner",
                 @cf::NAME => "banner",
                 @imgf::URL => @doc.xpath("//div[@class='hero-bnr']/img/@src").text.strip
@@ -230,7 +230,7 @@ module HeroScraper
                 tabPanelCharaImageTo   = tabPanel.xpath("./div[@class='panel-inner'][1]/ul[@class='evol']/li[3]/img/@src").text
                 
                 images.push({
-                    @imgf::HEROID => @heroID,
+                    @imgf::HERO_ID => @heroID,
                     @imgf::CAT => "hero",
                     @imgf::TYPE => "sprite",
                     @cf::NAME => base.to_s,
@@ -238,7 +238,7 @@ module HeroScraper
                 }) unless index == 2  #ignore repeat on second evo
 
                 images.push({
-                    @imgf::HEROID => @heroID,
+                    @imgf::HERO_ID => @heroID,
                     @imgf::CAT => "hero",
                     @imgf::TYPE => "sprite",
                     @cf::NAME => to.to_s,
@@ -266,16 +266,16 @@ module HeroScraper
 
                     evoMatID = evoMatImageURL.match(/[A-Z]\d{5,}/)[0]
                     images.push({
-                        @imgf::MATID => evoMatID,
+                        @imgf::MAT_ID => evoMatID,
                         @imgf::NAME => evoMatSize == nil ? evoMatName : "#{evoMatName} (#{evoMatSize})",
                         @imgf::CAT => "material",
                         @imgf::TYPE => "evolution",
                         @imgf::DESC => "no background",
                         @imgf::URL => evoMatImageURL,
                         @imgf::SIZE => "medium"
-                    }) unless images.any? { |image| image[@imgf::MATID] === evoMatID}
+                    }) unless images.any? { |image| image[@imgf::MAT_ID] === evoMatID}
                     evoMats.push({
-                        @cf::MATID => evoMatID,
+                        @cf::MAT_ID => evoMatID,
                         @cf::NAME => evoMatName,
                         @cf::SIZE => evoMatSize,
                         @cf::AMT => evoMatAmt

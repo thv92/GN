@@ -47,7 +47,7 @@ module Transformer
                     end
                 #images
                     heroData[@cf::IMGS].each do |img|
-                        
+                        if (img[@cf::MATID])
 
                     end
 
