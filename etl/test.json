@@ -1,0 +1,1000 @@
+[
+	{
+  "name": "チェシャ・ダイナ",
+  "heroID": "A00674",
+  "metadata": {
+    "role": "ヒーラー",
+    "weaponType": "片手杖",
+    "series": "リ・ページ"
+  },
+  "stats": {
+    "summary": {
+      "5": [
+        {
+          "level": 1,
+          "hp": 1016,
+          "attack": 110,
+          "defense": 118,
+          "isTranscendance": false
+        },
+        {
+          "level": 50,
+          "hp": 2052,
+          "attack": 222,
+          "defense": 238,
+          "isTranscendance": false
+        },
+        {
+          "level": 60,
+          "hp": 2470,
+          "attack": 267,
+          "defense": 287,
+          "isTranscendance": true
+        },
+        {
+          "level": 70,
+          "hp": 2887,
+          "attack": 313,
+          "defense": 336,
+          "isTranscendance": true
+        }
+      ],
+      "6": [
+        {
+          "level": 1,
+          "hp": 2287,
+          "attack": 237,
+          "defense": 254,
+          "isTranscendance": false
+        },
+        {
+          "level": 60,
+          "hp": 3368,
+          "attack": 349,
+          "defense": 374,
+          "isTranscendance": false
+        },
+        {
+          "level": 70,
+          "hp": 3849,
+          "attack": 399,
+          "defense": 427,
+          "isTranscendance": true
+        },
+        {
+          "level": 80,
+          "hp": 4330,
+          "attack": 449,
+          "defense": 481,
+          "isTranscendance": true
+        }
+      ],
+      "7": [
+        {
+          "level": 1,
+          "hp": 3049,
+          "attack": 308,
+          "defense": 331,
+          "isTranscendance": false
+        },
+        {
+          "level": 70,
+          "hp": 4619,
+          "attack": 468,
+          "defense": 501,
+          "isTranscendance": false
+        },
+        {
+          "level": 80,
+          "hp": 5196,
+          "attack": 526,
+          "defense": 564,
+          "isTranscendance": true
+        },
+        {
+          "level": 90,
+          "hp": 5774,
+          "attack": 585,
+          "defense": 627,
+          "isTranscendance": true
+        }
+      ]
+    },
+    "max": {
+      "level": 90,
+      "hp": 5774,
+      "attack": 585,
+      "defense": 627,
+      "isTranscendance": true
+    }
+  },
+  "ultimate": {
+    "name": "オール・フォー・アリス",
+    "cost": 2,
+    "description": "飛び出す矢を設置後、防ｱｯﾌﾟ/攻ｱｯﾌﾟし、回復。"
+  },
+  "attribute": {
+    "damage": {
+      "fire": 0,
+      "ice": 0,
+      "thunder": 0,
+      "light": 0,
+      "dark": 0
+    },
+    "resistance": {
+      "fire": 0,
+      "ice": 0,
+      "thunder": 0,
+      "light": 0,
+      "dark": 0
+    }
+  },
+  "passives": [
+    {
+      "fullName": "リジェネ・大",
+      "name": "リジェネ",
+      "level": 10,
+      "description": "静止時と移動時のみ、周囲の仲間のHPを1秒毎に大回復します。",
+      "tier": "大",
+      "symbol": "・"
+    },
+    {
+      "fullName": "AH動物体力↑",
+      "name": null,
+      "level": 30,
+      "description": "動物ヒーロー全員のHPが15%増加します。※AHスキルはバトル中1つだけ発動します。※動物ヒーローはヘルプで確認できます。",
+      "tier": null,
+      "symbol": null
+    }
+  ],
+  "evolutions": [
+    {
+      "base": 5,
+      "to": 6,
+      "materials": [
+        {
+          "materialID": "S00008",
+          "name": "正義のオーブ",
+          "size": "中",
+          "amount": 15
+        },
+        {
+          "materialID": "S00018",
+          "name": "誠実のオーブ",
+          "size": "中",
+          "amount": 15
+        },
+        {
+          "materialID": "S00019",
+          "name": "誠実のオーブ",
+          "size": "大",
+          "amount": 10
+        },
+        {
+          "materialID": "S00028",
+          "name": "慎重のオーブ",
+          "size": "中",
+          "amount": 15
+        },
+        {
+          "materialID": "S00029",
+          "name": "慎重のオーブ",
+          "size": "大",
+          "amount": 10
+        }
+      ]
+    },
+    {
+      "base": 6,
+      "to": 7,
+      "materials": [
+        {
+          "materialID": "S00009",
+          "name": "正義のオーブ",
+          "size": "大",
+          "amount": 15
+        },
+        {
+          "materialID": "S00019",
+          "name": "誠実のオーブ",
+          "size": "大",
+          "amount": 15
+        },
+        {
+          "materialID": "S00020",
+          "name": "誠実のオーブ",
+          "size": "超",
+          "amount": 10
+        },
+        {
+          "materialID": "S00029",
+          "name": "慎重のオーブ",
+          "size": "大",
+          "amount": 15
+        },
+        {
+          "materialID": "S00030",
+          "name": "慎重のオーブ",
+          "size": "超",
+          "amount": 10
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "heroID": "A00674",
+      "category": "banner",
+      "name": "banner",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_medium_A00674_00000074.png"
+    },
+    {
+      "heroID": "A00674",
+      "category": "hero",
+      "type": "sprite",
+      "name": "5",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_large_A00674_1_00000074.png"
+    },
+    {
+      "heroID": "A00674",
+      "category": "hero",
+      "type": "sprite",
+      "name": "6",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_large_A00674_22_00000074.png"
+    },
+    {
+      "materialID": "S00008",
+      "name": "正義のオーブ (中)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00008_8.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00018",
+      "name": "誠実のオーブ (中)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00018_18.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00019",
+      "name": "誠実のオーブ (大)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00019_19.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00028",
+      "name": "慎重のオーブ (中)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00028_28.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00029",
+      "name": "慎重のオーブ (大)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00029_29.png",
+      "size": "medium"
+    },
+    {
+      "heroID": "A00674",
+      "category": "hero",
+      "type": "sprite",
+      "name": "7",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_large_A00674_333_00000074.png"
+    },
+    {
+      "materialID": "S00009",
+      "name": "正義のオーブ (大)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00009_9.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00020",
+      "name": "誠実のオーブ (超)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00020_20.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00030",
+      "name": "慎重のオーブ (超)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00030_30.png",
+      "size": "medium"
+    },
+    {
+      "heroID": "A00674",
+      "name": "thumbnail",
+      "category": "hero",
+      "type": "thumbnail",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_small_A00674_00000074.png",
+      "size": "small"
+    }
+  ],
+  "isOrigin": false
+}[
+	{
+  "name": "チェシャ・ダイナ",
+  "heroID": "A00674",
+  "metadata": {
+    "role": "ヒーラー",
+    "weaponType": "片手杖",
+    "series": "リ・ページ"
+  },
+  "stats": {
+    "summary": {
+      "5": [
+        {
+          "level": 1,
+          "hp": 1016,
+          "attack": 110,
+          "defense": 118,
+          "isTranscendance": false
+        },
+        {
+          "level": 50,
+          "hp": 2052,
+          "attack": 222,
+          "defense": 238,
+          "isTranscendance": false
+        },
+        {
+          "level": 60,
+          "hp": 2470,
+          "attack": 267,
+          "defense": 287,
+          "isTranscendance": true
+        },
+        {
+          "level": 70,
+          "hp": 2887,
+          "attack": 313,
+          "defense": 336,
+          "isTranscendance": true
+        }
+      ],
+      "6": [
+        {
+          "level": 1,
+          "hp": 2287,
+          "attack": 237,
+          "defense": 254,
+          "isTranscendance": false
+        },
+        {
+          "level": 60,
+          "hp": 3368,
+          "attack": 349,
+          "defense": 374,
+          "isTranscendance": false
+        },
+        {
+          "level": 70,
+          "hp": 3849,
+          "attack": 399,
+          "defense": 427,
+          "isTranscendance": true
+        },
+        {
+          "level": 80,
+          "hp": 4330,
+          "attack": 449,
+          "defense": 481,
+          "isTranscendance": true
+        }
+      ],
+      "7": [
+        {
+          "level": 1,
+          "hp": 3049,
+          "attack": 308,
+          "defense": 331,
+          "isTranscendance": false
+        },
+        {
+          "level": 70,
+          "hp": 4619,
+          "attack": 468,
+          "defense": 501,
+          "isTranscendance": false
+        },
+        {
+          "level": 80,
+          "hp": 5196,
+          "attack": 526,
+          "defense": 564,
+          "isTranscendance": true
+        },
+        {
+          "level": 90,
+          "hp": 5774,
+          "attack": 585,
+          "defense": 627,
+          "isTranscendance": true
+        }
+      ]
+    },
+    "max": {
+      "level": 90,
+      "hp": 5774,
+      "attack": 585,
+      "defense": 627,
+      "isTranscendance": true
+    }
+  },
+  "ultimate": {
+    "name": "オール・フォー・アリス",
+    "cost": 2,
+    "description": "飛び出す矢を設置後、防ｱｯﾌﾟ/攻ｱｯﾌﾟし、回復。"
+  },
+  "attribute": {
+    "damage": {
+      "fire": 0,
+      "ice": 0,
+      "thunder": 0,
+      "light": 0,
+      "dark": 0
+    },
+    "resistance": {
+      "fire": 0,
+      "ice": 0,
+      "thunder": 0,
+      "light": 0,
+      "dark": 0
+    }
+  },
+  "passives": [
+    {
+      "fullName": "リジェネ・大",
+      "name": "リジェネ",
+      "level": 10,
+      "description": "静止時と移動時のみ、周囲の仲間のHPを1秒毎に大回復します。",
+      "tier": "大",
+      "symbol": "・"
+    },
+    {
+      "fullName": "AH動物体力↑",
+      "name": null,
+      "level": 30,
+      "description": "動物ヒーロー全員のHPが15%増加します。※AHスキルはバトル中1つだけ発動します。※動物ヒーローはヘルプで確認できます。",
+      "tier": null,
+      "symbol": null
+    }
+  ],
+  "evolutions": [
+    {
+      "base": 5,
+      "to": 6,
+      "materials": [
+        {
+          "materialID": "S00008",
+          "name": "正義のオーブ",
+          "size": "中",
+          "amount": 15
+        },
+        {
+          "materialID": "S00018",
+          "name": "誠実のオーブ",
+          "size": "中",
+          "amount": 15
+        },
+        {
+          "materialID": "S00019",
+          "name": "誠実のオーブ",
+          "size": "大",
+          "amount": 10
+        },
+        {
+          "materialID": "S00028",
+          "name": "慎重のオーブ",
+          "size": "中",
+          "amount": 15
+        },
+        {
+          "materialID": "S00029",
+          "name": "慎重のオーブ",
+          "size": "大",
+          "amount": 10
+        }
+      ]
+    },
+    {
+      "base": 6,
+      "to": 7,
+      "materials": [
+        {
+          "materialID": "S00009",
+          "name": "正義のオーブ",
+          "size": "大",
+          "amount": 15
+        },
+        {
+          "materialID": "S00019",
+          "name": "誠実のオーブ",
+          "size": "大",
+          "amount": 15
+        },
+        {
+          "materialID": "S00020",
+          "name": "誠実のオーブ",
+          "size": "超",
+          "amount": 10
+        },
+        {
+          "materialID": "S00029",
+          "name": "慎重のオーブ",
+          "size": "大",
+          "amount": 15
+        },
+        {
+          "materialID": "S00030",
+          "name": "慎重のオーブ",
+          "size": "超",
+          "amount": 10
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "heroID": "A00674",
+      "category": "banner",
+      "name": "banner",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_medium_A00674_00000074.png"
+    },
+    {
+      "heroID": "A00674",
+      "category": "hero",
+      "type": "sprite",
+      "name": "5",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_large_A00674_1_00000074.png"
+    },
+    {
+      "heroID": "A00674",
+      "category": "hero",
+      "type": "sprite",
+      "name": "6",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_large_A00674_22_00000074.png"
+    },
+    {
+      "materialID": "S00008",
+      "name": "正義のオーブ (中)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00008_8.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00018",
+      "name": "誠実のオーブ (中)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00018_18.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00019",
+      "name": "誠実のオーブ (大)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00019_19.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00028",
+      "name": "慎重のオーブ (中)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00028_28.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00029",
+      "name": "慎重のオーブ (大)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00029_29.png",
+      "size": "medium"
+    },
+    {
+      "heroID": "A00674",
+      "category": "hero",
+      "type": "sprite",
+      "name": "7",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_large_A00674_333_00000074.png"
+    },
+    {
+      "materialID": "S00009",
+      "name": "正義のオーブ (大)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00009_9.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00020",
+      "name": "誠実のオーブ (超)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00020_20.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00030",
+      "name": "慎重のオーブ (超)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00030_30.png",
+      "size": "medium"
+    },
+    {
+      "heroID": "A00674",
+      "name": "thumbnail",
+      "category": "hero",
+      "type": "thumbnail",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_small_A00674_00000074.png",
+      "size": "small"
+    }
+  ],
+  "isOrigin": false
+}[
+	{
+  "name": "チェシャ・ダイナ",
+  "heroID": "A00674",
+  "metadata": {
+    "role": "ヒーラー",
+    "weaponType": "片手杖",
+    "series": "リ・ページ"
+  },
+  "stats": {
+    "summary": {
+      "5": [
+        {
+          "level": 1,
+          "hp": 1016,
+          "attack": 110,
+          "defense": 118,
+          "isTranscendance": false
+        },
+        {
+          "level": 50,
+          "hp": 2052,
+          "attack": 222,
+          "defense": 238,
+          "isTranscendance": false
+        },
+        {
+          "level": 60,
+          "hp": 2470,
+          "attack": 267,
+          "defense": 287,
+          "isTranscendance": true
+        },
+        {
+          "level": 70,
+          "hp": 2887,
+          "attack": 313,
+          "defense": 336,
+          "isTranscendance": true
+        }
+      ],
+      "6": [
+        {
+          "level": 1,
+          "hp": 2287,
+          "attack": 237,
+          "defense": 254,
+          "isTranscendance": false
+        },
+        {
+          "level": 60,
+          "hp": 3368,
+          "attack": 349,
+          "defense": 374,
+          "isTranscendance": false
+        },
+        {
+          "level": 70,
+          "hp": 3849,
+          "attack": 399,
+          "defense": 427,
+          "isTranscendance": true
+        },
+        {
+          "level": 80,
+          "hp": 4330,
+          "attack": 449,
+          "defense": 481,
+          "isTranscendance": true
+        }
+      ],
+      "7": [
+        {
+          "level": 1,
+          "hp": 3049,
+          "attack": 308,
+          "defense": 331,
+          "isTranscendance": false
+        },
+        {
+          "level": 70,
+          "hp": 4619,
+          "attack": 468,
+          "defense": 501,
+          "isTranscendance": false
+        },
+        {
+          "level": 80,
+          "hp": 5196,
+          "attack": 526,
+          "defense": 564,
+          "isTranscendance": true
+        },
+        {
+          "level": 90,
+          "hp": 5774,
+          "attack": 585,
+          "defense": 627,
+          "isTranscendance": true
+        }
+      ]
+    },
+    "max": {
+      "level": 90,
+      "hp": 5774,
+      "attack": 585,
+      "defense": 627,
+      "isTranscendance": true
+    }
+  },
+  "ultimate": {
+    "name": "オール・フォー・アリス",
+    "cost": 2,
+    "description": "飛び出す矢を設置後、防ｱｯﾌﾟ/攻ｱｯﾌﾟし、回復。"
+  },
+  "attribute": {
+    "damage": {
+      "fire": 0,
+      "ice": 0,
+      "thunder": 0,
+      "light": 0,
+      "dark": 0
+    },
+    "resistance": {
+      "fire": 0,
+      "ice": 0,
+      "thunder": 0,
+      "light": 0,
+      "dark": 0
+    }
+  },
+  "passives": [
+    {
+      "fullName": "リジェネ・大",
+      "name": "リジェネ",
+      "level": 10,
+      "description": "静止時と移動時のみ、周囲の仲間のHPを1秒毎に大回復します。",
+      "tier": "大",
+      "symbol": "・"
+    },
+    {
+      "fullName": "AH動物体力↑",
+      "name": null,
+      "level": 30,
+      "description": "動物ヒーロー全員のHPが15%増加します。※AHスキルはバトル中1つだけ発動します。※動物ヒーローはヘルプで確認できます。",
+      "tier": null,
+      "symbol": null
+    }
+  ],
+  "evolutions": [
+    {
+      "base": 5,
+      "to": 6,
+      "materials": [
+        {
+          "materialID": "S00008",
+          "name": "正義のオーブ",
+          "size": "中",
+          "amount": 15
+        },
+        {
+          "materialID": "S00018",
+          "name": "誠実のオーブ",
+          "size": "中",
+          "amount": 15
+        },
+        {
+          "materialID": "S00019",
+          "name": "誠実のオーブ",
+          "size": "大",
+          "amount": 10
+        },
+        {
+          "materialID": "S00028",
+          "name": "慎重のオーブ",
+          "size": "中",
+          "amount": 15
+        },
+        {
+          "materialID": "S00029",
+          "name": "慎重のオーブ",
+          "size": "大",
+          "amount": 10
+        }
+      ]
+    },
+    {
+      "base": 6,
+      "to": 7,
+      "materials": [
+        {
+          "materialID": "S00009",
+          "name": "正義のオーブ",
+          "size": "大",
+          "amount": 15
+        },
+        {
+          "materialID": "S00019",
+          "name": "誠実のオーブ",
+          "size": "大",
+          "amount": 15
+        },
+        {
+          "materialID": "S00020",
+          "name": "誠実のオーブ",
+          "size": "超",
+          "amount": 10
+        },
+        {
+          "materialID": "S00029",
+          "name": "慎重のオーブ",
+          "size": "大",
+          "amount": 15
+        },
+        {
+          "materialID": "S00030",
+          "name": "慎重のオーブ",
+          "size": "超",
+          "amount": 10
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "heroID": "A00674",
+      "category": "banner",
+      "name": "banner",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_medium_A00674_00000074.png"
+    },
+    {
+      "heroID": "A00674",
+      "category": "hero",
+      "type": "sprite",
+      "name": "5",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_large_A00674_1_00000074.png"
+    },
+    {
+      "heroID": "A00674",
+      "category": "hero",
+      "type": "sprite",
+      "name": "6",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_large_A00674_22_00000074.png"
+    },
+    {
+      "materialID": "S00008",
+      "name": "正義のオーブ (中)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00008_8.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00018",
+      "name": "誠実のオーブ (中)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00018_18.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00019",
+      "name": "誠実のオーブ (大)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00019_19.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00028",
+      "name": "慎重のオーブ (中)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00028_28.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00029",
+      "name": "慎重のオーブ (大)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00029_29.png",
+      "size": "medium"
+    },
+    {
+      "heroID": "A00674",
+      "category": "hero",
+      "type": "sprite",
+      "name": "7",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_large_A00674_333_00000074.png"
+    },
+    {
+      "materialID": "S00009",
+      "name": "正義のオーブ (大)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00009_9.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00020",
+      "name": "誠実のオーブ (超)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00020_20.png",
+      "size": "medium"
+    },
+    {
+      "materialID": "S00030",
+      "name": "慎重のオーブ (超)",
+      "category": "material",
+      "type": "evolution",
+      "description": "no background",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_substance_substance_medium_S00030_30.png",
+      "size": "medium"
+    },
+    {
+      "heroID": "A00674",
+      "name": "thumbnail",
+      "category": "hero",
+      "type": "thumbnail",
+      "url": "http://portal.cache.grimmsnotes.jp/201806061740/uploads/2018/06/images_1df9aefa3ae6_hero_hero_small_A00674_00000074.png",
+      "size": "small"
+    }
+  ],
+  "isOrigin": false
+}

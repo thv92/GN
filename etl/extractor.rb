@@ -40,7 +40,7 @@ module Extractor
                     rawData[cf::IMGS].push(thumbnail)
                     
                     if(block_given?)
-                        yield rawData
+                        yield rawData, i
                     else
                         heroes.push(rawData)
                     end
