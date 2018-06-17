@@ -5,14 +5,10 @@ require './hero_scraper'
 require './constants/image_fields'
 require './constants/common_fields'
 
-
 module Extractor
-    def self.extractHeroes
-
-
-
+    def self.extractHeroes(&block)
+        HeroesExtractor.new.extractHeroes &block
     end
-
 
     class HeroesExtractor
         def extractHeroes
@@ -20,6 +16,7 @@ module Extractor
             maxPageNum = getMaxPageNum(url)
             gf = CommonFields
             imgf = ImageFields
+            heroes = []
 
             1.upto(maxPageNum) do |i|
                 pageURL = "#{url}/page/#{i}"
@@ -41,14 +38,22 @@ module Extractor
                     rawData = HeroScraper.scrape(heroURL)
                     rawData[gf::IS_ORIGIN] = isOrigin
                     rawData[gf::IMGS].push(thumbnail)
-                    # heroes.push(rawData)
-                    yield rawData
+                    
+                    if(block_given?)
+                        yield rawData
+                    else
+                        heroes.push(rawData)
+                    end
+                    break
                 end
+                break
             end
-            def getMaxPageNum(url)
-                doc = Nokogiri::HTML(open(url))
-                doc.xpath("//div[@class='pagenation']/ul/li[last() - 1]").text.strip.to_i
-            end
+            heroes unless block_given?
+        end
+
+        def getMaxPageNum(url)
+            doc = Nokogiri::HTML(open(url))
+            doc.xpath("//div[@class='pagenation']/ul/li[last() - 1]").text.strip.to_i
         end
     end
 end
