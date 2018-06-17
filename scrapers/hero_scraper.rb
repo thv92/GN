@@ -1,11 +1,11 @@
 require 'nokogiri'
 require 'open-uri'
 require 'json'
-require './constants/common_fields'
-require './constants/image_fields'
-require './constants/attributes'
-require './constants/stat_fields'
-require './constants/common_fields_jp'
+require '../constants/common_fields'
+require '../constants/image_fields'
+require '../constants/attributes'
+require '../constants/stat_fields'
+require '../constants/common_fields_jp'
 
 module HeroScraper
     def self.scrape(linkToHero = nil, pathToFile = nil)
@@ -14,8 +14,8 @@ module HeroScraper
 
     class Scraper
         def initialize(linkToHero = nil, pathToFile = nil)
-            @gf = CommonFields
-            @gfp = CommonFieldsJP
+            @cf = CommonFields
+            @cfp = CommonFieldsJP
             @imgf = ImageFields
             @att = Attributes
             @sf = StatFields
@@ -37,15 +37,15 @@ module HeroScraper
             @heroID = @doc.xpath("//div[@class='hero-bnr']/img/@src").text.strip.match(/[A-Z]\d{5,}/)[0]
 
             evoData = scrapeEvo
-            rawData[@gf::NAME] = @doc.xpath("//div[@class=\'page-title\']").text.strip
-            rawData[@gf::HEROID] = @heroID
-            rawData[@gf::MD] = scrapeMetadata
-            rawData[@gf::STATS] = scrapeStats
-            rawData[@gf::ULT] = scrapeUltimate
-            rawData[@gf::ATTR] = scrapeAttributes
-            rawData[@gf::PASSIVES] = scrapePassives
-            rawData[@gf::EVO] = evoData[0]
-            rawData[@gf::IMGS] = [scrapeBannerImageURL, *evoData[1]]
+            rawData[@cf::NAME] = @doc.xpath("//div[@class=\'page-title\']").text.strip
+            rawData[@cf::HEROID] = @heroID
+            rawData[@cf::MD] = scrapeMetadata
+            rawData[@cf::STATS] = scrapeStats
+            rawData[@cf::ULT] = scrapeUltimate
+            rawData[@cf::ATTR] = scrapeAttributes
+            rawData[@cf::PASSIVES] = scrapePassives
+            rawData[@cf::EVO] = evoData[0]
+            rawData[@cf::IMGS] = [scrapeBannerImageURL, *evoData[1]]
             
             if(@file)
                 @file.close
@@ -60,7 +60,7 @@ module HeroScraper
             {
                 @imgf::HEROID => @heroID,
                 @imgf::CAT => "banner",
-                @gf::NAME => "banner",
+                @cf::NAME => "banner",
                 @imgf::URL => @doc.xpath("//div[@class='hero-bnr']/img/@src").text.strip
             }
         end
@@ -72,12 +72,12 @@ module HeroScraper
             metadataTable.xpath('./tbody/tr').each do |tr| 
                 header =  tr.xpath('./th').text.strip
                 data = tr.xpath('./td').text.strip
-                if(header === @gfp::ROLE)
-                    metadataDict[@gf::ROLE] = data
-                elsif (header === @gfp::WT)
-                    metadataDict[@gf::WT] = data
-                elsif (header === @gfp::SERIES)
-                    metadataDict[@gf::SERIES] = data
+                if(header === @cfp::ROLE)
+                    metadataDict[@cf::ROLE] = data
+                elsif (header === @cfp::WT)
+                    metadataDict[@cf::WT] = data
+                elsif (header === @cfp::SERIES)
+                    metadataDict[@cf::SERIES] = data
                 end
             end
             metadataDict
@@ -107,7 +107,7 @@ module HeroScraper
                     hp = tr.xpath('./td[2]').text.strip
                     atk = tr.xpath('./td[3]').text.strip
                     defense = tr.xpath('./td[4]').text.strip
-                    isTrans = level.include?(@gfp::TRANS_SYMBOL)
+                    isTrans = level.include?(@cfp::TRANS_SYMBOL)
                     #Removed TRANS_SYMBOL
                     level = level.match(/\d+/)[0]
                     # puts "Level: #{level} HP: #{hp} Attack: #{atk} Defense: #{defense} isTranscendance: #{isTrans}"
@@ -126,23 +126,23 @@ module HeroScraper
                 index+=1
             end
             {
-                @gf::SUMMARY => statsDict,
-                @gf::MAX => statsDict[maxEvoStage][maxStatSection-1]
+                @cf::SUMMARY => statsDict,
+                @cf::MAX => statsDict[maxEvoStage][maxStatSection-1]
             }
         end
 
         # Ultimate Table
         def scrapeUltimate
             ultDict = {}
-            @doc.xpath("//h2[contains(text(), '#{@gfp::ULT}')]/following-sibling::table[1]/tbody/tr"). each do |row|
+            @doc.xpath("//h2[contains(text(), '#{@cfp::ULT}')]/following-sibling::table[1]/tbody/tr"). each do |row|
                 header = row.xpath('./th').text.strip.gsub(/\n/, "")
                 data = row.xpath('./td').text.strip.gsub(/\n/, "")
-                if (header === @gfp::ULT_NAME)
-                    ultDict[@gf::NAME] = data
-                elsif (header === @gfp::ULT_COST)
-                    ultDict[@gf::COST] = data.to_i
-                elsif (header === @gfp::ULT_DESC)
-                    ultDict[@gf::DESC] = data.match(/\[#{@gfp::ULT_DESC}\]/).post_match
+                if (header === @cfp::ULT_NAME)
+                    ultDict[@cf::NAME] = data
+                elsif (header === @cfp::ULT_COST)
+                    ultDict[@cf::COST] = data.to_i
+                elsif (header === @cfp::ULT_DESC)
+                    ultDict[@cf::DESC] = data.match(/\[#{@cfp::ULT_DESC}\]/).post_match
                 end
             end
             ultDict
@@ -151,28 +151,28 @@ module HeroScraper
         # Attribute Table
         def scrapeAttributes
             attributeDict = {}
-            attributeDict[@gf::DMG] = {}
-            attributeDict[@gf::RESIST] = {}
+            attributeDict[@cf::DMG] = {}
+            attributeDict[@cf::RESIST] = {}
             index = 1
-            @doc.xpath("//h2[contains(text(), '#{@gfp::ULT}')]/following-sibling::table[2]/tbody/tr[position() > 1]").each do |row|
+            @doc.xpath("//h2[contains(text(), '#{@cfp::ULT}')]/following-sibling::table[2]/tbody/tr[position() > 1]").each do |row|
                 damageValue = row.xpath('./td[2]').text.strip.to_i
                 resistValue = row.xpath('./td[3]').text.strip.to_i
 
                 if (index == 1) #fire
-                    attributeDict[@gf::DMG][@att::FIRE] = damageValue
-                    attributeDict[@gf::RESIST][@att::FIRE] = resistValue
+                    attributeDict[@cf::DMG][@att::FIRE] = damageValue
+                    attributeDict[@cf::RESIST][@att::FIRE] = resistValue
                 elsif (index == 2) #ice
-                    attributeDict[@gf::DMG][@att::ICE] = damageValue
-                    attributeDict[@gf::RESIST][@att::ICE] = resistValue
+                    attributeDict[@cf::DMG][@att::ICE] = damageValue
+                    attributeDict[@cf::RESIST][@att::ICE] = resistValue
                 elsif (index == 3) #thunder
-                    attributeDict[@gf::DMG][@att::THR] = damageValue
-                    attributeDict[@gf::RESIST][@att::THR] = resistValue    
+                    attributeDict[@cf::DMG][@att::THR] = damageValue
+                    attributeDict[@cf::RESIST][@att::THR] = resistValue    
                 elsif (index == 4) #light
-                    attributeDict[@gf::DMG][@att::LIGHT] = damageValue
-                    attributeDict[@gf::RESIST][@att::LIGHT] = resistValue
+                    attributeDict[@cf::DMG][@att::LIGHT] = damageValue
+                    attributeDict[@cf::RESIST][@att::LIGHT] = resistValue
                 elsif (index == 5) #dark
-                    attributeDict[@gf::DMG][@att::DARK] = damageValue
-                    attributeDict[@gf::RESIST][@att::DARK] = resistValue
+                    attributeDict[@cf::DMG][@att::DARK] = damageValue
+                    attributeDict[@cf::RESIST][@att::DARK] = resistValue
                 end
                 index += 1
             end
@@ -186,7 +186,7 @@ module HeroScraper
                 level = table.xpath('./caption').text.strip.match(/\d+/)[0].to_i
                 passiveFullName = table.xpath('./tbody/tr/th').text.strip.gsub(/\n/, "")
                 passiveDesc = table.xpath('./tbody/tr/td').text.strip.gsub(/\n/, "")
-                matchData = passiveFullName.match(/(.{2,})(#{@gf::BUFF_SYMBOL}|#{@gf::DOT_SYMBOL})(.)/)
+                matchData = passiveFullName.match(/(.{2,})(#{@cf::BUFF_SYMBOL}|#{@cf::DOT_SYMBOL})(.)/)
                 symbol = nil
                 tier = nil
                 if (matchData != nil)
@@ -196,12 +196,12 @@ module HeroScraper
                 end
                 # puts "Caption: #{caption} Passive Name: #{passiveName} Passive Desc: #{passiveDesc}"
                 passives.push({
-                    @gf::FULLNAME => passiveFullName,
-                    @gf::NAME => passiveName,
+                    @cf::FULLNAME => passiveFullName,
+                    @cf::NAME => passiveName,
                     @sf::LEVEL => level,
-                    @gf::DESC => passiveDesc,
-                    @gf::TIER => tier,
-                    @gf::SYMBOL => symbol
+                    @cf::DESC => passiveDesc,
+                    @cf::TIER => tier,
+                    @cf::SYMBOL => symbol
                 })
             end
             # puts passives
@@ -221,8 +221,8 @@ module HeroScraper
                 base = matchData[1].to_i
                 to = matchData[2].to_i
                 
-                evoDict[@gf::BASE] = base
-                evoDict[@gf::TO] = to
+                evoDict[@cf::BASE] = base
+                evoDict[@cf::TO] = to
                 
                 #process sprite images
                 tabPanel = evoSection.xpath("./div[@class='tab-content']/div[contains(@class, 'tabpanel')][#{index}]")
@@ -233,7 +233,7 @@ module HeroScraper
                     @imgf::HEROID => @heroID,
                     @imgf::CAT => "hero",
                     @imgf::TYPE => "sprite",
-                    @gf::NAME => base.to_s,
+                    @cf::NAME => base.to_s,
                     @imgf::URL => tabPanelCharaImageBase
                 }) unless index == 2  #ignore repeat on second evo
 
@@ -241,7 +241,7 @@ module HeroScraper
                     @imgf::HEROID => @heroID,
                     @imgf::CAT => "hero",
                     @imgf::TYPE => "sprite",
-                    @gf::NAME => to.to_s,
+                    @cf::NAME => to.to_s,
                     @imgf::URL => tabPanelCharaImageTo
                 })
 
@@ -275,14 +275,14 @@ module HeroScraper
                         @imgf::SIZE => "medium"
                     }) unless images.any? { |image| image[@imgf::MATID] === evoMatID}
                     evoMats.push({
-                        @gf::MATID => evoMatID,
-                        @gf::NAME => evoMatName,
-                        @gf::SIZE => evoMatSize,
-                        @gf::AMT => evoMatAmt
+                        @cf::MATID => evoMatID,
+                        @cf::NAME => evoMatName,
+                        @cf::SIZE => evoMatSize,
+                        @cf::AMT => evoMatAmt
                     })
                     # puts "evoMatMatchData: #{evoMatName} | #{evoMatSize} | #{evoMatAmt}"
                 end
-                evoDict[@gf::MATS] = evoMats
+                evoDict[@cf::MATS] = evoMats
                 evolutions.push(evoDict)
                 index += 1
             end
