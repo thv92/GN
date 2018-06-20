@@ -48,7 +48,12 @@ module Extractor
                 end
                 break
             end
-            heroes unless block_given?
+            if(!block_given?)
+                File.open('../data/rawData.json') do |f|
+                    f.write JSON.generate heroes
+                end
+                heroes
+            end
         end
 
         def getMaxPageNum(url)
