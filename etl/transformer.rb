@@ -24,7 +24,8 @@ module Transformer
             @matjp = MaterialsJP
             @sf = StatFields
             @sfjp = StatFieldsJP
-            @rawData = File.open('../data/rawData.json')
+            @rawData = File.open(File.join('..', 'rawData', 'rawDataHeroes.json')
+            createDir
         end
 
         def initialize(rawData)
@@ -44,7 +45,7 @@ module Transformer
             totalCount = 0
             translationFilePage = 1
             toTranslateFileName = "toTranslate_#{translationFilePage}.json"
-            rawData.each do |heroData|
+            @rawData.each do |heroData|
                 toAddToCount = 14 + (@cf::MATS).length + (@cf::PASSIVES).length + (@cf::ULT).length
                 #Setup block to translate
                 toTranslate = {}
@@ -63,7 +64,7 @@ module Transformer
 
                 #Write to File
                 if ((totalCount + toAddToCount) <= 4800)
-                    File.open("../dataToTranslate/#{toTranslateFileName}", "w") do |f|
+                    File.open(File.join('..', 'toTranslateData', toTranslateFileName), "w") do |f|
                         f.write(JSON.generate(toTranslate))
                     end
                     totalCount = toAddToCount
@@ -85,9 +86,9 @@ module Transformer
             end
             puts 'Proceeding with Translation Part Two'
 
-            if(Dir.exists? '../translatedData')
-                raise "TranslationPartTwo Error: Could not find dir translatedData"
-            end
+            # if(Dir.exists? '../translatedData')
+            #     raise "TranslationPartTwo Error: Could not find dir translatedData"
+            # end
 
             # translatedData = []
             # dirName = "../translationData"
@@ -349,6 +350,21 @@ module Transformer
                 'Grimm Notes'
             else
                 raise 'HeroTransformerError: Could not find correct Series'
+            end
+        end
+
+        #---------Utility--------
+        def createDir
+            if (!Dir.exists?(File.join('..', 'toTranslateData')))
+                Dir.mkdir(File.join('..', 'toTranslateData'))
+            end
+
+            if(!Dir.exists?(File.join('..', 'translatedData')))
+                Dir.mkdir(File.join('..', 'translatedData'))
+            end
+
+            if(!Dir.exists?(File.join('..', 'finalizedData')))
+                Dir.mkdir(File.join('..', 'finalizedData'))
             end
         end
     end #End class

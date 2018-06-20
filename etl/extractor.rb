@@ -49,7 +49,8 @@ module Extractor
                 break
             end
             if(!block_given?)
-                File.open('../data/rawDataHeroes.json') do |f|
+                createRawDataDir
+                File.open(File.join('..', 'rawData', 'rawDataHeroes.json') do |f|
                     f.write JSON.generate heroes
                 end
                 heroes
@@ -59,6 +60,13 @@ module Extractor
         def getMaxPageNum(url)
             doc = Nokogiri::HTML(open(url))
             doc.xpath("//div[@class='pagenation']/ul/li[last() - 1]").text.strip.to_i
+        end
+
+        def createRawDataDir
+            dirPath = File.join('~', '..', 'rawData')
+            if(!Dir.exist?(dirPath))
+                Dir.mkdir(dirPath)
+            end
         end
     end
 end
