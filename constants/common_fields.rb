@@ -9,6 +9,8 @@ module CommonFields
     ULT = 'ultimate'
     NAME = 'name'
     NAME_JP = 'nameJP'
+    FULLNAME = 'fullName'
+    FULLNAME_JP = 'fullNameJP'
     COST = 'cost'
     DESC = 'description'
     ATTR = 'attribute'
@@ -30,5 +32,4 @@ module CommonFields
     MAX = 'max'
     IS_ORIGIN = 'isOrigin'
     DOT_SYMBOL = '・'
-    FULLNAME = 'fullName'
-    end
+end

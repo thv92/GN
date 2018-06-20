@@ -34,7 +34,7 @@ module HeroScraper
         def scrapeHero
             rawData = {}
             images = []
-            @heroID = @doc.xpath("//div[@class='hero-bnr']/img/@src").text.strip.match(/[A-Z]\d{5,}/)[0]
+            @heroID = @doc.xpath("//div[@class='hero-bnr']/img/@src").text.strip.match(/[A-Z]+\d{5,}/)[0]
 
             evoData = scrapeEvo
             rawData[@cf::NAME] = @doc.xpath("//div[@class=\'page-title\']").text.strip
@@ -264,7 +264,7 @@ module HeroScraper
                         evoMatAmt = evoMatMatchData[2].to_i
                     end
 
-                    evoMatID = evoMatImageURL.match(/[A-Z]\d{5,}/)[0]
+                    evoMatID = evoMatImageURL.match(/[A-Z]+\d{5,}/)[0]
                     images.push({
                         @imgf::MAT_ID => evoMatID,
                         @imgf::NAME => evoMatSize == nil ? evoMatName : "#{evoMatName} (#{evoMatSize})",

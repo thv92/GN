@@ -7,6 +7,8 @@ module Materials
     ORB_TEMPERANCE = 'Orb of Temperance'
     ORB_SINCERITY = 'Orb of Sincerity'
     ORB_POEM = 'Orb of Original Poem'
+    SEED_OF_EVOLUTION = 'Seed of Evolution'
+    FLAME_OF_EVOLUTION = 'Flame of Evolution'
     XS = 'XS'
     S = 'S'
     M = 'M'
