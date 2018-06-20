@@ -8,11 +8,6 @@ require '../constants/materials_jp'
 require '../constants/stat_fields'
 require '../constants/stat_fields_jp'
 
-# jsonFile.close
-# file = File.open('test.json', 'a+')
-# file.write("[\n")
-
-
 module Transformer
     def self.transformHeroes
 
@@ -57,76 +52,12 @@ module Transformer
                 toTranslate[@cf::PASSIVES] = []
                 toTranslate[@cf::ULT] = {}
 
-                #Translate Metadata
-                heroData[@cf::MD] = {
-                    @cf::ROLE => translateRole(heroData[@cf::MD][@cf::ROLE]),
-                    @cf::WT => translateWeaponType(heroData[@cf::MD][@cf::WT]),
-                    @cf::SERIES => translateSeries(heroData[@cf::MD][@cf::SERIES])
-                }
-
-                #Translate evoMats
-                heroData[@cf::EVO].each do |evo|
-                    evo[@cf::MATS].each do |mat|
-                        translatedOrb = translateEvoOrb(mat[@cf::NAME])
-                        if (translatedOrb)
-                            mat[@cf::FULLNAME_JP] = "#{mat[@cf::NAME]} (#{mat[@cf::SIZE]})"
-                            mat[@cf::NAME] = translateEvoOrb(mat[@cf::NAME])
-                            mat[@cf::SIZE] = translateMatSize(mat[@cf::SIZE])
-                            mat[@cf::FULLNAME] = "#{mat[@cf::NAME]} (#{mat[@cf::SIZE]})"
-                        elsif (toTranslate[@cf::MATS][@cf::MAT_ID] == nil)
-                            toTranslate[@cf::MATS][@cf::MAT_ID] = mat[@cf::NAME]
-                            if (mat[@cf::SIZE])
-                                mat[@cf::SIZE] = translateMatSize(mat[@cf::SIZE])
-                            end
-                            toAddToCount += mat[@cf::MAT_ID].length + mat[@cf::NAME].length + 4
-                        end
-                    end
-                end
-
-                #images (Should still be evo mats)
-                heroData[@cf::IMGS].each do |img|
-                    if (img[@cf::MAT_ID] && toTranslate[@cf::MATS][img[@cf::MAT_ID]] == nil)
-                        if (img[@cf::NAME].include? "(")
-                            matchMatData = img[@cf::NAME].match(/(.+)\((.)\)/)
-                            img[@cf::NAME] = "#{translateEvoOrb(matchMatData[1])} (#{translateMatSize(matchMatData[2])})"
-                        else
-                            img[@cf::NAME] = translateEvoOrb(img[@cf::NAME])
-                        end
-                    end
-                end #End images
-                
-                #Add Passives to Translation Queue
-                heroData[@cf::PASSIVES].each do |passive|
-                    if (passive[@cf::NAME])
-                        toTranslate[@cf::PASSIVES].push({
-                            @cf::NAME => passive[@cf::NAME],
-                            @cf::DESC => passive[@cf::DESC]
-                        })
-                        toAddToCount += (@cf::NAME).length + (@cf::DESC).length + 
-                                        passive[@cf::NAME].length + passive[@cf::DESC].length + 8 + 10
-
-                        passive[@cf::FULLNAME_JP] = passive[@cf::FULLNAME]
-                        passive[@cf::FULLNAME] = nil
-                        
-                        if (passive[@cf::TIER])
-                            passive[@cf::TIER] = translateSkillTier(passive[@cf::TIER])
-                        end
-                    else #Only fullname is available
-                        toTranslate[@cf::PASSIVES].push({
-                            @cf::FULLNAME => passive[@cf::FULLNAME],
-                            @cf::DESC => passive[@cf::DESC]
-                        })
-                        passive[@cf::FULLNAME_JP] = passive[@cf::FULLNAME] 
-                    end
-                end
-
-                #Add Ultimate to Translation Queue
-                toTranslate[@cf::ULT] = {
-                    @cf::NAME => heroData[@cf::ULT][@cf::NAME],
-                    @cf::DESC => heroData[@cf::ULT][@cf::DESC]
-                }
-                toAddToCount += (@cf::NAME).length + (@cf::DESC).length + heroData[@cf::ULT][@cf::NAME].length 
-                             + heroData[@cf::ULT][@cf::DESC].lenght + 8 + 10
+                transPt1MD(heroData, toTranslate)
+                transPt1Images(heroData, toTranslate)
+                toAddToCount += transPt1Name(heroData, toTranslate)
+                             + transPtEvoMats(heroData, toTranslate)
+                             + transPt1Passives(heroData, toTranslate)
+                             + transPt1Ult(heroData, toTranslate)
                 toTranslate[@cf::HERO_ID] = heroData[@cf::HERO_ID]
                 toAddToCount += (@cf::HERO_ID).length + heroData[@cf::HERO_ID].length + 4
 
@@ -135,11 +66,14 @@ module Transformer
                     File.open("../dataToTranslate/#{toTranslateFileName}", "w") do |f|
                         f.write(JSON.generate(toTranslate))
                     end
+                    totalCount = toAddToCount
                     translationFilePage += 1
                     toTranslateFileName = "toTranslate_#{translationFilePage}.json"
-                    translationQueue = []
+                    translationQueue = [toTranslate]
+                else
+                    totalCount += toAddToCount
+                    translationQueue.push(toTranslate)
                 end
-                translationQueue.push(toTranslate)
             end
         end
 
@@ -147,7 +81,7 @@ module Transformer
             answer = false
             while(!answer)
                 print 'Done with manual translation? (Y/N): '
-                answer = gets.chomp.strip.toLowerCase == 'Y'
+                answer = gets.chomp.strip.upcase == 'Y'
             end
             puts 'Proceeding with Translation Part Two'
 
@@ -155,19 +89,22 @@ module Transformer
                 raise "TranslationPartTwo Error: Could not find dir translatedData"
             end
 
-            translatedData = []
-            dirName = "../translationData"
-            Dir.entries(dirName).each do |fileName|
-                if(fileName == '..' or fileName == '.')
-                    next
-                end
-                translatedData.push JSON.parse File.read("#{dirName}/#{fileName}")
-            end
+            # translatedData = []
+            # dirName = "../translationData"
+            # Dir.entries(dirName).each do |fileName|
+            #     if(fileName == '..' or fileName == '.')
+            #         next
+            #     end
+            #     translatedData.push JSON.parse File.read("#{dirName}/#{fileName}")
+            # end
 
             0.upto(translatedData.length-1) do |index|
                 if (index > translatedData.length or index > @rawData.length)
                     break
                 end
+
+                #Need hero name
+                #Open only files we need to save memory
 
                 rawHero = @rawData[index]
                 translatedHero = translatedData[index]
@@ -184,7 +121,7 @@ module Transformer
 
 
                     else
-                        
+
 
                     end
 
@@ -195,8 +132,107 @@ module Transformer
 
         end
 
+        #------------TranslatePartTwo--------------
 
-        private
+
+        #------------TranslatePartOne--------------
+
+        #Add hero name to translation queue
+        def transPt1Name(heroData, toTranslate)
+            toTranslate[@cf::NAME] = heroData[@cf::NAME]
+            heroData[@cf::NAME_JP] = heroData[@cf::NAME]
+            return 4 + heroData[@cf::NAME].length + (@cf::NAME).length
+        end
+
+        #Translate Metadata
+        def transPt1MD(heroData, toTranslate)
+            heroData[@cf::MD] = {
+                @cf::ROLE => translateRole(heroData[@cf::MD][@cf::ROLE]),
+                @cf::WT => translateWeaponType(heroData[@cf::MD][@cf::WT]),
+                @cf::SERIES => translateSeries(heroData[@cf::MD][@cf::SERIES])
+            }
+        end
+
+        #Translate Evo Mats
+        def transPt1EvoMats(heroData, toTranslate)
+            toAddToCount = 0
+            heroData[@cf::EVO].each do |evo|
+                evo[@cf::MATS].each do |mat|
+                    translatedOrb = translateEvoOrb(mat[@cf::NAME])
+                    if (translatedOrb)
+                        mat[@cf::FULLNAME_JP] = "#{mat[@cf::NAME]} (#{mat[@cf::SIZE]})"
+                        mat[@cf::NAME] = translateEvoOrb(mat[@cf::NAME])
+                        mat[@cf::SIZE] = translateMatSize(mat[@cf::SIZE])
+                        mat[@cf::FULLNAME] = "#{mat[@cf::NAME]} (#{mat[@cf::SIZE]})"
+                    elsif (toTranslate[@cf::MATS][@cf::MAT_ID] == nil)
+                        toTranslate[@cf::MATS][@cf::MAT_ID] = mat[@cf::NAME]
+                        if (mat[@cf::SIZE])
+                            mat[@cf::SIZE] = translateMatSize(mat[@cf::SIZE])
+                        end
+                        toAddToCount += mat[@cf::MAT_ID].length + mat[@cf::NAME].length + 4
+                    end
+                end
+            end
+            toAddToCount
+        end
+
+        #Translate Images
+        def transPt1Images(heroData, toTranslate)
+            #images (Should still be evo mats)
+            heroData[@cf::IMGS].each do |img|
+                if (img[@cf::MAT_ID] && toTranslate[@cf::MATS][img[@cf::MAT_ID]] == nil)
+                    if (img[@cf::NAME].include? "(")
+                        matchMatData = img[@cf::NAME].match(/(.+)\((.)\)/)
+                        img[@cf::NAME] = "#{translateEvoOrb(matchMatData[1])} (#{translateMatSize(matchMatData[2])})"
+                    else
+                        img[@cf::NAME] = translateEvoOrb(img[@cf::NAME])
+                    end
+                end
+            end #End images
+        end
+
+        #Translate Passives
+        def transPt1Passives(heroData, toTranslate)
+            toAddToCount = 0
+            #Add Passives to Translation Queue
+            heroData[@cf::PASSIVES].each do |passive|
+                if (passive[@cf::NAME])
+                    toTranslate[@cf::PASSIVES].push({
+                        @cf::NAME => passive[@cf::NAME],
+                        @cf::DESC => passive[@cf::DESC]
+                    })
+                    toAddToCount += (@cf::NAME).length + (@cf::DESC).length + 
+                                    passive[@cf::NAME].length + passive[@cf::DESC].length + 8 + 10
+
+                    passive[@cf::FULLNAME_JP] = passive[@cf::FULLNAME]
+                    passive[@cf::FULLNAME] = nil
+                    
+                    if (passive[@cf::TIER])
+                        passive[@cf::TIER] = translateSkillTier(passive[@cf::TIER])
+                    end
+                else #Only fullname is available
+                    toTranslate[@cf::PASSIVES].push({
+                        @cf::FULLNAME => passive[@cf::FULLNAME],
+                        @cf::DESC => passive[@cf::DESC]
+                    })
+                    toAddToCount += 8 + (@cf::FULLNAME).length + (@cf::DESC).length + passive[@cf::FULLNAME].length
+                                  + passive[@cf::DESC].length + 10
+                    passive[@cf::FULLNAME_JP] = passive[@cf::FULLNAME] 
+                end
+            end
+            toAddToCount
+        end
+
+        #Add Ultimate to Translation Queue
+        def transPt1Ult(heroData, toTranslate)
+            toTranslate[@cf::ULT] = {
+                @cf::NAME => heroData[@cf::ULT][@cf::NAME],
+                @cf::DESC => heroData[@cf::ULT][@cf::DESC]
+            }
+            return (@cf::NAME).length + (@cf::DESC).length + heroData[@cf::ULT][@cf::NAME].length 
+                + heroData[@cf::ULT][@cf::DESC].lenght + 8 + 10
+        end
+
         #------------Skills--------------
         def translateSkillTier(t)
             case t

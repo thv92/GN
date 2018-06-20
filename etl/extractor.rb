@@ -49,7 +49,7 @@ module Extractor
                 break
             end
             if(!block_given?)
-                File.open('../data/rawData.json') do |f|
+                File.open('../data/rawDataHeroes.json') do |f|
                     f.write JSON.generate heroes
                 end
                 heroes
