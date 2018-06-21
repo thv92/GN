@@ -89,10 +89,20 @@ module Transformer
 
                 dataFromFile.each do |data|
                     rawData = @rawData[rawDataIndex]
-
-                    rawData[@cf::NAME] = data[@cf::NAME]
-
-                    rawDataIndex += 1
+                    
+                    if (data[@cf::HERO_ID] == rawData[@cf::HERO_ID])
+                        #Hero Name
+                        rawData[@cf::NAME] = data[@cf::NAME]
+                        #Evo Mats
+                        transPt2EvoMatEvos(rawData, data)
+                        #Evo Mats Images
+                        transPt2EvoMatsImages(rawData, data)
+                        #Ult
+                        transPt2Ult(rawData, data)
+                        #Passives
+                        transPt2Passives(rawData, data)
+                        rawDataIndex += 1
+                    end
                 end
 
                 pageNum += 1
@@ -109,6 +119,70 @@ module Transformer
             end
             puts 'Proceeding with Translation Part Two'
         end
+
+        #Evolution Mats
+        def transPt2EvoMatsEvo(heroData, translated)
+            heroData[@cf::EVO].each do |evo|
+                evo[@cf::MATS].each do |mat|
+                    if (mat[@cf::NAME].match(/\W+/))
+                        transName = translated[@cf::MATS][mat[@cf::MAT_ID]]
+
+                        if (transName  == nil)
+                            raise "TranslationPartTwo Error: Could not find for MAT_ID: #{mat[@cf::MAT_ID]}"
+                        end
+
+                        mat[@cf::NAME_JP] = mat[@cf::NAME]
+                        mat[@cf::NAME] = transName
+                        if (mat[@cf::SIZE])
+                            mat[@cf::FULLNAME_JP] = "#{mat[@cf::NAME_JP]} (#{mat[@cf::SIZE]})"
+                            transSize = translateMatSize(mat[@cf::SIZE])
+                            mat[@cf::FULLNAME] = "#{transName} (#{transSize})"
+                            mat[@cf::SIZE] = transSize
+                        else
+                            mat[@cf::NAME_JP] = mat[@cf::NAME]
+                            mat[@cf::FULLNAME_JP] = mat[@cf::NAME]
+                            mat[@cf::NAME] = transName
+                            mat[@cf::FULLNAME] = transName
+                        end
+                    end
+                end
+            end
+        end
+
+        #Evolution Mats Images
+        def transPt2EvoMatsImages(heroData, translated)
+            heroData[@cf::IMGS].each do |image|
+                if (image[@cf::MAT_ID] and image[@cf::NAME].match(/\W+/))
+                    transName = translated[@cf::MATS][image[@cf::MAT_ID]]
+
+                    if (transName  == nil)
+                        raise "TranslationPartTwo Error: Could not find for MAT_ID: #{mat[@cf::MAT_ID]}"
+                    end
+
+                    if (image[@cf::NAME].include? '(')
+                        matchData = image[@cf::NAME].match(/(.+)\((.)\)/)
+                        transSize = translateMatSize(matchData[2])
+                        image[@cf::NAME] = "#{transName} (#{transSize})"
+                    else
+                        image[@cf::NAME] = transName
+                    end
+                end
+            end
+        end
+
+       def transPt2Ult(heroData, translated)
+            heroData[@cf::ULT][@cf::NAME] = translate[@cf::ULT][@cf::NAME]
+            heroData[@cf::ULT][@cf::DESC] = translate[@cf::ULT][@cf::DESC]
+       end
+
+
+       def transPt2Passives(heroData, translated)
+            heroData[@cf::PASSIVES].each do |passive|
+                
+
+            end
+       end
+
 
         #------------TranslatePartOne--------------
 
@@ -143,11 +217,7 @@ module Transformer
                         mat[@cf::FULLNAME] = "#{mat[@cf::NAME]} (#{mat[@cf::SIZE]})"
                     elsif (toTranslate[@cf::MATS][@cf::MAT_ID] == nil)
                         toTranslate[@cf::MATS][@cf::MAT_ID] = mat[@cf::NAME]
-                        if (mat[@cf::SIZE])
-                            mat[@cf::SIZE] = translateMatSize(mat[@cf::SIZE])
-                        end
                         toAddToCount += mat[@cf::MAT_ID].length + mat[@cf::NAME].length + 4
-                        mat[@cf::NAME] = nil
                     end
                 end
             end
