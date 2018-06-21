@@ -43,8 +43,8 @@ module Transformer
         def translatePartOne
             translationQueue = []
             totalCount = 0
-            translationFilePage = 1
-            toTranslateFileName = "toTranslate_#{translationFilePage}.json"
+            pageNum = 1
+            toTranslateFileName = "toTranslate_#{pageNum}.json"
             @rawData.each do |heroData|
                 toAddToCount = 14 + (@cf::MATS).length + (@cf::PASSIVES).length + (@cf::ULT).length
                 #Setup block to translate
@@ -68,8 +68,8 @@ module Transformer
                         f.write(JSON.generate(toTranslate))
                     end
                     totalCount = toAddToCount
-                    translationFilePage += 1
-                    toTranslateFileName = "toTranslate_#{translationFilePage}.json"
+                    pageNum += 1
+                    toTranslateFileName = "toTranslate_#{pageNum}.json"
                     translationQueue = [toTranslate]
                 else
                     totalCount += toAddToCount
@@ -79,62 +79,36 @@ module Transformer
         end
 
         def translatePartTwo
+            waitOnManualTranslation
+
+            pageNum = 1
+            rawDataIndex = 0
+            toTranslateFile = File.join('..', 'toTranslateData', "toTranslate_#{pageNum}.json")
+            while (File.exist?(toTranslateFile))
+                dataFromFile = JSON.parse(File.read(toTranslateFile))
+
+                dataFromFile.each do |data|
+                    rawData = @rawData[rawDataIndex]
+
+                    rawData[@cf::NAME] = data[@cf::NAME]
+
+                    rawDataIndex += 1
+                end
+
+                pageNum += 1
+                toTranslateFile = File.join('..', 'toTranslateData', "toTranslate_#{pageNum}.json")
+            end
+        end
+
+        #------------TranslatePartTwo--------------
+        def waitOnManualTranslation
             answer = false
             while(!answer)
                 print 'Done with manual translation? (Y/N): '
                 answer = gets.chomp.strip.upcase == 'Y'
             end
             puts 'Proceeding with Translation Part Two'
-
-            # if(Dir.exists? '../translatedData')
-            #     raise "TranslationPartTwo Error: Could not find dir translatedData"
-            # end
-
-            # translatedData = []
-            # dirName = "../translationData"
-            # Dir.entries(dirName).each do |fileName|
-            #     if(fileName == '..' or fileName == '.')
-            #         next
-            #     end
-            #     translatedData.push JSON.parse File.read("#{dirName}/#{fileName}")
-            # end
-
-            0.upto(translatedData.length-1) do |index|
-                if (index > translatedData.length or index > @rawData.length)
-                    break
-                end
-
-                #Need hero name
-                #Open only files we need to save memory
-
-                rawHero = @rawData[index]
-                translatedHero = translatedData[index]
-
-                rawHero[@cf::ULT][@cf::NAME] = translatedHero[@cf::ULT][@cf::NAME]
-                rawHero[@cf::ULT][@cf::DESC] = translatedHero[@cf::ULT][@cf::DESC]
-
-                0.upto(rawHero[@cf::PASSIVES].length-1) do |i|
-                    rPassive = rawHero[@cf::PASSIVES][i]
-                    tPassive = translatedHero[@cf::PASSIVES][i]
-
-                    #If FULLNAME
-                    if (tPassive[@cf::FULLNAME])
-
-
-                    else
-
-
-                    end
-
-                end
-
-
-            end
-
         end
-
-        #------------TranslatePartTwo--------------
-
 
         #------------TranslatePartOne--------------
 
@@ -142,7 +116,9 @@ module Transformer
         def transPt1Name(heroData, toTranslate)
             toTranslate[@cf::NAME] = heroData[@cf::NAME]
             heroData[@cf::NAME_JP] = heroData[@cf::NAME]
-            return 4 + heroData[@cf::NAME].length + (@cf::NAME).length
+            charCount = 4 + heroData[@cf::NAME].length + (@cf::NAME).length
+            heroData[@cf::NAME] = nil
+            charCount
         end
 
         #Translate Metadata
@@ -171,6 +147,7 @@ module Transformer
                             mat[@cf::SIZE] = translateMatSize(mat[@cf::SIZE])
                         end
                         toAddToCount += mat[@cf::MAT_ID].length + mat[@cf::NAME].length + 4
+                        mat[@cf::NAME] = nil
                     end
                 end
             end
