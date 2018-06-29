@@ -32,4 +32,12 @@ module CommonFields
     MAX = 'max'
     IS_ORIGIN = 'isOrigin'
     DOT_SYMBOL = '・'
+    IS_DAMAGE = 'isDamage'
+    IS_DEFENSE = 'isDefense'
+    IS_SUPPORT = 'isSupport'
+    IS_UTILITY = 'isUtility'
+    IS_ATTRIBUTE = 'isAttribute'
+    IS_STATUS = 'isStatus'
+    IS_ARENA = 'isArena'
+    IS_DEBUFF = 'isDebuff'
 end

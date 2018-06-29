@@ -10,9 +10,7 @@ require '../constants/stat_fields_jp'
 
 module Transformer
     def self.transformHeroes
-
-
-
+        HeroTransformer.new.transform
     end
 
     class HeroTransformer
@@ -35,7 +33,8 @@ module Transformer
 
 
         def transform
-
+            translatePartOne
+            translatePartTWo
 
 
         end
@@ -63,9 +62,9 @@ module Transformer
                 toAddToCount += (@cf::HERO_ID).length + heroData[@cf::HERO_ID].length + 4
 
                 #Write to File
-                if ((totalCount + toAddToCount) <= 4800)
+                if ((totalCount + toAddToCount) >= 4800)
                     File.open(File.join('..', 'toTranslateData', toTranslateFileName), "w") do |f|
-                        f.write(JSON.generate(toTranslate))
+                        f.write(JSON.generate(translationQueue))
                     end
                     totalCount = toAddToCount
                     pageNum += 1
@@ -83,7 +82,7 @@ module Transformer
 
             pageNum = 1
             rawDataIndex = 0
-            toTranslateFile = File.join('..', 'toTranslateData', "toTranslate_#{pageNum}.json")
+            toTranslateFile = File.join('..', 'toTranslateData', 'manuallyTranslatedData', "toTranslate_#{pageNum}.json")
             while (File.exist?(toTranslateFile))
                 dataFromFile = JSON.parse(File.read(toTranslateFile))
 
@@ -109,6 +108,18 @@ module Transformer
                 toTranslateFile = File.join('..', 'toTranslateData', "toTranslate_#{pageNum}.json")
             end
         end
+
+        def categorizeSkills
+            @rawData.each do |hero|
+                hero[@cf::PASSIVES].each do |passive|
+                    
+
+
+                end
+            end
+        end
+
+
 
         #------------TranslatePartTwo--------------
         def waitOnManualTranslation
@@ -170,16 +181,34 @@ module Transformer
             end
         end
 
+       #Ult
        def transPt2Ult(heroData, translated)
             heroData[@cf::ULT][@cf::NAME] = translate[@cf::ULT][@cf::NAME]
             heroData[@cf::ULT][@cf::DESC] = translate[@cf::ULT][@cf::DESC]
        end
 
-
+       #Passives
        def transPt2Passives(heroData, translated)
+            #Keep passive jp name for organizing?
+            index = 0
             heroData[@cf::PASSIVES].each do |passive|
-                
+                transPassive = translated[@cf::PASSIVES][index]
+                name = transPassive[@cf::NAME]
+                desc = transPassive[@cf::DESC]
+                fullname = transPassive[@cf::FULLNAME]
 
+                if (fullname)
+                    passive[@cf::FULLNAME] = fullname
+                    passive[@cf::NAME] = fullname
+                else
+                    passive[@cf::NAME] = name
+                    if (passive[@cf::TIER])
+                        passive[@cf::FULLNAME] = "#{name} (#{passive[@cf::TIER]})"
+                    else
+                        passive[@cf::FULLNAME] = name
+                    end
+                end
+                passive[@cf::DESC] = desc
             end
        end
 

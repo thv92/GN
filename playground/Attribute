@@ -1,0 +1,154 @@
+Attribute
+  Fire|Thunder|Ice|Darkness|Light
+
+
+Status
+  Poison(?:ed)?|Bur(?:ned|nt)|Freeze|Frozen|Paraly(?:sis|zed)|Stun(?:ned)?
+
+
+
+
+
+
+
+
+
+
+
+Keywords:
+  Ultimate Skill | Swap Skill support effect is increased
+
+  ATK and DEF increased
+
+  Increases damage dealt
+
+  Do not stagger
+  Luck
+  Ultimate Skill Gauge
+
+
+  Damage dealt|received is increased/decreased
+  ***** effect is increased/decreased
+    Ultimate Skill effect
+    Movement Speed
+    damage dealt
+    Normal attack effect
+    Swap Skill effect
+    Melee attack damage
+    Damage received **** decreased
+    Blast attack damage
+
+  When *situation*, *Subject* is *increased/decreased*
+    Recovery is increased/decreased
+    *small|medium|large HP recovered
+
+When *Status*, damage *received/dealt* increased
+
+Can have damage received and damage dealt on same line
+
+Resist - DEF against status and elemental
+Guard - Defense
+Causes *Status*
+
+
++ Skills
+  Use Plus to separate
+
+
+Desc:
+When _______, _____ is increased/decreased
+_______ effect is increased/decreased
+_______ dealt/received is increased/decreased
+_________. Plus, ___________ (+)
+STAT of ____ and _____ is increased/decreased (in Arena) (+)
+STAT of ____ is increased/decreased (in Arena)
+_______ is applied
+Causes _____ effect
+by ____ is increased/decreased
+by [STATUS]
+
+Title: 
+Resist ____
+Guard
+
+Split Desc on /\./
+  Match each split
+
+
+Damage:
+  Damage dealt
+  ATK
+  attack
+
+  if (title does not match resist) if not + | filter Guard
+    match desc for attack
+    Pattern: (?:(?:I|i)ncrease(?:s|d))\s(?:D|d)amage dealt|((?:(?:D|d)amage)\sdealt|(?:ATK|(?:A|a)ttack(?=\s))(?:\s(?:effect|damage))?)(?:.*\s(?:is|are)\s(?:increase|applied))
+
+Defense:
+  Damage received
+  Guard (frontal attack)
+  DEF (DEF against)
+  Resist *status*
+    Pattern: (?:(?:(?:D|d)ef)|DEF)(?:(\sagainst.+(?:are|is\sincrease))|(?:\sis increase))|(?:D|d)amage received.+(?:is decreased)|(?:(?:D|d)efense effect is applied)
+  HP
+    Pattern: HP is increased by
+
+
+Support:
+  Regeneration effect
+  Recovery from Regeneration
+  recovery effect
+  HP is recovered
+  Pattern: HP is recovered|HP is restored|Regeneration effect.+(applied)|recovery effect.+is increase|(?:(?:R|r)ecovery) from (?:(?:R|r)egeneration).+is increase
+
+Utility:
+  Luck
+  EXP
+  Weapon EXP
+  Drop
+  Avoid Death
+  Ultimate Skill Gauge
+  Ultimate skill effect
+  Sway
+  Swap Skill
+  Immunity/immune
+  Combo duration (Extend Combo)
+  Movement Speed
+
+  inherited
+  stagger
+  stealth
+
+  TitlePattern: Drop|EXP|Drop|Avoid Death|Ultimate|Swap Skill|Immunity|Sway|Extend Combo|Movement Speed
+  DescPattern: stagger|inherited|stealth
+
+Elemental:
+  Ice
+  Thunder
+  Light
+  Darkness
+  Fire
+
+  Pattern: (Ice|Thunder|Light|Darkness|Fire).+(element)?
+
+Status:
+  Freeze/Frozen
+  Burn/Burned/Burnt/Burning
+  Poison/Poisoned
+  Paralyze/Paralyzed/Paralysis
+  Stun/Stunned
+  Curse/Cursed
+
+  Pattern: Poison(:?ed)?|Freeze|Frozen|Burn(?:ed|t|ing)|Paraly(?:ze|zed|sis)|Stun(?:ned)?|Curse(?:d)?
+
+
+Debuff(?):
+  Check is increased/is decreased
+
+Arena(?):
+  Arena
+
+
+
+
+

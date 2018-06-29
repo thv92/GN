@@ -1,0 +1,2248 @@
+SkillName: Pinch Attack↑ (Ⅱ)
+SkillDesc: When HP is below 30%， damage dealt is increased by 20%.
+SkillName: Pinch Attack↑ (Ⅲ)
+SkillDesc: When HP is below 30%， damage dealt is increased by 30%.
+SkillName: Pinch Attack↑ (Ⅳ)
+SkillDesc: When HP is below 30%， damage dealt is increased by 40%.
+SkillName: Pinch Attack↑ (Ⅰ)
+SkillDesc: When HP is below 30%， damage dealt is increased by 10%.
+SkillName: Difficult Love
+SkillDesc: When HP is below 50%， damage dealt is increased by 40%.
+SkillName: Unafraid of Death
+SkillDesc: When HP is below 15%， damage dealt is increased by 60%.
+SkillName: Pinch Defense↑ (Ⅱ)
+SkillDesc: When HP is below 30%， damage received is decreased by 20%.
+SkillName: Pinch Defense↑ (Ⅲ)
+SkillDesc: When HP is below 30%， damage received is decreased by 30%.
+SkillName: Pinch Defense↑ (Ⅳ)
+SkillDesc: When HP is below 30%， damage received is decreased by 40%.
+SkillName: Pinch Defense↑ (Ⅰ)
+SkillDesc: When HP is below 30%， damage received is decreased by 10%.
+SkillName: Impossible Love
+SkillDesc: When HP is below 50%， damage received is decreased by 40%.
+SkillName: Pinch Upgrade↑(Ⅱ)
+SkillDesc: When HP is below 30%， damage dealt is increased by 10%， and damage received is decreased by 10%.
+SkillName: Pinch Upgrade↑ (Ⅲ)
+SkillDesc: When HP is below 30%， damage dealt is increased by 20%， and damage received is decreased by 20%.
+SkillName: Pinch Upgrade↑ (Ⅳ)
+SkillDesc: When HP is below 30%， damage dealt is increased by 30%， and damage received is decreased by 30%.
+SkillName: Pinch Upgrade↑ (Ⅰ)
+SkillDesc: When HP is below 30%， damage dealt is increased by 5%， and damage received is decreased by 5%.
+SkillName: Sign of Tragedy
+SkillDesc: When HP is below 50%， damage dealt is increased by 20%， and damage received is decreased by 20%.
+SkillName: Wisdom of Fairy Queen
+SkillDesc: When HP is below 50%， damage dealt is increased by 20%， and damage received is decreased by 20%.
+SkillName: Ultimate Skill↑ (Ⅱ)
+SkillDesc: Ultimate Skill effect is increased by 10%.
+SkillName: Ultimate Skill↑ (Ⅲ)
+SkillDesc: Ultimate Skill effect is increased by 20%.
+SkillName: Ultimate Skill↑ (Ⅳ)
+SkillDesc: Ultimate Skill effect is increased by 30%.
+SkillName: Ultimate Skill↑ (Ⅰ)
+SkillDesc: Ultimate Skill effect is increased by 5%.
+SkillName: Illusion
+SkillDesc: Ultimate Skill effect is increased by 40%.
+SkillName: Mischief Mania
+SkillDesc: Ultimate Skill effect is increased by 42%.
+SkillName: Wave Attack↑ (Ⅱ)
+SkillDesc: Damage dealt on each Wave is increased by 5%. (Max 20%)
+SkillName: Wave Attack↑ (Ⅲ)
+SkillDesc: Damage dealt on each Wave is increased by 5%. (Max 30%)
+SkillName: Wave Attack↑ (Ⅳ)
+SkillDesc: Damage dealt on each Wave is increased by 5%. (Max 40%)
+SkillName: Wave Attack↑ (Ⅰ)
+SkillDesc: Damage dealt on each Wave is increased by 5%. (Max 10%)
+SkillName: Fast Adaptation
+SkillDesc: Damage dealt on each Wave is increased by 8%. (Max 40%)
+SkillName: Destruction Attack↑ (Ⅱ)
+SkillDesc: Each time you kill an enemy， damage dealt is increased by 1%. (Max 20%)
+SkillName: Destruction Attack↑ (Ⅲ)
+SkillDesc: Each time you kill an enemy， damage dealt is increased by 1%. (Max 30%)
+SkillName: Destruction Attack↑ (Ⅳ)
+SkillDesc: Each time you kill an enemy， damage dealt is increased by 1%. (Max 40%)
+SkillName: Destruction Attack↑ (Ⅰ)
+SkillDesc: Each time you kill an enemy， damage dealt is increased by 1%. (Max 10%)
+SkillName: Despair
+SkillDesc: Each time you kill an enemy， damage dealt is increased by 3%. (Max 50%)
+SkillName: Ambition
+SkillDesc: Each time you kill an enemy， damage dealt is increased by 6%. (Max 35%)
+SkillName: Grim Reaper's Agreement
+SkillDesc: Each time you kill an enemy， damage dealt is increased by 4%. (Max 44%)
+SkillName: Rear Attack↑ (Ⅱ)
+SkillDesc: When you attack from behind， damage dealt is increased by 10%.
+SkillName: Rear Attack↑ (Ⅲ)
+SkillDesc: When you attack from behind， damage dealt is increased by 20%.
+SkillName: Rear Attack↑ (Ⅳ)
+SkillDesc: When you attack from behind， damage dealt is increased by 30%.
+SkillName: Rear Attack↑ (Ⅰ)
+SkillDesc: When you attack from behind， damage dealt is increased by 5%.
+SkillName: Ambush
+SkillDesc: When you attack from behind， damage dealt is increased by 40%.
+SkillName: Rear Defense↑ (Ⅱ)
+SkillDesc: When you are attacked from behind， damage received is decreased by 10%.
+SkillName: Rear Defense↑ (Ⅲ)
+SkillDesc: When you are attacked from behind， damage received is decreased by 20%.
+SkillName: Rear Defense↑ (Ⅳ)
+SkillDesc: When you are attacked from behind， damage received is decreased by 30%.
+SkillName: Rear Defense↑ (Ⅰ)
+SkillDesc: When you are attacked from behind， damage received is decreased by 5%.
+SkillName: Bulk Up'
+SkillDesc: Reduces the distance being thrown or pushed back when attacked by an enemy.
+SkillName: Recovery↑ (Ⅱ)
+SkillDesc: When receiving heal， recovery effect is increased by 10%.
+SkillName: Recovery↑ (Ⅲ)
+SkillDesc: When receiving heal， recovery effect is increased by 20%.
+SkillName: Recovery↑ (Ⅳ)
+SkillDesc: When receiving heal， recovery effect is increased by 30%.
+SkillName: Recovery↑ (Ⅰ)
+SkillDesc: When receiving heal， recovery effect is increased by 5%.
+SkillName: Combo Attack↑ (Ⅱ)
+SkillDesc: When you reach over 20 Combos， damage dealt is increased by 10%.
+SkillName: Combo Attack↑ (Ⅲ)
+SkillDesc: When you reach over 20 Combos， damage dealt is increased by 20%.
+SkillName: Combo Attack↑ (Ⅳ)
+SkillDesc: When you reach over 20 Combos， damage dealt is increased by 30%.
+SkillName: Combo Attack↑ (Ⅰ)
+SkillDesc: When you reach over 20 Combos， damage dealt is increased by 5%.
+SkillName: Combo Tactics)
+SkillDesc: When you reach over 20 Combos， damage dealt is increased by 50%.
+SkillName: First Attack↑ (Ⅱ)
+SkillDesc: When you attack an unharmed enemy， damage dealt is increased by 30%.
+SkillName: First Attack↑ (Ⅲ)
+SkillDesc: When you attack an unharmed enemy， damage dealt is increased by 40%.
+SkillName: First Attack↑ (Ⅳ)
+SkillDesc: When you attack an unharmed enemy， damage dealt is increased by 50%.
+SkillName: First Attack↑ (Ⅰ)
+SkillDesc: When you attack an unharmed enemy， damage dealt is increased by 20%.
+SkillName: Flash of Lightning
+SkillDesc: When you attack an unharmed enemy， damage dealt is increased by 60%.
+SkillName: Deadly HP Recovery (Ⅱ)
+SkillDesc: When you deal a killing blow， a small amount of HP is recovered.
+SkillName: Deadly HP Recovery (Ⅲ)
+SkillDesc: When you deal a killing blow， a medium amount of HP is recovered.
+SkillName: Deadly HP Recovery (Ⅳ)
+SkillDesc: When you deal a killing blow， a large amount of HP is recovered.
+SkillName: Deadly HP Recovery (Ⅰ)
+SkillDesc: When you deal a killing blow， a very small amount of HP is recovered.
+SkillName: Longing+
+SkillDesc: When you deal a killing blow， a very large amount of HP is recovered.
+SkillName: Ranged Attack↑ (Ⅱ)
+SkillDesc: When you attack a far away enemy， damage dealt is increased by 10%.
+SkillName: Ranged Attack↑ (Ⅲ)
+SkillDesc: When you attack a far away enemy， damage dealt is increased by 20%.
+SkillName: Ranged Attack↑ (Ⅳ)
+SkillDesc: When you attack a far away enemy， damage dealt is increased by 30%.
+SkillName: Ranged Attack↑ (Ⅰ)
+SkillDesc: When you attack a far away enemy， damage dealt is increased by 5%.
+SkillName: Pure Love Sniper
+SkillDesc: When you attack a far away enemy， damage dealt is increased by 40%.
+SkillName: Extend Support (Ⅱ)
+SkillDesc: Duration of Ultimate Skill · Swap Skill support effect is increased by 3 seconds.
+SkillName: Extend Support (Ⅲ)
+SkillDesc: Duration of Ultimate Skill · Swap Skill support effect is increased by 6 seconds.
+SkillName: Extend Support (Ⅳ)
+SkillDesc: Duration of Ultimate Skill · Swap Skill support effect is increased by 10 seconds.
+SkillName: Extend Support (Ⅰ)
+SkillDesc: Duration of Ultimate Skill · Swap Skill support effect is increased by 1 second.
+SkillName: Magic Hour
+SkillDesc: ATK and DEF are increased by 25% from 20:00 to 24:00.
+SkillName: All Night
+SkillDesc: ATK and DEF are increased by 25% from 18:00 to 06:00.
+SkillName: 20-24 Upgrade↑ (Ⅱ)
+SkillDesc: ATK and DEF are increased by 10% from 20:00 to 24:00.
+SkillName: Pinch Move↑ (Ⅱ)
+SkillDesc: When HP is below 30%、 Movement Speed is increased by 5%.
+SkillName: Pinch Move↑ (Ⅲ)
+SkillDesc: When HP is below 30%、 Movement Speed is increased by 10%.
+SkillName: Pinch Move↑ (Ⅳ)
+SkillDesc: When HP is below 30%、 Movement Speed is increased by 15%.
+SkillName: Pinch Move↑ (Ⅰ)
+SkillDesc: When HP is below 30%、 Movement Speed is increased by 2%.
+SkillName: Bonus Attack↑ (Ⅱ)
+SkillDesc: When you attack an enemy with HP below 50%， damage dealt is increased by 10%.
+SkillName: Bonus Attack↑ (Ⅲ)
+SkillDesc: When you attack an enemy with HP below 50%， damage dealt is increased by 20%.
+SkillName: Bonus Attack↑ (Ⅳ)
+SkillDesc: When you attack an enemy with HP below 50%， damage dealt is increased by 30%.
+SkillName: Bonus Attack↑ (Ⅰ)
+SkillDesc: When you attack an enemy with HP below 50%， damage dealt is increased by 5%.
+SkillName: Fierce Bonus Attack
+SkillDesc: When you attack an enemy with HP below 50%， damage dealt is increased by 40%.
+SkillName: Terminate
+SkillDesc: When you attack an enemy with HP below 25%， damage dealt is increased by 60%.
+SkillName: Giant Killer
+SkillDesc: Increases damage dealt to a heavy enemy.
+SkillName: Wake Time
+SkillDesc: ATK and DEF are increased by 25% from 12:00 to 16:00.
+SkillName: 12-16 Upgrade↑ (Ⅱ)
+SkillDesc: ATK and DEF are increased by 10% from 12:00 to 16:00.
+SkillName: Melee Armor
+SkillDesc: You do not stagger from a melee attack.
+SkillName: Bullet Armor
+SkillDesc: You do not stagger from a bullet attack.
+SkillName: Blast Armor
+SkillDesc: You do not stagger from a blast attack.
+SkillName: Normal Attack↑ (Ⅱ)
+SkillDesc: Normal attack effect is increased by 10%.
+SkillName: Normal Attack↑ (Ⅲ)
+SkillDesc: Normal attack effect is increased by 20%.
+SkillName: Normal Attack↑ (Ⅳ)
+SkillDesc: Normal attack effect is increased by 30%.
+SkillName: Normal Attack↑ (Ⅰ)
+SkillDesc: Normal attack effect is increased by 5%.
+SkillName: Gifted Talent
+SkillDesc: Normal attack effect is increased by 40%.
+SkillName: Trickster
+SkillDesc: Normal attack effect is increased by 40%.
+SkillName: Swap Skill↑ (Ⅱ)
+SkillDesc: Swap Skill effect is increased by 20%.
+SkillName: Swap Skill↑ (Ⅲ)
+SkillDesc: Swap Skill effect is increased by 30%.
+SkillName: Swap Skill↑ (Ⅳ)
+SkillDesc: Swap Skill effect is increased by 40%.
+SkillName: Swap Skill↑ (Ⅰ)
+SkillDesc: Swap Skill effect is increased by 10%.
+SkillName: Melee Attack↑ (Ⅱ)
+SkillDesc: Melee attack damage is increased by 5%.
+SkillName: Melee Attack↑ (Ⅲ)
+SkillDesc: Melee attack damage is increased by 15%.
+SkillName: Melee Attack↑ (Ⅳ)
+SkillDesc: Melee attack damage is increased by 25%.
+SkillName: Melee Attack↑ (Ⅰ)
+SkillDesc: Melee attack damage is increased by 2%.
+SkillName: Expert Fighter
+SkillDesc: Melee attack damage is increased by 35%.
+SkillName: Melee Defense↑ (Ⅱ)
+SkillDesc: Damage received from a melee attack is decreased by 10%.
+SkillName: Melee Defense↑ (Ⅲ)
+SkillDesc: Damage received from a melee attack is decreased by 20%.
+SkillName: Melee Defense↑ (Ⅳ)
+SkillDesc: Damage received from a melee attack is decreased by 30%.
+SkillName: Melee Defense↑ (Ⅰ)
+SkillDesc: Damage received from a melee attack is decreased by 5%.
+SkillName: Bullet Attack↑ (Ⅱ)
+SkillDesc: Bullet attack damage is increased by 10%.
+SkillName: Bullet Attack↑ (Ⅳ)
+SkillDesc: Bullet attack damage is increased by 30%.
+SkillName: Bullet Attack↑ (Ⅰ)
+SkillDesc: Bullet attack damage is increased by 5%.
+SkillName: Bullet Defense↑ (Ⅱ)
+SkillDesc: Damage received from a bullet attack is decreased by 10%.
+SkillName: Bullet Defense↑ (Ⅲ)
+SkillDesc: Damage received from a bullet attack is decreased by 20%.
+SkillName: Bullet Defense↑ (Ⅳ)
+SkillDesc: Damage received from a bullet attack is decreased by 30%.
+SkillName: Bullet Defense↑ (Ⅰ)
+SkillDesc: Damage received from a bullet attack is decreased by 5%.
+SkillName: Blast Attack↑ (Ⅱ)
+SkillDesc: Blast attack damage is increased by 20%.
+SkillName: Blast Attack↑ (Ⅲ)
+SkillDesc: Blast attack damage is increased by 30%.
+SkillName: Blast Attack↑ (Ⅳ)
+SkillDesc: Blast attack damage is increased by 40%.
+SkillName: Blast Attack↑ (Ⅰ)
+SkillDesc: Blast attack damage is increased by 10%.
+SkillName: Blast Defense↑ (Ⅱ)
+SkillDesc: Damage received from a blast attack is decreased by 20%.
+SkillName: Blast Defense↑ (Ⅳ)
+SkillDesc: Damage received from a blast attack is decreased by 40%.
+SkillName: Blast Defense↑ (Ⅰ)
+SkillDesc: Damage received from a blast attack is decreased by 10%.
+SkillName: Combat Defense↑ (Ⅱ)
+SkillDesc: Damage received while attacking is decreased by 10%.
+SkillName: Combat Defense↑ (Ⅲ)
+SkillDesc: Damage received while attacking is decreased by 20%.
+SkillName: Combat Defense↑ (Ⅳ)
+SkillDesc: Damage received while attacking is decreased by 30%.
+SkillName: Combat Defense↑ (Ⅰ)
+SkillDesc: Damage received while attacking is decreased by 5%.
+SkillName: Iron Will
+SkillDesc: Damage received while attacking is decreased by 40%.
+SkillName: Charge Ultimate Skill (Attack) (II)
+SkillDesc: A small amount of Ultimate Skill Gauge is charged when a normal attack hits.
+SkillName: Charge Ultimate Skill (Attack) (Ⅲ)
+SkillDesc: A medium amount of Ultimate Skill Gauge is charged when a normal attack hits.
+SkillName: Charge Ultimate Skill (Attack) (Ⅳ)
+SkillDesc: A large amount of Ultimate Skill Gauge is charged when a normal attack hits.
+SkillName: Charge Ultimate Skill (Attack) (Ⅰ)
+SkillDesc: A very small amount of Ultimate Skill Gauge is charged when a normal attack hits.
+SkillName: Love Attack
+SkillDesc: A large amount of Ultimate Skill Gauge is charged when a normal attack hits.
+SkillName: Poison Bonus Attack↑ (Ⅱ)
+SkillDesc: When you attack a Poisoned enemy， damage dealt is increased by 10%.
+SkillName: Poison Bonus Attack↑ (Ⅲ)
+SkillDesc: When you attack a Poisoned enemy， damage dealt is increased by 20%.
+SkillName: Poison Bonus Attack↑ (Ⅳ)
+SkillDesc: When you attack a Poisoned enemy， damage dealt is increased by 30%.
+SkillName: Poison Bonus Attack↑ (Ⅰ)
+SkillDesc: When you attack a Poisoned enemy， damage dealt is increased by 5%.
+SkillName: Stun Bonus Attack↑ (Ⅱ)
+SkillDesc: When you attack a Stunned enemy， damage dealt is increased by 10%.
+SkillName: Stun Bonus Attack↑ (Ⅳ)
+SkillDesc: When you attack a Stunned enemy， damage dealt is increased by 30%.
+SkillName: Stun Bonus Attack↑ (Ⅰ)
+SkillDesc: When you attack a Stunned enemy， damage dealt is increased by 5%.
+SkillName: Paralysis Bonus Attack↑ (Ⅱ)
+SkillDesc: When you attack a Paralyzed enemy， damage dealt is increased by 10%.
+SkillName: Paralysis Bonus Attack↑ (Ⅲ)
+SkillDesc: When you attack a Paralyzed enemy， damage dealt is increased by 20%.
+SkillName: Paralysis Bonus Attack↑ (Ⅳ)
+SkillDesc: When you attack a Paralyzed enemy， damage dealt is increased by 30%.
+SkillName: Paralysis Bonus Attack↑ (Ⅰ)
+SkillDesc: When you attack a Paralyzed enemy， damage dealt is increased by 5%.
+SkillName: Burn Bonus Attack↑ (Ⅱ)
+SkillDesc: When you attack a Burning enemy， damage dealt is increased by 10%.
+SkillName: Burn Bonus Attack↑ (Ⅲ)
+SkillDesc: When you attack a Burning enemy， damage dealt is increased by 20%.
+SkillName: Burn Bonus Attack↑ (Ⅳ)
+SkillDesc: When you attack a Burning enemy， damage dealt is increased by 30%.
+SkillName: Burn Bonus Attack↑ (Ⅰ)
+SkillDesc: When you attack a Burning enemy， damage dealt is increased by 5%.
+SkillName: Heat Blaze
+SkillDesc: When you attack a Burning enemy， damage dealt is increased by 40%.
+SkillName: Freeze Bonus Attack↑ (Ⅱ)
+SkillDesc: When you attack a Frozen enemy， damage dealt is increased by 10%.
+SkillName: Freeze Bonus Attack↑ (Ⅲ)
+SkillDesc: When you attack a Frozen enemy， damage dealt is increased by 20%.
+SkillName: Freeze Bonus Attack↑ (Ⅳ)
+SkillDesc: When you attack a Frozen enemy， damage dealt is increased by 30%.
+SkillName: Freeze Bonus Attack↑ (Ⅰ)
+SkillDesc: When you attack a Frozen enemy， damage dealt is increased by 5%.
+SkillName: Cruelty
+SkillDesc: When you attack a Frozen enemy， damage dealt is increased by 40%.
+SkillName: Stroke of Luck (Ⅱ)
+SkillDesc: Very rarely， damage dealt is increased by 100%.
+SkillName: Stroke of Luck (Ⅲ)
+SkillDesc: Rarely， damage dealt is increased by 125%.
+SkillName: Stroke of Luck (Ⅳ)
+SkillDesc: Sometimes， damage dealt is increased by 150%.
+SkillName: Stroke of Luck (Ⅰ)
+SkillDesc: Extremely rarely， damage dealt is increased by 75%.
+SkillName: Lucky Punch
+SkillDesc: Rarely， damage dealt is increased by 350%.
+SkillName: Hidden Thorn
+SkillDesc: Frequently， damage dealt is increased by 150%.
+SkillName: Powerful Luck (Ⅱ)
+SkillDesc: Very rarely， damage received is reduced to 1. (Does not activate when Stunned or Paralyzed.)
+SkillName: Powerful Luck (Ⅲ)
+SkillDesc: Rarely， damage received is reduced to 1. (Does not activate when Stunned or Paralyzed.)
+SkillName: Powerful Luck (Ⅳ)
+SkillDesc: Sometimes， damage received is reduced to 1. (Does not activate when Stunned or Paralyzed.)
+SkillName: Powerful Luck (Ⅰ)
+SkillDesc: Extremely rarely， damage received is reduced to 1. (Does not activate when Stunned or Paralyzed.)
+SkillName: Mask
+SkillDesc: Frequently， damage received is reduced to 1. (Does not activate when Stunned or Paralyzed.)
+SkillName: Max HP Attack↑ (Ⅱ)
+SkillDesc: When HP is 100%， damage dealt is increased by 10%.
+SkillName: Max HP Attack↑ (Ⅲ)
+SkillDesc: When HP is 100%， damage dealt is increased by 20%.
+SkillName: Max HP Attack↑ (Ⅳ)
+SkillDesc: When HP is 100%， damage dealt is increased by 30%.
+SkillName: Max HP Attack↑ (Ⅰ)
+SkillDesc: When HP is 100%， damage dealt is increased by 5%.
+SkillName: Dignity of Fairy King
+SkillDesc: When HP is 100%， damage dealt is increased by 40%.
+SkillName: Caprice
+SkillDesc: When HP is 100%， damage dealt is increased by 40%.
+SkillName: Extend Combo (Ⅱ)
+SkillDesc: Combo duration is increased by 1 second.
+SkillName: Extend Combo (Ⅲ)
+SkillDesc: Combo duration is increased by 2 seconds.
+SkillName: Extend Combo (Ⅳ)
+SkillDesc: Combo duration is increased by 3 seconds.
+SkillName: Extend Combo (Ⅰ)
+SkillDesc: Combo duration is increased by 0.5 second.
+SkillName: Node [Mountain]
+SkillDesc: HP is increased by 10%. If the condition of [Node] is met... (All 4 nodes)
+SkillName: Node [Fire]
+SkillDesc: ATK is increased by 10%. If the condition of [Node] is met... (All 4 nodes)
+SkillName: Node [Forest]
+SkillDesc: DEF is increased by 10%. If the condition of [Node] is met... (All 4 nodes)
+SkillName: Node [Wind]
+SkillDesc: Movement Speed is increased by 10%. If the condition of [Node] is met... (All 4 nodes)
+SkillName: Element [Darkness]
+SkillDesc: Darkness effect is increased by 5%. If the condition of [Element] is met... (All 5 elements)
+SkillName: Element [Light]
+SkillDesc: Light effect is increased by 5%. If the condition of [Element] is met... (All 5 elements)
+SkillName: Element [Thunder]
+SkillDesc: Thunder effect is increased by 5%. If the condition of [Element] is met... (All 5 elements)
+SkillName: Element [Ice]
+SkillDesc: Ice effect is increased by 5%. If the condition of [Element] is met... (All 5 elements)
+SkillName: Element [Fire]
+SkillDesc: Fire effect is increased by 5%. If the condition of [Element] is met... (All 5 elements)
+SkillName: Upgrade Poison
+SkillDesc: Max damage dealt by [Poison] is increased.
+SkillName: Upgrade Burn
+SkillDesc: ATK reduction rate by [Burn] is increased.
+SkillName: Upgrade Freeze
+SkillDesc: DEF reduction rate by [Freeze] is increased.
+SkillName: Upgrade Stun
+SkillDesc: Duration of [Stun] is extended.
+SkillName: Upgrade Paralysis
+SkillDesc: Duration of [Paralysis] is extended.
+SkillName: Upgrade Curse
+SkillDesc: Duration of [Curse] is extended.
+SkillName: Maintain Upgrade Status
+SkillDesc: When changing Heroes， upgrade status is inherited to new Heroes.
+SkillName: Maintain All Status
+SkillDesc: When changing Heroes， status effects are inherited to new Heroes.
+SkillName: Advanced Step
+SkillDesc: Step invincible duration is extended.
+SkillName: Ultimate Skill (Attack)↑ (Ⅱ)
+SkillDesc: Offensive Ultimate Skill effect is increased by 15%.
+SkillName: Ultimate Skill (Attack)↑ (Ⅲ)
+SkillDesc: Offensive Ultimate Skill effect is increased by 25%.
+SkillName: Ultimate Skill (Attack)↑ (Ⅳ)
+SkillDesc: Offensive Ultimate Skill effect is increased by 35%.
+SkillName: Ultimate Skill (Attack)↑ (Ⅰ)
+SkillDesc: Offensive Ultimate Skill effect is increased by 5%.
+SkillName: Emerald Edge
+SkillDesc: Offensive Ultimate Skill effect is increased by 40%.
+SkillName: Ultimate Skill (Recovery)↑ (Ⅱ)
+SkillDesc: Recovery Ultimate Skill effect is increased by 15%.
+SkillName: Ultimate Skill (Recovery)↑ (Ⅲ)
+SkillDesc: Recovery Ultimate Skill effect is increased by 25%.
+SkillName: Ultimate Skill (Recovery)↑ (Ⅳ)
+SkillDesc: Recovery Ultimate Skill effect is increased by 35%.
+SkillName: Ultimate Skill (Recovery)↑ (Ⅰ)
+SkillDesc: Recovery Ultimate Skill effect is increased by 5%.
+SkillName: Curse Bonus Attack↑ (Ⅳ)
+SkillDesc: When you attack a Cursed enemy， damage dealt is increased by 30%.
+SkillName: Uncanny SP Recovery x 1
+SkillDesc: When knocked out of battle， 1 Ultimate Skill Gauge is recovered.
+SkillName: Uncanny SP Recovery x 2
+SkillDesc: When knocked out of battle， 2 Ultimate Skill Gauges are recovered.
+SkillName: Uncanny SP Recovery x 3
+SkillDesc: When knocked out of battle， 3 Ultimate Skill Gauges are recovered.
+SkillName: Recovery Transform · Poison
+SkillDesc: Damage received from [Poison] is recovered.
+SkillName: Recovery Transform · Burn
+SkillDesc: Damage received from [Burn] is recovered.
+SkillName: Recovery Transform · Freeze
+SkillDesc: Damage received from [Freeze] is recovered.
+SkillName: Combat HP Recovery (Ⅱ)
+SkillDesc: A small amount of HP is recovered when a normal attack hits.
+SkillName: Combat HP Recovery (Ⅲ)
+SkillDesc: A medium amount of HP is recovered when a normal attack hits.
+SkillName: Combat HP Recovery (Ⅳ)
+SkillDesc: A large amount of HP is recovered when a normal attack hits.
+SkillName: Combat HP Recovery (Ⅰ)
+SkillDesc: A very small amount of HP is recovered when a normal attack hits.
+SkillName: Start Support · Attack
+SkillDesc: Support attack effect is applied at the start of Wave.
+SkillName: Start Support · Defense
+SkillDesc: Support defense effect is applied at the start of Wave.
+SkillName: Start Support · Stealth
+SkillDesc: Support stealth effect is applied at the start of Wave.
+SkillName: Start Defense↑ (Ⅲ)
+SkillDesc: Support defense effect is applied for 8 seconds at the start of Wave.
+SkillName: Avoid Death
+SkillDesc: A hit that reduces HP to zero reduces it to 1 instead. Activates once.
+SkillName: Avoid Death x 2
+SkillDesc: A hit that reduces HP to zero reduces it to 1 instead. Activates twice.
+SkillName: Avoid Death x 3
+SkillDesc: A hit that reduces HP to zero reduces it to 1 instead. Activates three times.
+SkillName: Avoid Death 100%
+SkillDesc: If HP is above 90%， a hit that reduces HP to zero reduces it to 1 instead.
+SkillName: Avoid Death 50%
+SkillDesc: If HP is above 50%， a hit that reduces HP to zero reduces it to 1 instead.
+SkillName: Upgrade Reload (Ⅱ)
+SkillDesc: Duration of Switch Reload is extended by 3 seconds.
+SkillName: Upgrade Reload (Ⅲ)
+SkillDesc: Duration of Switch Reload is extended by 6 seconds.
+SkillName: Upgrade Reload (Ⅳ)
+SkillDesc: Duration of Switch Reload is extended by 10 seconds.
+SkillName: Upgrade Reload (Ⅰ)
+SkillDesc: Duration of Switch Reload is extended by 1 second.
+SkillName: Poison Bonus Attack↑ Ⅰ
+SkillDesc: When you attack a Poisoned enemy， damage dealt is increased by 5%.
+SkillName: Poison Bonus Attack↑ Ⅱ
+SkillDesc: When you attack a Poisoned enemy， damage dealt is increased by 10%.
+SkillName: Poison Bonus Attack↑ Ⅲ
+SkillDesc: When you attack a Poisoned enemy， damage dealt is increased by 15%.
+SkillName: Stun Bonus Attack↑ Ⅰ
+SkillDesc: When you attack a Stunned enemy， damage dealt is increased by 5%.
+SkillName: Stun Bonus Attack↑ Ⅱ
+SkillDesc: When you attack a Stunned enemy， damage dealt is increased by 10%.
+SkillName: Stun Bonus Attack↑ Ⅲ
+SkillDesc: When you attack a Stunned enemy， damage dealt is increased by 15%.
+SkillName: Paralysis Bonus Attack↑ Ⅰ
+SkillDesc: When you attack a Paralyzed enemy， damage dealt is increased by 5%.
+SkillName: Paralysis Bonus Attack↑ Ⅱ
+SkillDesc: When you attack a Paralyzed enemy， damage dealt is increased by 10%.
+SkillName: Paralysis Bonus Attack↑ Ⅲ
+SkillDesc: When you attack a Paralyzed enemy， damage dealt is increased by 15%.
+SkillName: Burn Bonus Attack↑ Ⅰ
+SkillDesc: When you attack a Burning enemy， damage dealt is increased by 5%.
+SkillName: Burn Bonus Attack↑ Ⅱ
+SkillDesc: When you attack a Burning enemy， damage dealt is increased by 10%.
+SkillName: Burn Bonus Attack↑ Ⅲ
+SkillDesc: When you attack a Burning enemy， damage dealt is increased by 15%.
+SkillName: Freeze Bonus Attack↑ Ⅰ
+SkillDesc: When you attack a Frozen enemy， damage dealt is increased by 5%.
+SkillName: Freeze Bonus Attack↑ Ⅱ
+SkillDesc: When you attack a Frozen enemy， damage dealt is increased by 10%.
+SkillName: Freeze Bonus Attack↑ Ⅲ
+SkillDesc: When you attack a Frozen enemy， damage dealt is increased by 15%.
+SkillName: PT Recovery↑ (Ⅳ)
+SkillDesc: Recovery effect of all party members is increased by 30%.
+SkillName: PT Melee Attack↑ (Ⅲ)
+SkillDesc: Melee attack damage is increased by 15%.
+SkillName: PT Bullet Attack↑ (Ⅲ)
+SkillDesc: Bullet attack damage of all party members is increased by 20%.
+SkillName: Wave Recover All (Ⅱ)
+SkillDesc: After the second Wave， all party members' HP is restored by 10% at the start of the next Wave.
+SkillName: Wave Recover All (Ⅲ)
+SkillDesc: After the second Wave， all party members' HP is restored by 15% at the start of the next Wave.
+SkillName: Wave Recover All (Ⅳ)
+SkillDesc: After the second Wave， all party members' HP is restored by 20% at the start of the next Wave.
+SkillName: Wave Recover All (Ⅴ)
+SkillDesc: After the second Wave， all party members' HP is restored by 25% at the start of the next Wave.
+SkillName: Wave Recover All (Ⅰ)
+SkillDesc: After the second Wave， all party members' HP is restored by 5% at the start of the next Wave.
+SkillName: Wave Emergency Recovery (Ⅱ)
+SkillDesc: After the second Wave， HP of the Hero with the lowest HP is restored by 20% at the start of the next Wave.
+SkillName: Wave Emergency Recovery (Ⅲ)
+SkillDesc: After the second Wave， HP of the Hero with the lowest HP is restored by 30% at the start of the next Wave.
+SkillName: Wave Emergency Recovery (Ⅳ)
+SkillDesc: After the second Wave， HP of the Hero with the lowest HP is restored by 40% at the start of the next Wave.
+SkillName: Wave Emergency Recovery (Ⅴ)
+SkillDesc: After the second Wave， HP of the Hero with the lowest HP is restored by 50% at the start of the next Wave.
+SkillName: Wave Emergency Recovery (Ⅰ)
+SkillDesc: After the second Wave， HP of the Hero with the lowest HP is restored by 10% at the start of the next Wave.
+SkillName: Charge Ultimate Skill x 1
+SkillDesc: Starts the quest with 1 Ultimate Skill Gauge charged.
+SkillName: Charge Ultimate Skill x 2
+SkillDesc: Starts the quest with 2 Ultimate Skill Gauges charged.
+SkillName: Charge Ultimate Skill x 3
+SkillDesc: Starts the quest with 3 Ultimate Skill Gauges charged.
+SkillName: Charge Ultimate Skill x 4
+SkillDesc: Starts the quest with 4 Ultimate Skill Gauges charged.
+SkillName: Drop↑ (Ⅱ)
+SkillDesc: Material drop rate is increased by 5%.
+SkillName: Drop↑ (Ⅲ)
+SkillDesc: Material drop rate is increased by 10%.
+SkillName: Drop↑ (Ⅳ)
+SkillDesc: Material drop rate is increased by 15%.
+SkillName: Drop↑ (Ⅴ)
+SkillDesc: Material drop rate is increased by 20%.
+SkillName: Drop↑ (Ⅰ)
+SkillDesc: Material drop rate is increased by 2%.
+SkillName: Weapon EXP↑ (Ⅱ)
+SkillDesc: Acquired Weapon EXP is increased by 10%.
+SkillName: Weapon EXP↑ (Ⅲ)
+SkillDesc: Acquired Weapon EXP is increased by 15%.
+SkillName: Weapon EXP↑ (Ⅳ)
+SkillDesc: Acquired Weapon EXP is increased by 20%.
+SkillName: Weapon EXP↑ (Ⅴ)
+SkillDesc: Acquired Weapon EXP is increased by 25%.
+SkillName: Weapon EXP↑ (Ⅰ)
+SkillDesc: Acquired Weapon EXP is increased by 5%.
+SkillName: Charge Ultimate Skill (Wave) (Ⅱ)
+SkillDesc: After the second Wave， a small amount of Ultimate Skill Gauge is charged at the start of the next Wave.
+SkillName: Charge Ultimate Skill (Wave) (Ⅲ)
+SkillDesc: After the second Wave， a medium amount of Ultimate Skill Gauge is charged at the start of the next Wave.
+SkillName: Charge Ultimate Skill (Wave) (Ⅳ)
+SkillDesc: After the second Wave， a large amount of Ultimate Skill Gauge is charged at the start of the next Wave.
+SkillName: Charge Ultimate Skill (Wave) (Ⅰ)
+SkillDesc: After the second Wave， a very small amount of Ultimate Skill Gauge is charged at the start of the next Wave.
+SkillName: Wave Recovery (Ⅱ)
+SkillDesc: After the second Wave， HP is restored by 15% at the start of the next Wave.
+SkillName: Wave Recovery (Ⅲ)
+SkillDesc: After the second Wave， HP is restored by 20% at the start of the next Wave.
+SkillName: Wave Recovery (Ⅳ)
+SkillDesc: After the second Wave， HP is restored by 25% at the start of the next Wave.
+SkillName: Wave Recovery (Ⅴ)
+SkillDesc: After the second Wave， HP is restored by 30% at the start of the next Wave.
+SkillName: Wave Recovery (Ⅰ)
+SkillDesc: After the second Wave， HP is restored by 10% at the start of the next Wave.
+SkillName: Devour
+SkillDesc: After the second Wave， HP is restored by 50% at the start of the next Wave.
+SkillName: EXP↑ (Ⅱ)
+SkillDesc: Acquired EXP is increased by 10%.
+SkillName: EXP↑ (Ⅲ)
+SkillDesc: Acquired EXP is increased by 15%.
+SkillName: EXP↑ (Ⅳ)
+SkillDesc: Acquired EXP is increased by 20%.
+SkillName: EXP↑ (Ⅴ)
+SkillDesc: Acquired EXP is increased by 25%.
+SkillName: EXP↑ (Ⅰ)
+SkillDesc: Acquired EXP is increased by 5%.
+SkillName: Gold↑ (Ⅱ)
+SkillDesc: Acquired Gold is increased by 10%.
+SkillName: Gold↑ (Ⅲ)
+SkillDesc: Acquired Gold is increased by 15%.
+SkillName: Gold↑ (Ⅳ)
+SkillDesc: Acquired Gold is increased by 20%.
+SkillName: Gold↑ (Ⅴ)
+SkillDesc: Acquired Gold is increased by 25%.
+SkillName: Gold Digger
+SkillDesc: Acquired Gold is increased by 100%.
+SkillName: Gold↑ (Ⅰ)
+SkillDesc: Acquired Gold is increased by 5%.
+SkillName: Poison Immunity
+SkillDesc: Becomes immune to Poison.
+SkillName: Stun Immunity
+SkillDesc: Becomes immune to Stun.
+SkillName: Paralysis Immunity
+SkillDesc: Becomes immune to Paralysis.
+SkillName: Status Effect Immunity
+SkillDesc: Becomes immune to status effect.
+SkillName: Burn Immunity
+SkillDesc: Becomes immune to Burn.
+SkillName: Freeze Immunity
+SkillDesc: Becomes immune to Freeze.
+SkillName: Divine Enlightenment
+SkillDesc: Becomes immune to status effect.
+SkillName: Soft and Lofty
+SkillDesc: Becomes immune to status effect.
+SkillName: Heart of Ice
+SkillDesc: Becomes immune to status effect.
+SkillName: Resist Poison
+SkillDesc: Resists Poison.
+SkillName: Resist Stun
+SkillDesc: Resists Stun.
+SkillName: Resist Paralysis
+SkillDesc: Resists Paralysis.
+SkillName: Resist Status Effect
+SkillDesc: Resists status effect.
+SkillName: Resist Burn
+SkillDesc: Resists Burn.
+SkillName: Resist Freeze
+SkillDesc: Resists Freeze.
+SkillName: Curse Immunity
+SkillDesc: Becomes immune to Curse.
+SkillName: Resist Curse
+SkillDesc: Resists Curse.
+SkillName: Poison (Ⅱ)
+SkillDesc: Causes small Poison effect to the enemy attacked.
+SkillName: Poison (Ⅲ)
+SkillDesc: Causes medium Poison effect to the enemy attacked.
+SkillName: Poison (Ⅳ)
+SkillDesc: Causes large Poison effect to the enemy attacked.
+SkillName: Poison (Ⅴ)
+SkillDesc: Causes very large Poison effect to the enemy attacked.
+SkillName: Poison (Ⅰ)
+SkillDesc: Causes very small Poison effect to the enemy attacked.
+SkillName: Stun (Ⅱ)
+SkillDesc: Causes small Stun effect to the enemy attacked.
+SkillName: Stun (Ⅲ)
+SkillDesc: Causes medium Stun effect to the enemy attacked.
+SkillName: Stun (Ⅳ)
+SkillDesc: Causes large Stun effect to the enemy attacked.
+SkillName: Stun (Ⅴ)
+SkillDesc: Causes very large Stun effect to the enemy attacked.
+SkillName: Stun (Ⅰ)
+SkillDesc: Causes very small Stun effect to the enemy attacked.
+SkillName: Paralysis (Ⅱ)
+SkillDesc: Causes small Paralysis effect to the enemy attacked.
+SkillName: Paralysis (Ⅲ)
+SkillDesc: Causes medium Paralysis effect to the enemy attacked.
+SkillName: Paralysis (Ⅳ)
+SkillDesc: Causes large Paralysis effect to the enemy attacked.
+SkillName: Paralysis (Ⅴ)
+SkillDesc: Causes very large Paralysis effect to the enemy attacked.
+SkillName: Paralysis (Ⅰ)
+SkillDesc: Causes very small Paralysis effect to the enemy attacked.
+SkillName: Fast Status Effect Recovery
+SkillDesc: Quickly recovers from status effect.
+SkillName: Egg Skin
+SkillDesc: Very quickly recovers from status effect.
+SkillName: Burn (Ⅱ)
+SkillDesc: Causes small Burn effect to the enemy attacked.
+SkillName: Burn (Ⅲ)
+SkillDesc: Causes medium Burn effect to the enemy attacked.
+SkillName: Burn (Ⅳ)
+SkillDesc: Causes large Burn effect to the enemy attacked.
+SkillName: Burn (Ⅴ)
+SkillDesc: Causes very large Burn effect to the enemy attacked.
+SkillName: Burn (Ⅰ)
+SkillDesc: Causes very small Burn effect to the enemy attacked.
+SkillName: Freeze (Ⅱ)
+SkillDesc: Causes small Freeze effect to the enemy attacked.
+SkillName: Freeze (Ⅲ)
+SkillDesc: Causes medium Freeze effect to the enemy attacked.
+SkillName: Freeze (Ⅳ)
+SkillDesc: Causes large Freeze effect to the enemy attacked.
+SkillName: Freeze (Ⅴ)
+SkillDesc: Causes very large Freeze effect to the enemy attacked.
+SkillName: Freeze (Ⅰ)
+SkillDesc: Causes very small Freeze effect to the enemy attacked.
+SkillName: Ultimate Freeze
+SkillDesc: Causes very large Freeze effect to the enemy attacked.
+SkillName: Curse (Ⅱ)
+SkillDesc: Causes small Curse effect to the enemy attacked.
+SkillName: Curse (Ⅲ)
+SkillDesc: Causes medium Curse effect to the enemy attacked.
+SkillName: Curse (Ⅳ)
+SkillDesc: Causes large Curse effect to the enemy attacked.
+SkillName: Curse (Ⅰ)
+SkillDesc: Causes very small Curse effect to the enemy attacked.
+SkillName: Resist Darkness↓ (Ⅱ)
+SkillDesc: DEF against Darkness element is decreased by 5%.
+SkillName: Resist Darkness↓ (Ⅲ)
+SkillDesc: DEF against Darkness element is decreased by 10%.
+SkillName: Resist Darkness↓ (Ⅳ)
+SkillDesc: DEF against Darkness element is decreased by 15%.
+SkillName: Resist Light↓ (Ⅱ)
+SkillDesc: DEF against Light element is decreased by 5%.
+SkillName: Resist Light↓ (Ⅲ)
+SkillDesc: DEF against Light element is decreased by 10%.
+SkillName: Resist Light↓ (Ⅳ)
+SkillDesc: DEF against Light element is decreased by 15%.
+SkillName: Resist Thunder↓ (Ⅱ)
+SkillDesc: DEF against Thunder element is decreased by 5%.
+SkillName: Resist Thunder↓ (Ⅲ)
+SkillDesc: DEF against Thunder element is decreased by 10%.
+SkillName: Resist Thunder↓ (Ⅳ)
+SkillDesc: DEF against Thunder element is decreased by 15%.
+SkillName: Resist Ice↓ (Ⅱ)
+SkillDesc: DEF against Ice element is decreased by 5%.
+SkillName: Resist Ice↓ (Ⅲ)
+SkillDesc: DEF against Ice element is decreased by 10%.
+SkillName: Resist Ice↓ (Ⅳ)
+SkillDesc: DEF against Ice element is decreased by 15%.
+SkillName: Resist Fire↓ (Ⅱ)
+SkillDesc: DEF against Fire element is decreased by 5%.
+SkillName: Resist Fire↓ (Ⅲ)
+SkillDesc: DEF against Fire element is decreased by 10%.
+SkillName: Resist Fire↓ (Ⅳ)
+SkillDesc: DEF against Fire element is decreased by 15%.
+SkillName: Darkness↓ (Ⅱ)
+SkillDesc: Darkness element ATK is decreased by 5%.
+SkillName: Darkness↓ (Ⅲ)
+SkillDesc: Darkness element ATK is decreased by 10%.
+SkillName: Darkness↓ (Ⅳ)
+SkillDesc: Darkness element ATK is decreased by 15%.
+SkillName: Light↓ (Ⅱ)
+SkillDesc: Light element ATK is decreased by 5%.
+SkillName: Light↓ (Ⅲ)
+SkillDesc: Light element ATK is decreased by 10%.
+SkillName: Light↓ (Ⅳ)
+SkillDesc: Light element ATK is decreased by 15%.
+SkillName: Thunder↓ (Ⅱ)
+SkillDesc: Thunder element ATK is decreased by 5%.
+SkillName: Thunder↓ (Ⅲ)
+SkillDesc: Thunder element ATK is decreased by 10%.
+SkillName: Thunder↓ (Ⅳ)
+SkillDesc: Thunder element ATK is decreased by 15%.
+SkillName: Ice↓ (Ⅱ)
+SkillDesc: Ice element ATK is decreased by 5%.
+SkillName: Ice↓ (Ⅲ)
+SkillDesc: Ice element ATK is decreased by 10%.
+SkillName: Ice↓ (Ⅳ)
+SkillDesc: Ice element ATK is decreased by 15%.
+SkillName: Fire↓ (Ⅱ)
+SkillDesc: Fire element ATK is decreased by 5%.
+SkillName: Fire↓ (Ⅲ)
+SkillDesc: Fire element ATK is decreased by 10%.
+SkillName: Fire↓ (Ⅳ)
+SkillDesc: Fire element ATK is decreased by 15%.
+SkillName: Movement Speed↓ (Ⅱ)
+SkillDesc: Movement Speed is decreased by 5%.
+SkillName: Movement Speed↓ (Ⅲ)
+SkillDesc: Movement Speed is decreased by 10%.
+SkillName: Movement Speed↓ (Ⅳ)
+SkillDesc: Movement Speed is decreased by 15%.
+SkillName: Defense↓ (Ⅱ)
+SkillDesc: DEF is decreased by 5%.
+SkillName: Defense↓ (Ⅲ)
+SkillDesc: DEF is decreased by 10%.
+SkillName: Defense↓ (Ⅳ)
+SkillDesc: DEF is decreased by 15%.
+SkillName: Attack↓ (Ⅱ)
+SkillDesc: ATK is decreased by 5%.
+SkillName: Attack↓ (Ⅲ)
+SkillDesc: ATK is decreased by 10%.
+SkillName: Attack↓ (Ⅳ)
+SkillDesc: ATK is decreased by 15%.
+SkillName: HP↓ (Ⅱ)
+SkillDesc: HP is decreased by 5%.
+SkillName: HP↓ (Ⅲ)
+SkillDesc: HP is decreased by 10%.
+SkillName: HP↓ (Ⅳ)
+SkillDesc: HP is decreased by 15%.
+SkillName: Resist Darkness↑ (Ⅱ)
+SkillDesc: DEF against Darkness element attack is increased by 10%.
+SkillName: Resist Darkness↑ (Ⅲ)
+SkillDesc: DEF against Darkness element attack is increased by 25%.
+SkillName: Resist Darkness↑ (Ⅳ)
+SkillDesc: DEF against Darkness element attack is increased by 50%.
+SkillName: Resist Darkness↑ (Ⅴ)
+SkillDesc: DEF against Darkness element attack is increased by 75%.
+SkillName: Resist Darkness↑ (Ⅰ)
+SkillDesc: DEF against Darkness element attack is increased by 5%.
+SkillName: Resist Light↑ (Ⅱ)
+SkillDesc: DEF against Light element attack is increased by 10%.
+SkillName: Resist Light↑ (Ⅲ)
+SkillDesc: DEF against Light element attack is increased by 25%.
+SkillName: Resist Light↑ (Ⅳ)
+SkillDesc: DEF against Light element attack is increased by 50%.
+SkillName: Resist Light↑ (Ⅴ)
+SkillDesc: DEF against Light element attack is increased by 75%.
+SkillName: Resist Light↑ (Ⅰ)
+SkillDesc: DEF against Light element attack is increased by 5%.
+SkillName: Resist Thunder↑ (Ⅱ)
+SkillDesc: DEF against Thunder element attack is increased by 10%.
+SkillName: Resist Thunder↑ (Ⅲ)
+SkillDesc: DEF against Thunder element attack is increased by 25%.
+SkillName: Resist Thunder↑ (Ⅳ)
+SkillDesc: DEF against Thunder element attack is increased by 50%.
+SkillName: Resist Thunder↑ (Ⅴ)
+SkillDesc: DEF against Thunder element attack is increased by 75%.
+SkillName: Resist Thunder↑ (Ⅰ)
+SkillDesc: DEF against Thunder element attack is increased by 5%.
+SkillName: Resist Ice↑ (Ⅱ)
+SkillDesc: DEF against Ice element attack is increased by 10%.
+SkillName: Resist Ice↑ (Ⅲ)
+SkillDesc: DEF against Ice element attack is increased by 25%.
+SkillName: Resist Ice↑ (Ⅳ)
+SkillDesc: DEF against Ice element attack is increased by 50%.
+SkillName: Resist Ice↑ (Ⅴ)
+SkillDesc: DEF against Ice element attack is increased by 75%.
+SkillName: Resist Ice↑ (Ⅰ)
+SkillDesc: DEF against Ice element attack is increased by 5%.
+SkillName: Resist Fire↑ (Ⅱ)
+SkillDesc: DEF against Fire element attack is increased by 10%.
+SkillName: Resist Fire↑ (Ⅲ)
+SkillDesc: DEF against Fire element attack is increased by 25%.
+SkillName: Resist Fire↑ (Ⅳ)
+SkillDesc: DEF against Fire element attack is increased by 50%.
+SkillName: Resist Fire↑ (Ⅴ)
+SkillDesc: DEF against Fire element attack is increased by 75%.
+SkillName: Resist Fire↑ (Ⅰ)
+SkillDesc: DEF against Fire element attack is increased by 5%.
+SkillName: Darkness↑ (Ⅱ)
+SkillDesc: Darkness element ATK is increased by 5%.
+SkillName: Darkness↑ (Ⅲ)
+SkillDesc: Darkness element ATK is increased by 10%.
+SkillName: Darkness↑ (Ⅳ)
+SkillDesc: Darkness element ATK is increased by 15%.
+SkillName: Darkness↑(Ⅴ)
+SkillDesc: Darkness element ATK is increased by 20%.
+SkillName: Darkness↑ (Ⅰ)
+SkillDesc: Darkness element ATK is increased by 2%.
+SkillName: Doom
+SkillDesc: Darkness element ATK is increased by 30%.
+SkillName: Dark Side
+SkillDesc: Darkness element ATK is increased by 30%.
+SkillName: Light↑ (Ⅱ)
+SkillDesc: Light element ATK is increased by 5%.
+SkillName: Light↑ (Ⅲ)
+SkillDesc: Light element ATK is increased by 10%.
+SkillName: Light↑ (Ⅳ)
+SkillDesc: Light element ATK is increased by 15%.
+SkillName: Light↑ (Ⅴ)
+SkillDesc: Light element ATK is increased by 20%.
+SkillName: Light↑ (Ⅰ)
+SkillDesc: Light element ATK is increased by 2%.
+SkillName: Full Moon
+SkillDesc: Light element ATK is increased by 30%.
+SkillName: Thunder↑ (Ⅱ)
+SkillDesc: Thunder element ATK is increased by 5%.
+SkillName: Thunder↑ (Ⅲ)
+SkillDesc: Thunder element ATK is increased by 10%.
+SkillName: Thunder↑ (Ⅳ)
+SkillDesc: Thunder element ATK is increased by 15%.
+SkillName: Thunder↑ (Ⅴ)
+SkillDesc: Thunder element ATK is increased by 20%.
+SkillName: Thunder↑ (Ⅰ)
+SkillDesc: Thunder element ATK is increased by 2%.
+SkillName: Ice↑ (Ⅱ)
+SkillDesc: Ice element ATK is increased by 5%.
+SkillName: Ice↑ (Ⅲ)
+SkillDesc: Ice element ATK is increased by 10%.
+SkillName: Ice↑ (Ⅳ)
+SkillDesc: Ice element ATK is increased by 15%.
+SkillName: Ice↑ (Ⅴ)
+SkillDesc: Ice element ATK is increased by 20%.
+SkillName: Ice↑ (Ⅰ)
+SkillDesc: Ice element ATK is increased by 2%.
+SkillName: Ice Blade
+SkillDesc: Ice element ATK is increased by 30%.
+SkillName: Fire↑ (Ⅱ)
+SkillDesc: Fire element ATK is increased by 5%.
+SkillName: Fire↑ (Ⅲ)
+SkillDesc: Fire element ATK is increased by 10%.
+SkillName: Fire↑ (Ⅳ)
+SkillDesc: Fire element ATK is increased by 15%.
+SkillName: Fire↑ (Ⅴ)
+SkillDesc: Fire element ATK is increased by 20%.
+SkillName: Fire↑ (Ⅰ)
+SkillDesc: Fire element ATK is increased by 2%.
+SkillName: Movement Speed+
+SkillDesc: Movement Speed is increased. (Stacks with Movement Speed↑.)
+SkillName: Defense+
+SkillDesc: DEF is increased by 50.
+SkillName: Attack+
+SkillDesc: ATK is increased by 50.
+SkillName: HP+
+SkillDesc: HP is increased by 50.
+SkillName: Movement Speed↑ (Ⅱ)
+SkillDesc: Movement Speed is increased by 5%.
+SkillName: Movement Speed↑ (Ⅲ)
+SkillDesc: Movement Speed is increased by 10%.
+SkillName: Movement Speed↑ (Ⅳ)
+SkillDesc: Movement Speed is increased by 15%.
+SkillName: Movement Speed↑ (Ⅴ)
+SkillDesc: Movement Speed is increased by 20%.
+SkillName: Movement Speed↑ (Ⅰ)
+SkillDesc: Movement Speed is increased by 2%.
+SkillName: Defense↑ (Ⅱ)
+SkillDesc: DEF is increased by 5%.
+SkillName: Defense↑ (Ⅲ)
+SkillDesc: DEF is increased by 10%.
+SkillName: Defense↑ (Ⅳ)
+SkillDesc: DEF is increased by 15%.
+SkillName: Defense↑ (Ⅴ)
+SkillDesc: DEF is increased by 20%.
+SkillName: Defense↑ (Ⅰ)
+SkillDesc: DEF is increased by 2%.
+SkillName: Attack↑ (Ⅱ)
+SkillDesc: ATK is increased by 5%.
+SkillName: Attack↑ (Ⅲ)
+SkillDesc: ATK is increased by 10%.
+SkillName: Attack↑ (Ⅳ)
+SkillDesc: ATK is increased by 15%.
+SkillName: Attack↑ (Ⅴ)
+SkillDesc: ATK is increased by 20%.
+SkillName: Attack↑ (Ⅰ)
+SkillDesc: ATK is increased by 2%.
+SkillName: HP↑ (Ⅱ)
+SkillDesc: HP is increased by 5%.
+SkillName: HP↑ (Ⅲ)
+SkillDesc: HP is increased by 10%.
+SkillName: HP↑ (Ⅳ)
+SkillDesc: HP is increased by 15%.
+SkillName: HP↑ (Ⅴ)
+SkillDesc: HP is increased by 20%.
+SkillName: HP↑ (Ⅰ)
+SkillDesc: HP is increased by 2%.
+SkillName: HL Resist Darkness↑ (Ⅱ)
+SkillDesc: All Healers' DEF against Darkness element attack is increased by 10%.
+SkillName: HL Resist Darkness↑ (Ⅲ)
+SkillDesc: All Healers' DEF against Darkness element attack is increased by 25%.
+SkillName: HL Resist Darkness↑ (Ⅳ)
+SkillDesc: All Healers' DEF against Darkness element attack is increased by 50%.
+SkillName: HL Resist Darkness↑ (Ⅴ)
+SkillDesc: All Healers' DEF against Darkness element attack is increased by 75%.
+SkillName: HL Resist Light↑ (Ⅱ)
+SkillDesc: All Healers' DEF against Light element attack is increased by 10%.
+SkillName: HL Resist Light↑ (Ⅲ)
+SkillDesc: All Healers' DEF against Light element attack is increased by 25%.
+SkillName: HL Resist Light↑ (Ⅳ)
+SkillDesc: All Healers' DEF against Light element attack is increased by 50%.
+SkillName: HL Resist Light↑ (Ⅴ)
+SkillDesc: All Healers' DEF against Light element attack is increased by 75%.
+SkillName: HL Resist Thunder↑ (Ⅱ)
+SkillDesc: All Healers' DEF against Thunder element attack is increased by 10%.
+SkillName: HL Resist Thunder↑ (Ⅲ)
+SkillDesc: All Healers' DEF against Thunder element attack is increased by 25%.
+SkillName: HL Resist Thunder↑ (Ⅳ)
+SkillDesc: All Healers' DEF against Thunder element attack is increased by 50%.
+SkillName: HL Resist Thunder↑ (Ⅴ)
+SkillDesc: All Healers' DEF against Thunder element attack is increased by 75%.
+SkillName: HL Resist Ice↑ (Ⅱ)
+SkillDesc: All Healers' DEF against Ice element attack is increased by 10%.
+SkillName: HL Resist Ice↑ (Ⅲ)
+SkillDesc: All Healers' DEF against Ice element attack is increased by 25%.
+SkillName: HL Resist Ice↑ (Ⅳ)
+SkillDesc: All Healers' DEF against Ice element attack is increased by 50%.
+SkillName: HL Resist Ice↑ (Ⅴ)
+SkillDesc: All Healers' DEF against Ice element attack is increased by 75%.
+SkillName: HL Resist Fire↑ (Ⅱ)
+SkillDesc: All Healers' DEF against Fire element attack is increased by 10%.
+SkillName: HL Resist Fire↑ (Ⅲ)
+SkillDesc: All Healers' DEF against Fire element attack is increased by 25%.
+SkillName: HL Resist Fire↑ (Ⅳ)
+SkillDesc: All Healers' DEF against Fire element attack is increased by 50%.
+SkillName: HL Resist Fire↑ (Ⅴ)
+SkillDesc: All Healers' DEF against Fire element attack is increased by 75%.
+SkillName: HL Darkness↑ (Ⅱ)
+SkillDesc: All Healers' Darkness element ATK is increased by 5%.
+SkillName: HL Darkness↑ (Ⅲ)
+SkillDesc: All Healers' Darkness element ATK is increased by 10%.
+SkillName: HL Darkness↑ (Ⅳ)
+SkillDesc: All Healers' Darkness element ATK is increased by 15%.
+SkillName: HL Darkness↑ (Ⅴ)
+SkillDesc: All Healers' Darkness element ATK is increased by 20%.
+SkillName: HL Light↑ (Ⅱ)
+SkillDesc: All Healers' Light element ATK is increased by 5%.
+SkillName: HL Light↑ (Ⅲ)
+SkillDesc: All Healers' Light element ATK is increased by 10%.
+SkillName: HL Light↑ (Ⅳ)
+SkillDesc: All Healers' Light element ATK is increased by 15%.
+SkillName: HL Light↑ (Ⅴ)
+SkillDesc: All Healers' Light element ATK is increased by 20%.
+SkillName: HL Thunder↑ (Ⅱ)
+SkillDesc: All Healers' Thunder element ATK is increased by 5%.
+SkillName: HL Thunder↑ (Ⅲ)
+SkillDesc: All Healers' Thunder element ATK is increased by 10%.
+SkillName: HL Thunder↑ (Ⅳ)
+SkillDesc: All Healers' Thunder element ATK is increased by 15%.
+SkillName: HL Thunder↑ (Ⅴ)
+SkillDesc: All Healers' Thunder element ATK is increased by 20%.
+SkillName: HL Ice↑ (Ⅱ)
+SkillDesc: All Healers' Ice element ATK is increased by 5%.
+SkillName: HL Ice↑ (Ⅲ)
+SkillDesc: All Healers' Ice element ATK is increased by 10%.
+SkillName: HL Ice↑ (Ⅳ)
+SkillDesc: All Healers' Ice element ATK is increased by 15%.
+SkillName: HL Ice↑ (Ⅴ)
+SkillDesc: All Healers' Ice element ATK is increased by 20%.
+SkillName: HL Fire↑ (Ⅱ)
+SkillDesc: All Healers' Fire element ATK is increased by 5%.
+SkillName: HL Fire↑ (Ⅲ)
+SkillDesc: All Healers' Fire element ATK is increased by 10%.
+SkillName: HL Fire↑ (Ⅳ)
+SkillDesc: All Healers' Fire element ATK is increased by 15%.
+SkillName: HL Fire↑ (Ⅴ)
+SkillDesc: All Healers' Fire element ATK is increased by 20%.
+SkillName: HL Movement Speed↑ (Ⅱ)
+SkillDesc: All Healers' Movement Speed is increased by 5%.
+SkillName: HL Movement Speed↑ (Ⅲ)
+SkillDesc: All Healers' Movement Speed is increased by 10%.
+SkillName: HL Movement Speed↑ (Ⅳ)
+SkillDesc: All Healers' Movement Speed is increased by 15%.
+SkillName: HL Movement Speed↑ (Ⅴ)
+SkillDesc: All Healers' Movement Speed is increased by 20%.
+SkillName: HL Defense↑ (Ⅱ)
+SkillDesc: All Healers' DEF is increased by 5%.
+SkillName: HL Defense↑ (Ⅲ)
+SkillDesc: All Healers' DEF is increased by 10%.
+SkillName: HL Defense↑ (Ⅳ)
+SkillDesc: All Healers' DEF is increased by 15%.
+SkillName: HL Defense↑ (Ⅴ)
+SkillDesc: All Healers' DEF is increased by 20%.
+SkillName: HL Attack↑ (Ⅱ)
+SkillDesc: All Healers' ATK is increased by 5%.
+SkillName: HL Attack↑ (Ⅲ)
+SkillDesc: All Healers' ATK is increased by 10%.
+SkillName: HL Attack↑ (Ⅳ)
+SkillDesc: All Healers' ATK is increased by 15%.
+SkillName: HL Attack↑ (Ⅴ)
+SkillDesc: All Healers' ATK is increased by 20%.
+SkillName: Veil of Courage
+SkillDesc: All Healers' ATK is increased by 20%.
+SkillName: HL HP↑ (Ⅱ)
+SkillDesc: All Healers' HP is increased by 5%.
+SkillName: HL HP↑ (Ⅲ)
+SkillDesc: All Healers' HP is increased by 10%.
+SkillName: HL HP↑ (Ⅳ)
+SkillDesc: All Healers' HP is increased by 15%.
+SkillName: HL HP↑ (Ⅴ)
+SkillDesc: All Healers' HP is increased by 20%.
+SkillName: ST Resist Darkness↑ (Ⅱ)
+SkillDesc: All Shooters' DEF against Darkness element attack is increased by 10%.
+SkillName: ST Resist Darkness↑ (Ⅲ)
+SkillDesc: All Shooters' DEF against Darkness element attack is increased by 25%.
+SkillName: ST Resist Darkness↑ (Ⅳ)
+SkillDesc: All Shooters' DEF against Darkness element attack is increased by 50%.
+SkillName: ST Resist Darkness↑ (Ⅴ)
+SkillDesc: All Shooters' DEF against Darkness element attack is increased by 75%.
+SkillName: ST Resist Light↑ (Ⅱ)
+SkillDesc: All Shooters' DEF against Light element attack is increased by 10%.
+SkillName: ST Resist Light↑ (Ⅲ)
+SkillDesc: All Shooters' DEF against Light element attack is increased by 25%.
+SkillName: ST Resist Light↑ (Ⅳ)
+SkillDesc: All Shooters' DEF against Light element attack is increased by 50%.
+SkillName: ST Resist Light↑ (Ⅴ)
+SkillDesc: All Shooters' DEF against Light element attack is increased by 75%.
+SkillName: ST Resist Thunder↑ (Ⅱ)
+SkillDesc: All Shooters' DEF against Thunder element attack is increased by 10%.
+SkillName: ST Resist Thunder↑ (Ⅲ)
+SkillDesc: All Shooters' DEF against Thunder element attack is increased by 25%.
+SkillName: ST Resist Thunder↑ (Ⅳ)
+SkillDesc: All Shooters' DEF against Thunder element attack is increased by 50%.
+SkillName: ST Resist Thunder↑ (Ⅴ)
+SkillDesc: All Shooters' DEF against Thunder element attack is increased by 75%.
+SkillName: ST Resist Ice↑ (Ⅱ)
+SkillDesc: All Shooters' DEF against Ice element attack is increased by 10%.
+SkillName: ST Resist Ice↑ (Ⅲ)
+SkillDesc: All Shooters' DEF against Ice element attack is increased by 25%.
+SkillName: ST Resist Ice↑ (Ⅳ)
+SkillDesc: All Shooters' DEF against Ice element attack is increased by 50%.
+SkillName: ST Resist Ice↑ (Ⅴ)
+SkillDesc: All Shooters' DEF against Ice element attack is increased by 75%.
+SkillName: ST Resist Fire↑ (Ⅱ)
+SkillDesc: All Shooters' DEF against Fire element attack is increased by 10%.
+SkillName: ST Resist Fire↑ (Ⅲ)
+SkillDesc: All Shooters' DEF against Fire element attack is increased by 25%.
+SkillName: ST Resist Fire↑ (Ⅳ)
+SkillDesc: All Shooters' DEF against Fire element attack is increased by 50%.
+SkillName: ST Resist Fire↑ (Ⅴ)
+SkillDesc: All Shooters' DEF against Fire element attack is increased by 75%.
+SkillName: ST Darkness↑ (Ⅱ)
+SkillDesc: All Shooters' Darkness element ATK is increased by 5%.
+SkillName: ST Darkness↑ (Ⅲ)
+SkillDesc: All Shooters' Darkness element ATK is increased by 10%.
+SkillName: ST Darkness↑ (Ⅳ)
+SkillDesc: All Shooters' Darkness element ATK is increased by 15%.
+SkillName: ST Darkness↑ (Ⅴ)
+SkillDesc: All Shooters' Darkness element ATK is increased by 20%.
+SkillName: ST Light↑ (Ⅱ)
+SkillDesc: All Shooters' Light element ATK is increased by 5%.
+SkillName: ST Light↑ (Ⅲ)
+SkillDesc: All Shooters' Light element ATK is increased by 10%.
+SkillName: ST Light↑ (Ⅳ)
+SkillDesc: All Shooters' Light element ATK is increased by 15%.
+SkillName: ST Light↑ (Ⅴ)
+SkillDesc: All Shooters' Light element ATK is increased by 20%.
+SkillName: ST Thunder↑ (Ⅱ)
+SkillDesc: All Shooters' Thunder element ATK is increased by 5%.
+SkillName: ST Thunder↑ (Ⅲ)
+SkillDesc: All Shooters' Thunder element ATK is increased by 10%.
+SkillName: ST Thunder↑ (Ⅳ)
+SkillDesc: All Shooters' Thunder element ATK is increased by 15%.
+SkillName: ST Thunder↑ (Ⅴ)
+SkillDesc: All Shooters' Thunder element ATK is increased by 20%.
+SkillName: ST Ice↑ (Ⅱ)
+SkillDesc: All Shooters' Ice element ATK is increased by 5%.
+SkillName: ST Ice↑ (Ⅲ)
+SkillDesc: All Shooters' Ice element ATK is increased by 10%.
+SkillName: ST Ice↑ (Ⅳ)
+SkillDesc: All Shooters' Ice element ATK is increased by 15%.
+SkillName: ST Ice↑ (Ⅴ)
+SkillDesc: All Shooters' Ice element ATK is increased by 20%.
+SkillName: Ice Waltz
+SkillDesc: All Shooters' Ice element ATK is increased by 15%.
+SkillName: ST Fire↑ (Ⅱ)
+SkillDesc: All Shooters' Fire element ATK is increased by 5%.
+SkillName: ST Fire↑ (Ⅲ)
+SkillDesc: All Shooters' Fire element ATK is increased by 10%.
+SkillName: ST Fire↑ (Ⅳ)
+SkillDesc: All Shooters' Fire element ATK is increased by 15%.
+SkillName: ST Fire↑ (Ⅴ)
+SkillDesc: All Shooters' Fire element ATK is increased by 20%.
+SkillName: Elaborate Fire
+SkillDesc: All Shooters' Fire element ATK is increased by 15%.
+SkillName: ST Movement Speed↑ (Ⅱ)
+SkillDesc: All Shooters' Movement Speed is increased by 5%.
+SkillName: ST Movement Speed↑ (Ⅲ)
+SkillDesc: All Shooters' Movement Speed is increased by 10%.
+SkillName: ST Movement Speed↑ (Ⅳ)
+SkillDesc: All Shooters' Movement Speed is increased by 15%.
+SkillName: ST Movement Speed↑ (Ⅴ)
+SkillDesc: All Shooters' Movement Speed is increased by 20%.
+SkillName: ST Defense↑ (Ⅱ)
+SkillDesc: All Shooters' DEF is increased by 5%.
+SkillName: ST Defense↑ (Ⅲ)
+SkillDesc: All Shooters' DEF is increased by 10%.
+SkillName: ST Defense↑ (Ⅳ)
+SkillDesc: All Shooters' DEF is increased by 15%.
+SkillName: ST Defense↑ (Ⅴ)
+SkillDesc: All Shooters' DEF is increased by 20%.
+SkillName: ST Attack↑ (Ⅱ)
+SkillDesc: All Shooters' ATK is increased by 5%.
+SkillName: ST Attack↑ (Ⅲ)
+SkillDesc: All Shooters' ATK is increased by 10%.
+SkillName: ST Attack↑ (Ⅳ)
+SkillDesc: All Shooters' ATK is increased by 15%.
+SkillName: ST Attack↑ (Ⅴ)
+SkillDesc: All Shooters' ATK is increased by 20%.
+SkillName: ST HP↑ (Ⅱ)
+SkillDesc: All Shooters' HP is increased by 5%.
+SkillName: ST HP↑ (Ⅲ)
+SkillDesc: All Shooters' HP is increased by 10%.
+SkillName: ST HP↑ (Ⅳ)
+SkillDesc: All Shooters' HP is increased by 15%.
+SkillName: ST HP↑ (Ⅴ)
+SkillDesc: All Shooters' HP is increased by 20%.
+SkillName: DF Resist Darkness↑ (Ⅱ)
+SkillDesc: All Defenders' DEF against Darkness element attack is increased by 10%.
+SkillName: DF Resist Darkness↑ (Ⅲ)
+SkillDesc: All Defenders' DEF against Darkness element attack is increased by 25%.
+SkillName: DF Resist Darkness↑ (Ⅳ)
+SkillDesc: All Defenders' DEF against Darkness element attack is increased by 50%.
+SkillName: DF Resist Darkness↑ (Ⅴ)
+SkillDesc: All Defenders' DEF against Darkness element attack is increased by 75%.
+SkillName: DF Resist Light↑ (Ⅱ)
+SkillDesc: All Defenders' DEF against Light element attack is increased by 10%.
+SkillName: DF Resist Light↑ (Ⅲ)
+SkillDesc: All Defenders' DEF against Light element attack is increased by 25%.
+SkillName: DF Resist Light↑ (Ⅳ)
+SkillDesc: All Defenders' DEF against Light element attack is increased by 50%.
+SkillName: DF Resist Light↑ (Ⅴ)
+SkillDesc: All Defenders' DEF against Light element attack is increased by 75%.
+SkillName: DF Resist Thunder↑ (Ⅱ)
+SkillDesc: All Defenders' DEF against Thunder element attack is increased by 10%.
+SkillName: DF Resist Thunder↑ (Ⅲ)
+SkillDesc: All Defenders' DEF against Thunder element attack is increased by 25%.
+SkillName: DF Resist Thunder↑ (Ⅳ)
+SkillDesc: All Defenders' DEF against Thunder element attack is increased by 50%.
+SkillName: DF Resist Thunder↑ (Ⅴ)
+SkillDesc: All Defenders' DEF against Thunder element attack is increased by 75%.
+SkillName: DF Resist Ice↑ (Ⅱ)
+SkillDesc: All Defenders' DEF against Ice element attack is increased by 10%.
+SkillName: DF Resist Ice↑ (Ⅲ)
+SkillDesc: All Defenders' DEF against Ice element attack is increased by 25%.
+SkillName: DF Resist Ice↑ (Ⅳ)
+SkillDesc: All Defenders' DEF against Ice element attack is increased by 50%.
+SkillName: DF Resist Ice↑ (Ⅴ)
+SkillDesc: All Defenders' DEF against Ice element attack is increased by 75%.
+SkillName: DF Resist Fire↑ (Ⅱ)
+SkillDesc: All Defenders' DEF against Fire element attack is increased by 10%.
+SkillName: DF Resist Fire↑ (Ⅲ)
+SkillDesc: All Defenders' DEF against Fire element attack is increased by 25%.
+SkillName: DF Resist Fire↑ (Ⅳ)
+SkillDesc: All Defenders' DEF against Fire element attack is increased by 50%.
+SkillName: DF Resist Fire↑ (Ⅴ)
+SkillDesc: All Defenders' DEF against Fire element attack is increased by 75%.
+SkillName: DF Darkness↑ (Ⅱ)
+SkillDesc: All Defenders' Darkness element ATK is increased by 5%.
+SkillName: DF Darkness↑ (Ⅲ)
+SkillDesc: All Defenders' Darkness element ATK is increased by 10%.
+SkillName: DF Darkness↑ (Ⅳ)
+SkillDesc: All Defenders' Darkness element ATK is increased by 15%.
+SkillName: DF Darkness↑ (Ⅴ)
+SkillDesc: All Defenders' Darkness element ATK is increased by 20%.
+SkillName: DF Light↑ (Ⅱ)
+SkillDesc: All Defenders' Light element ATK is increased by 5%.
+SkillName: DF Light↑ (Ⅲ)
+SkillDesc: All Defenders' Light element ATK is increased by 10%.
+SkillName: DF Light↑ (Ⅳ)
+SkillDesc: All Defenders' Light element ATK is increased by 15%.
+SkillName: DF Light↑ (Ⅴ)
+SkillDesc: All Defenders' Light element ATK is increased by 20%.
+SkillName: DF Thunder↑ (Ⅱ)
+SkillDesc: All Defenders' Thunder element ATK is increased by 5%.
+SkillName: DF Thunder↑ (Ⅲ)
+SkillDesc: All Defenders' Thunder element ATK is increased by 10%.
+SkillName: DF Thunder↑ (Ⅳ)
+SkillDesc: All Defenders' Thunder element ATK is increased by 15%.
+SkillName: DF Thunder↑ (Ⅴ)
+SkillDesc: All Defenders' Thunder element ATK is increased by 20%.
+SkillName: DF Ice↑ (Ⅱ)
+SkillDesc: All Defenders' Ice element ATK is increased by 5%.
+SkillName: DF Ice↑ (Ⅲ)
+SkillDesc: All Defenders' Ice element ATK is increased by 10%.
+SkillName: DF Ice↑ (Ⅳ)
+SkillDesc: All Defenders' Ice element ATK is increased by 15%.
+SkillName: DF Ice↑ (Ⅴ)
+SkillDesc: All Defenders' Ice element ATK is increased by 20%.
+SkillName: DF Fire↑ (Ⅱ)
+SkillDesc: All Defenders' Fire element ATK is increased by 5%.
+SkillName: DF Fire↑ (Ⅲ)
+SkillDesc: All Defenders' Fire element ATK is increased by 10%.
+SkillName: DF Fire↑ (Ⅳ)
+SkillDesc: All Defenders' Fire element ATK is increased by 15%.
+SkillName: DF Fire↑ (Ⅴ)
+SkillDesc: All Defenders' Fire element ATK is increased by 20%.
+SkillName: DF Movement Speed↑ (Ⅱ)
+SkillDesc: All Defenders' Movement Speed is increased by 5%.
+SkillName: DF Movement Speed↑ (Ⅲ)
+SkillDesc: All Defenders' Movement Speed is increased by 10%.
+SkillName: DF Movement Speed↑ (Ⅳ)
+SkillDesc: All Defenders' Movement Speed is increased by 15%.
+SkillName: DF Movement Speed↑ (Ⅴ)
+SkillDesc: All Defenders' Movement Speed is increased by 20%.
+SkillName: DF Defense↑ (Ⅱ)
+SkillDesc: All Defenders' DEF is increased by 5%.
+SkillName: DF Defense↑ (Ⅲ)
+SkillDesc: All Defenders' DEF is increased by 10%.
+SkillName: DF Defense↑ (Ⅳ)
+SkillDesc: All Defenders' DEF is increased by 15%.
+SkillName: DF Defense↑ (Ⅴ)
+SkillDesc: All Defenders' DEF is increased by 20%.
+SkillName: DF Attack↑ (Ⅱ)
+SkillDesc: All Defenders' ATK is increased by 5%.
+SkillName: DF Attack↑ (Ⅲ)
+SkillDesc: All Defenders' ATK is increased by 10%.
+SkillName: DF Attack↑ (Ⅳ)
+SkillDesc: All Defenders' ATK is increased by 15%.
+SkillName: DF Attack↑ (Ⅴ)
+SkillDesc: All Defenders' ATK is increased by 20%.
+SkillName: DF HP↑ (Ⅱ)
+SkillDesc: All Defenders' HP is increased by 5%.
+SkillName: DF HP↑ (Ⅲ)
+SkillDesc: All Defenders' HP is increased by 10%.
+SkillName: DF HP↑ (Ⅳ)
+SkillDesc: All Defenders' HP is increased by 15%.
+SkillName: DF HP↑ (Ⅴ)
+SkillDesc: All Defenders' HP is increased by 20%.
+SkillName: AT Resist Darkness↑ (Ⅱ)
+SkillDesc: All Attackers' DEF against Darkness element attack is increased by 10%.
+SkillName: AT Resist Darkness↑ (Ⅲ)
+SkillDesc: All Attackers' DEF against Darkness element attack is increased by 25%.
+SkillName: AT Resist Darkness↑ (Ⅳ)
+SkillDesc: All Attackers' DEF against Darkness element attack is increased by 50%.
+SkillName: AT Resist Darkness↑ (Ⅴ)
+SkillDesc: All Attackers' DEF against Darkness element attack is increased by 75%.
+SkillName: AT Resist Light↑ (Ⅱ)
+SkillDesc: All Attackers' DEF against Light element attack is increased by 10%.
+SkillName: AT Resist Light↑ (Ⅲ)
+SkillDesc: All Attackers' DEF against Light element attack is increased by 25%.
+SkillName: AT Resist Light↑ (Ⅳ)
+SkillDesc: All Attackers' DEF against Light element attack is increased by 50%.
+SkillName: AT Resist Light↑ (Ⅴ)
+SkillDesc: All Attackers' DEF against Light element attack is increased by 75%.
+SkillName: AT Resist Thunder↑ (Ⅱ)
+SkillDesc: All Attackers' DEF against Thunder element attack is increased by 10%.
+SkillName: AT Resist Thunder↑ (Ⅲ)
+SkillDesc: All Attackers' DEF against Thunder element attack is increased by 25%.
+SkillName: AT Resist Thunder↑ (Ⅳ)
+SkillDesc: All Attackers' DEF against Thunder element attack is increased by 50%.
+SkillName: AT Resist Thunder↑ (Ⅴ)
+SkillDesc: All Attackers' DEF against Thunder element attack is increased by 75%.
+SkillName: AT Resist Ice↑ (Ⅱ)
+SkillDesc: All Attackers' DEF against Ice element attack is increased by 10%.
+SkillName: AT Resist Ice↑ (Ⅲ)
+SkillDesc: All Attackers' DEF against Ice element attack is increased by 25%.
+SkillName: AT Resist Ice↑ (Ⅳ)
+SkillDesc: All Attackers' DEF against Ice element attack is increased by 50%.
+SkillName: AT Resist Ice↑ (Ⅴ)
+SkillDesc: All Attackers' DEF against Ice element attack is increased by 75%.
+SkillName: AT Resist Fire↑ (Ⅱ)
+SkillDesc: All Attackers' DEF against Fire element attack is increased by 10%.
+SkillName: AT Resist Fire↑ (Ⅲ)
+SkillDesc: All Attackers' DEF against Fire element attack is increased by 25%.
+SkillName: AT Resist Fire↑ (Ⅳ)
+SkillDesc: All Attackers' DEF against Fire element attack is increased by 50%.
+SkillName: AT Resist Fire↑ (Ⅴ)
+SkillDesc: All Attackers' DEF against Fire element attack is increased by 75%.
+SkillName: AT Darkness↑ (Ⅱ)
+SkillDesc: All Attackers' Darkness element ATK is increased by 5%.
+SkillName: AT Darkness↑ (Ⅲ)
+SkillDesc: All Attackers' Darkness element ATK is increased by 10%.
+SkillName: AT Darkness↑ (Ⅳ)
+SkillDesc: All Attackers' Darkness element ATK is increased by 15%.
+SkillName: AT Darkness↑ (Ⅴ)
+SkillDesc: All Attackers' Darkness element ATK is increased by 20%.
+SkillName: AT Light↑ (Ⅱ)
+SkillDesc: All Attackers' Light element ATK is increased by 5%.
+SkillName: AT Light↑ (Ⅲ)
+SkillDesc: All Attackers' Light element ATK is increased by 10%.
+SkillName: AT Light↑ (Ⅳ)
+SkillDesc: All Attackers' Light element ATK is increased by 15%.
+SkillName: AT Light↑ (Ⅴ)
+SkillDesc: All Attackers' Light element ATK is increased by 20%.
+SkillName: AT Thunder↑ (Ⅱ)
+SkillDesc: All Attackers' Thunder element ATK is increased by 5%.
+SkillName: AT Thunder↑ (Ⅲ)
+SkillDesc: All Attackers' Thunder element ATK is increased by 10%.
+SkillName: AT Thunder↑ (Ⅳ)
+SkillDesc: All Attackers' Thunder element ATK is increased by 15%.
+SkillName: AT Thunder↑ (Ⅴ)
+SkillDesc: All Attackers' Thunder element ATK is increased by 20%.
+SkillName: AT Ice↑ (Ⅱ)
+SkillDesc: All Attackers' Ice element ATK is increased by 5%.
+SkillName: AT Ice↑ (Ⅲ)
+SkillDesc: All Attackers' Ice element ATK is increased by 10%.
+SkillName: AT Ice↑ (Ⅳ)
+SkillDesc: All Attackers' Ice element ATK is increased by 15%.
+SkillName: AT Ice↑ (Ⅴ)
+SkillDesc: All Attackers' Ice element ATK is increased by 20%.
+SkillName: AT Fire↑ (Ⅱ)
+SkillDesc: All Attackers' Fire element ATK is increased by 5%.
+SkillName: AT Fire↑ (Ⅲ)
+SkillDesc: All Attackers' Fire element ATK is increased by 10%.
+SkillName: AT Fire↑ (Ⅳ)
+SkillDesc: All Attackers' Fire element ATK is increased by 15%.
+SkillName: AT Fire↑ (Ⅴ)
+SkillDesc: All Attackers' Fire element ATK is increased by 20%.
+SkillName: AT Movement Speed↑ (Ⅱ)
+SkillDesc: All Attackers' Movement Speed is increased by 5%.
+SkillName: AT Movement Speed↑ (Ⅲ)
+SkillDesc: All Attackers' Movement Speed is increased by 10%.
+SkillName: AT Movement Speed↑ (Ⅳ)
+SkillDesc: All Attackers' Movement Speed is increased by 15%.
+SkillName: AT Movement Speed↑ (Ⅴ)
+SkillDesc: All Attackers' Movement Speed is increased by 20%.
+SkillName: AT Defense↑ (Ⅱ)
+SkillDesc: All Attackers' DEF is increased by 5%.
+SkillName: AT Defense↑ (Ⅲ)
+SkillDesc: All Attackers' DEF is increased by 10%.
+SkillName: AT Defense↑ (Ⅳ)
+SkillDesc: All Attackers' DEF is increased by 15%.
+SkillName: AT Defense↑ (Ⅴ)
+SkillDesc: All Attackers' DEF is increased by 20%.
+SkillName: AT Attack↑ (Ⅱ)
+SkillDesc: All Attackers' ATK is increased by 5%.
+SkillName: AT Attack↑ (Ⅲ)
+SkillDesc: All Attackers' ATK is increased by 10%.
+SkillName: AT Attack↑ (Ⅳ)
+SkillDesc: All Attackers' ATK is increased by 15%.
+SkillName: AT Attack↑ (Ⅴ)
+SkillDesc: All Attackers' ATK is increased by 20%.
+SkillName: AT HP↑ (Ⅱ)
+SkillDesc: All Attackers' HP is increased by 5%.
+SkillName: AT HP↑ (Ⅲ)
+SkillDesc: All Attackers' HP is increased by 10%.
+SkillName: AT HP↑ (Ⅳ)
+SkillDesc: All Attackers' HP is increased by 15%.
+SkillName: AT HP↑ (Ⅴ)
+SkillDesc: All Attackers' HP is increased by 20%.
+SkillName: PT Resist Darkness↑ (Ⅱ)
+SkillDesc: All party members' DEF against Darkness element attack is increased by 10%.
+SkillName: PT Resist Darkness↑ (Ⅲ)
+SkillDesc: All party members' DEF against Darkness element attack is increased by 25%.
+SkillName: PT Resist Darkness↑ (Ⅳ)
+SkillDesc: All party members' DEF against Darkness element attack is increased by 50%.
+SkillName: PT Resist Darkness↑ (Ⅴ)
+SkillDesc: All party members' DEF against Darkness element attack is increased by 75%.
+SkillName: PT Resist Light↑ (Ⅱ)
+SkillDesc: All party members' DEF against Light element attack is increased by 10%.
+SkillName: PT Resist Light↑ (Ⅲ)
+SkillDesc: All party members' DEF against Light element attack is increased by 25%.
+SkillName: PT Resist Light↑ (Ⅳ)
+SkillDesc: All party members' DEF against Light element attack is increased by 50%.
+SkillName: PT Resist Light↑ (Ⅴ)
+SkillDesc: All party members' DEF against Light element attack is increased by 75%.
+SkillName: PT Resist Thunder↑ (Ⅱ)
+SkillDesc: All party members' DEF against Thunder element attack is increased by 10%.
+SkillName: PT Resist Thunder↑ (Ⅲ)
+SkillDesc: All party members' DEF against Thunder element attack is increased by 25%.
+SkillName: PT Resist Thunder↑ (Ⅳ)
+SkillDesc: All party members' DEF against Thunder element attack is increased by 50%.
+SkillName: PT Resist Thunder↑ (Ⅴ)
+SkillDesc: All party members' DEF against Thunder element attack is increased by 75%.
+SkillName: PT Resist Ice↑ (Ⅱ)
+SkillDesc: All party members' DEF against Ice element attack is increased by 10%.
+SkillName: PT Resist Ice↑ (Ⅲ)
+SkillDesc: All party members' DEF against Ice element attack is increased by 25%.
+SkillName: PT Resist Ice↑ (Ⅳ)
+SkillDesc: All party members' DEF against Ice element attack is increased by 50%.
+SkillName: PT Resist Ice↑ (Ⅴ)
+SkillDesc: All party members' DEF against Ice element attack is increased by 75%.
+SkillName: PT Resist Fire↑ (Ⅱ)
+SkillDesc: All party members' DEF against Fire element attack is increased by 10%.
+SkillName: PT Resist Fire↑ (Ⅲ)
+SkillDesc: All party members' DEF against Fire element attack is increased by 25%.
+SkillName: PT Resist Fire↑ (Ⅳ)
+SkillDesc: All party members' DEF against Fire element attack is increased by 50%.
+SkillName: PT Resist Fire↑ (Ⅴ)
+SkillDesc: All party members' DEF against Fire element attack is increased by 75%.
+SkillName: PT Darkness↑ (Ⅱ)
+SkillDesc: All party members' Darkness element ATK is increased by 5%.
+SkillName: PT Darkness↑ (Ⅲ)
+SkillDesc: All party members' Darkness element ATK is increased by 10%.
+SkillName: PT Darkness↑ (Ⅳ)
+SkillDesc: All party members' Darkness element ATK is increased by 15%.
+SkillName: PT Darkness↑ (Ⅴ)
+SkillDesc: All party members' Darkness element ATK is increased by 20%.
+SkillName: Mad Tea Party
+SkillDesc: All party members' Darkness element ATK is increased by 5%.
+SkillName: PT Light↑ (Ⅱ)
+SkillDesc: All party members' Light element ATK is increased by 5%.
+SkillName: PT Light↑ (Ⅲ)
+SkillDesc: All party members' Light element ATK is increased by 10%.
+SkillName: PT Light↑ (Ⅳ)
+SkillDesc: All party members' Light element ATK is increased by 15%.
+SkillName: PT Light↑ (Ⅴ)
+SkillDesc: All party members' Light element ATK is increased by 20%.
+SkillName: Pupil's Thought
+SkillDesc: All party members' Light element ATK is increased by 5%.
+SkillName: PT Thunder↑ (Ⅱ)
+SkillDesc: All party members' Thunder element ATK is increased by 5%.
+SkillName: PT Thunder↑ (Ⅲ)
+SkillDesc: All party members' Thunder element ATK is increased by 10%.
+SkillName: PT Thunder↑ (Ⅳ)
+SkillDesc: All party members' Thunder element ATK is increased by 15%.
+SkillName: PT Thunder↑ (Ⅴ)
+SkillDesc: All party members' Thunder element ATK is increased by 20%.
+SkillName: PT Ice↑ (Ⅱ)
+SkillDesc: All party members' Ice element ATK is increased by 5%.
+SkillName: PT Ice↑ (Ⅲ)
+SkillDesc: All party members' Ice element ATK is increased by 10%.
+SkillName: PT Ice↑ (Ⅳ)
+SkillDesc: All party members' Ice element ATK is increased by 15%.
+SkillName: PT Ice↑ (Ⅴ)
+SkillDesc: All party members' Ice element ATK is increased by 20%.
+SkillName: PT Fire↑ (Ⅱ)
+SkillDesc: All party members' Fire element ATK is increased by 5%.
+SkillName: PT Fire↑ (Ⅲ)
+SkillDesc: All party members' Fire element ATK is increased by 10%.
+SkillName: PT Fire↑ (Ⅳ)
+SkillDesc: All party members' Fire element ATK is increased by 15%.
+SkillName: PT Fire↑ (Ⅴ)
+SkillDesc: All party members' Fire element ATK is increased by 20%.
+SkillName: PT Movement Speed↑ (Ⅱ)
+SkillDesc: All party members' Movement Speed is increased by 5%.
+SkillName: PT Movement Speed↑ (Ⅲ)
+SkillDesc: All party members' Movement Speed is increased by 10%.
+SkillName: PT Movement Speed↑ (Ⅳ)
+SkillDesc: All party members' Movement Speed is increased by 15%.
+SkillName: PT Movement Speed↑ (Ⅴ)
+SkillDesc: All party members' Movement Speed is increased by 20%.
+SkillName: PT Defense↑ (Ⅱ)
+SkillDesc: All party members' DEF is increased by 5%.
+SkillName: PT Defense↑ (Ⅲ)
+SkillDesc: All party members' DEF is increased by 10%.
+SkillName: PT Defense↑ (Ⅳ)
+SkillDesc: All party members' DEF is increased by 15%.
+SkillName: PT Defense↑ (Ⅴ)
+SkillDesc: All party members' DEF is increased by 20%.
+SkillName: Blessing of Labyrinth
+SkillDesc: All party members' DEF is increased by 10%.
+SkillName: PT Attack↑ (Ⅱ)
+SkillDesc: All party members' ATK is increased by 5%.
+SkillName: PT Attack↑ (Ⅲ)
+SkillDesc: All party members' ATK is increased by 10%.
+SkillName: PT Attack↑ (Ⅳ)
+SkillDesc: All party members' ATK is increased by 15%.
+SkillName: PT Attack↑ (Ⅴ)
+SkillDesc: All party members' ATK is increased by 20%.
+SkillName: PT HP↑ (Ⅱ)
+SkillDesc: All party members' HP is increased by 5%.
+SkillName: PT HP↑ (Ⅲ)
+SkillDesc: All party members' HP is increased by 10%.
+SkillName: PT HP↑ (Ⅳ)
+SkillDesc: All party members' HP is increased by 15%.
+SkillName: PT HP↑ (Ⅴ)
+SkillDesc: All party members' HP is increased by 20%.
+SkillName: Regeneration (Ⅱ)
+SkillDesc: Only when stopped and when moving， a small amount of nearby allies' HP is recovered every 1 second.
+SkillName: Regeneration (Ⅲ)
+SkillDesc: Only when stopped and when moving， a medium amount of nearby allies' HP is recovered every 1 second.
+SkillName: Regeneration (Ⅳ)
+SkillDesc: Only when stopped and when moving， a large amount of nearby allies' HP is recovered every 1 second.
+SkillName: Regeneration (Ⅴ)
+SkillDesc: Only when stopped and when moving， a very large amount of nearby allies' HP is recovered every 1 second.
+SkillName: Regeneration (Arrogance)
+SkillDesc: Only when stopped and when moving， a very large amount of nearby allies' HP is recovered every 1 second.
+SkillName: Guard
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased.
+SkillName: Guard + Resist Darkness↑
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， DEF against Darkness element attack is increased by 25%.
+SkillName: Guard + Resist Light↑
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， DEF against Light element attack is increased by 25%.
+SkillName: Guard + Resist Thunder↑
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， DEF against Thunder element attack is increased by 25%.
+SkillName: Guard + Resist Ice↑
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， DEF against Ice element attack is increased by 25%.
+SkillName: Guard + Resist Fire↑
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， DEF against Fire element attack is increased by 25%.
+SkillName: Guard + Darkness↑
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， Darkness element ATK is increased by 10%.
+SkillName: Guard + Light↑
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， Light element ATK is increased by 10%.
+SkillName: Guard + Thunder↑
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， Thunder element ATK is increased by 10%.
+SkillName: Guard + Ice↑
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， Ice element ATK is increased by 10%.
+SkillName: Guard + Fire↑
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， Fire element ATK is increased by 10%.
+SkillName: Guard + Hellfire
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， Fire element ATK is increased by 30%.
+SkillName: Floral Guard
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， Light element ATK is increased by 30%.
+SkillName: Guard + Crazy Thunder
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， Thunder element ATK is increased by 30%.
+SkillName: Guard + Move↑
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， Movement Speed is increased by 10%.
+SkillName: Guard + Defense↑
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， DEF is increased by 10%.
+SkillName: Guard + Attack↑
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， ATK is increased by 10%.
+SkillName: Guard + HP↑
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， HP is increased by 10%.
+SkillName: Guard + Violence
+SkillDesc: When stopped， when moving， after attack， and before and after Step， damage received from a frontal attack is decreased. Plus， ATK is increased by 30%.
+SkillName: Infight
+SkillDesc: Combo is increased by 2. Sways when you flick during an attack.
+SkillName: Infight + Resist Darkness
+SkillDesc: Combo is increased by 2. Sways when you flick during an attack. Plus， DEF against Darkness element is increased by 10%.
+SkillName: Infight + Resist Light
+SkillDesc: Combo is increased by 2. Sways when you flick during an attack. Plus， DEF against Light element is increased by 10%.
+SkillName: Infight + Resist Thunder
+SkillDesc: Combo is increased by 2. Sways when you flick during an attack. Plus， DEF against Thunder element is increased by 10%.
+SkillName: Infight + Resist Ice
+SkillDesc: Combo is increased by 2. Sways when you flick during an attack. Plus， DEF against Ice element is increased by 10%.
+SkillName: Infight + Resist Fire
+SkillDesc: Combo is increased by 2. Sways when you flick during an attack. Plus， DEF against Fire element is increased by 10%.
+SkillName: Infight + Darkness
+SkillDesc: Combo is increased by 2. Sways when you flick during an attack. Plus， Darkness element ATK is increased by 10%.
+SkillName: Infight + Light
+SkillDesc: Combo is increased by 2. Sways when you flick during an attack. Plus， Light element ATK is increased by 10%.
+SkillName: Infight + Thunder
+SkillDesc: Combo is increased by 2. Sways when you flick during an attack. Plus， Thunder element ATK is increased by 10%.
+SkillName: Infight + Ice
+SkillDesc: Combo is increased by 2. Sways when you flick during an attack. Plus， Ice element ATK is increased by 10%.
+SkillName: Infight + Fire
+SkillDesc: Combo is increased by 2. Sways when you flick during an attack. Plus， Fire element ATK is increased by 10%.
+SkillName: Infight + Moves
+SkillDesc: Combo is increased by 2. Sways when you flick during an attack. Plus， Movement Speed is increased by 10%.
+SkillName: Infight + Defense
+SkillDesc: Combo is increased by 2. Sways when you flick during an attack. Plus， DEF is increased by 10%.
+SkillName: Infight + Attack
+SkillDesc: Combo is increased by 2. Sways when you flick during an attack. Plus， ATK is increased by 10%.
+SkillName: Infight + HP
+SkillDesc: Combo is increased by 2. Sways when you flick during an attack. Plus， HP is increased by 10%.
+SkillName: Double Sway
+SkillDesc: Sway can be used 2 consecutive times.
+SkillName: Triple Sway
+SkillDesc: Sway can be used 3 consecutive times.
+SkillName: Advanced Sway
+SkillDesc: Sway invincible duration is extended.
+SkillName: Full Charge
+SkillDesc: Hold to charge Mana and deal powerful attack.
+SkillName: Full Charge + HP
+SkillDesc: Hold to charge Mana and deal powerful attack. Plus， HP is increased by 10%.
+SkillName: Full Charge + Attack
+SkillDesc: Hold to charge Mana and deal powerful attack. Plus， ATK is increased by 10%.
+SkillName: Full Charge + Defense
+SkillDesc: Hold to charge Mana and deal powerful attack. Plus， DEF is increased by 10%.
+SkillName: Full Charge + Movement
+SkillDesc: Hold to charge Mana and deal powerful attack. Plus， Movement Speed is increased by 10%.
+SkillName: Full Charge + Fire
+SkillDesc: Hold to charge Mana and deal powerful attack. Plus， Fire element ATK is increased by 10%.
+SkillName: Full Charge + Ice
+SkillDesc: Hold to charge Mana and deal powerful attack. Plus， Ice element ATK is increased by 10%.
+SkillName: Full Charge + Thunder
+SkillDesc: Hold to charge Mana and deal powerful attack. Plus， Thunder element ATK is increased by 10%.
+SkillName: Full Charge + Light
+SkillDesc: Hold to charge Mana and deal powerful attack. Plus， Light element ATK is increased by 10%.
+SkillName: Full Charge + Darkness
+SkillDesc: Hold to charge Mana and deal powerful attack. Plus， Darkness element ATK is increased by 10%.
+SkillName: Full Charge + Resist Fire
+SkillDesc: Hold to charge Mana and deal powerful attack. Plus， DEF against Fire element is increased by 10%.
+SkillName: Full Charge + Resist Ice
+SkillDesc: Hold to charge Mana and deal powerful attack. Plus， DEF against Ice element is increased by 10%.
+SkillName: Full Charge + Resist Thunder
+SkillDesc: Hold to charge Mana and deal powerful attack. Plus， DEF against Thunder element is increased by 10%.
+SkillName: Full Charge + Resist Light
+SkillDesc: Hold to charge Mana and deal powerful attack. Plus， DEF against Light element is increased by 10%.
+SkillName: Full Charge + Resist Darkness
+SkillDesc: Hold to charge Mana and deal powerful attack. Plus， DEF against Darkness element is increased by 10%.
+SkillName: Advanced Full Charge·10
+SkillDesc: If a max charge attack is used with Cannon， damage is increased by 10%.
+SkillName: Advanced Full Charge·20
+SkillDesc: If a max charge attack is used with Cannon， damage is increased by 20%.
+SkillName: Advanced Full Charge·30
+SkillDesc: If a max charge attack is used with Cannon， damage is increased by 30%.
+SkillName: Regeneration Attack
+SkillDesc: Regeneration does not heal but deals damage to nearby enemies.
+SkillName: Advanced Regeneration·25
+SkillDesc: Recovery from Regeneration is increased by 25%.
+SkillName: Advanced Regeneration·50
+SkillDesc: Recovery from Regeneration is increased by 50%.
+SkillName: Area Regeneration·25
+SkillDesc: Regeneration range is expanded by 25%.
+SkillName: Area Regeneration·50
+SkillDesc: Regeneration range is expanded by 50%.
+SkillName: Self Regeneration·25
+SkillDesc: 25% of Regeneration effect is also applied to self.
+SkillName: Self Regeneration·50
+SkillDesc: 50% of Regeneration effect is also applied to self.
+SkillName: Self Regeneration·100
+SkillDesc: 100% of Regeneration effect is also applied to self.
+SkillName: Combat Regeneration·25
+SkillDesc: 25% of Regeneration effect is also applied during a normal attack.
+SkillName: Combat Regeneration·50
+SkillDesc: 50% of Regeneration effect is also applied during a normal attack.
+SkillName: Combat Regeneration·100
+SkillDesc: 100% of Regeneration effect is also applied during a normal attack.
+SkillName: Advanced Guard·10
+SkillDesc: If Guard is successful、 damage reduction from Guard is increased by 10%.
+SkillName: Advanced Guard·25
+SkillDesc: If Guard is successful、 damage reduction from Guard is increased by 25%.
+SkillName: Advanced Guard·50
+SkillDesc: If Guard is successful、 damage reduction from Guard is increased by 50%.
+SkillName: Boost Guard·50
+SkillDesc: If Guard is successful、 damage dealt on the next attack is increased by 50%.
+SkillName: Boost Guard·100
+SkillDesc: If Guard is successful、 damage dealt on the next attack is increased by 100%.
+SkillName: Boost Guard·150
+SkillDesc: If Guard is successful、 damage dealt on the next attack is increased by 150%.
+SkillName: Counter Guard·50
+SkillDesc: If Guard is successful against a melee attack， 50% of the intended damage is reflected back to the attacker.
+SkillName: Counter Guard·100
+SkillDesc: If Guard is successful against a melee attack， 100% of the intended damage is reflected back to the attacker.
+SkillName: Ultimate Skill (Absorb) Guard
+SkillDesc: If Guard is successful、 Ultimate Skill Gauge is charged.
+SkillName: Charge Ultimate Skill (Arena)
+SkillDesc: Ultimate Skill Gauge is charged when a normal attack hits in the Arena.
+SkillName: 3☆Defense↑400%
+SkillDesc: DEF of non-evolved 3☆ Hero is increased by 400% in the Arena.
+SkillName: 3☆Attack↑400%
+SkillDesc: ATK of non-evolved 3☆ Hero is increased by 400% in the Arena.
+SkillName: 3☆HP↑400%
+SkillDesc: HP of non-evolved 3☆ Hero is increased by 400% in the Arena.
+SkillName: 4☆Defense↑150%
+SkillDesc: DEF of non-evolved 4☆ Hero is increased by 150% in the Arena.
+SkillName: 4☆Attack↑150%
+SkillDesc: ATK of non-evolved 4☆ Hero is increased by 150% in the Arena.
+SkillName: 4☆HP↑150%
+SkillDesc: HP of non-evolved 4☆ Hero is increased by 150% in the Arena.
+SkillName: One-Handed Sword Attack↑
+SkillDesc: ATK of One-Handed Sword Hero is increased by 100% in the Arena.
+SkillName: Great Sword Attack↑
+SkillDesc: ATK of Great Sword Hero is increased by 100% in the Arena.
+SkillName: Knuckle Attack↑
+SkillDesc: ATK of Knuckle Hero is increased by 100% in the Arena.
+SkillName: Lance Attack↑
+SkillDesc: ATK of Lance Hero is increased by 100% in the Arena.
+SkillName: Hammer Attack↑
+SkillDesc: ATK of Hammer Hero is increased by 100% in the Arena.
+SkillName: Grimoire Attack↑
+SkillDesc: ATK of Grimoire Hero is increased by 100% in the Arena.
+SkillName: One-Handed Staff Attack↑
+SkillDesc: ATK of One-Handed Staff Hero is increased by 100% in the Arena.
+SkillName: Bow Attack↑
+SkillDesc: ATK of Bow Hero is increased by 100% in the Arena.
+SkillName: Two-Handed Staff Attack↑
+SkillDesc: ATK of Two-Handed Staff Hero is increased by 100% in the Arena.
+SkillName: Cannon Attack↑
+SkillDesc: ATK of Cannon Hero is increased by 100% in the Arena.
+SkillName: One-Handed Sword Attack↑50%
+SkillDesc: ATK of One-Handed Sword Hero is increased by 50% in the Arena.
+SkillName: Great Sword Attack↑50%
+SkillDesc: ATK of Great Sword Hero is increased by 50% in the Arena.
+SkillName: Knuckle Attack↑50%
+SkillDesc: ATK of Knuckle Hero is increased by 50% in the Arena.
+SkillName: Lance Attack↑50%
+SkillDesc: ATK of Lance Hero is increased by 50% in the Arena.
+SkillName: Hammer Attack↑50%
+SkillDesc: ATK of Hammer Hero is increased by 50% in the Arena.
+SkillName: Grimoire Attack↑50%
+SkillDesc: ATK of Grimoire Hero is increased by 50% in the Arena.
+SkillName: One-Handed Staff Attack↑50%
+SkillDesc: ATK of One-Handed Staff Hero is increased by 50% in the Arena.
+SkillName: Bow Attack↑50%
+SkillDesc: ATK of Bow Hero is increased by 50% in the Arena.
+SkillName: Two-Handed Staff Attack↑50%
+SkillDesc: ATK of Two-Handed Staff Hero is increased by 50% in the Arena.
+SkillName: Female Attack↑50%
+SkillDesc: ATK of Female Hero is increased by 50% in the Arena.
+SkillName: Male Attack↑15%
+SkillDesc: ATK of Male Hero is increased by 15% in the Arena.
+SkillName: Grimms Notes Attack↑50%
+SkillDesc: ATK of Grimms Notes Hero is increased by 50% in the Arena.
+SkillName: Alice Series Attack↑50%
+SkillDesc: ATK of Alice Series Hero is increased by 50% in the Arena.
+SkillName: Grimm Fairy Tales Attack↑50%
+SkillDesc: ATK of Grimm Fairy Tale Hero is increased by 50% in the Arena.
+SkillName: One-Handed Sword Defense↑
+SkillDesc: DEF of One-Handed Sword Hero is increased by 100% in the Arena.
+SkillName: Great Sword Defense↑
+SkillDesc: DEF of Great Sword Hero is increased by 100% in the Arena.
+SkillName: Knuckle Defense↑
+SkillDesc: DEF of Knuckle Hero is increased by 100% in the Arena.
+SkillName: Lance Defense↑
+SkillDesc: DEF of Lance Hero is increased by 100% in the Arena.
+SkillName: Hammer Defense↑
+SkillDesc: DEF of Hammer Hero is increased by 100% in the Arena.
+SkillName: Grimoire Defense↑
+SkillDesc: DEF of Grimoire Hero is increased by 100% in the Arena.
+SkillName: One-Handed Staff Defense↑
+SkillDesc: DEF of One-Handed Staff Hero is increased by 100% in the Arena.
+SkillName: Bow Defense↑
+SkillDesc: DEF of Bow Hero is increased by 100% in the Arena.
+SkillName: Two-Handed Staff Defense↑
+SkillDesc: DEF of Two-Handed Staff Hero is increased by 100% in the Arena.
+SkillName: Cannon Defense↑
+SkillDesc: DEF of Cannon Hero is increased by 100% in the Arena.
+SkillName: One-Handed Sword HP↑
+SkillDesc: HP of One-Handed Sword Hero is increased by 100% in the Arena.
+SkillName: Great Sword HP↑
+SkillDesc: HP of Great Sword Hero is increased by 100% in the Arena.
+SkillName: Knuckle HP↑
+SkillDesc: HP of Knuckle Hero is increased by 100% in the Arena.
+SkillName: Lance HP↑
+SkillDesc: HP of Lance Hero is increased by 100% in the Arena.
+SkillName: Hammer HP↑
+SkillDesc: HP of Hammer Hero is increased by 100% in the Arena.
+SkillName: Grimoire HP↑
+SkillDesc: HP of Grimoire Hero is increased by 100% in the Arena.
+SkillName: One-Handed Staff HP↑
+SkillDesc: HP of One-Handed Staff Hero is increased by 100% in the Arena.
+SkillName: Bow HP↑
+SkillDesc: HP of Bow Hero is increased by 100% in the Arena.
+SkillName: Two-Handed Staff HP↑
+SkillDesc: HP of Two-Handed Staff Hero is increased by 100% in the Arena.
+SkillName: One-Handed Sword Melee↑100%
+SkillDesc: Melee attack damage of One-Handed Sword Hero is increased by 100% in the Arena.
+SkillName: Great Sword Melee↑100%
+SkillDesc: Melee attack damage of Great Sword Hero is increased by 100% in the Arena.
+SkillName: Cannon HP↑
+SkillDesc: HP of Cannon Hero is increased by 100% in the Arena.
+SkillName: Grimms Notes Hero Attack↑
+SkillDesc: ATK of Grimms Notes Hero is increased by 100% in the Arena.
+SkillName: Grimms Notes Hero Defense↑
+SkillDesc: DEF of Grimms Notes Hero is increased by 100% in the Arena.
+SkillName: Grimms Notes Hero HP↑
+SkillDesc: HP of Grimms Notes Hero is increased by 100% in the Arena.
+SkillName: Grimm Fairy Tale Hero + Grimm Attack↑
+SkillDesc: ATK of Grimm Fairy Tale Hero and Ludwig Grimm is increased by 100% in the Arena.
+SkillName: Grimm Fairy Tale Hero + Grimm Defense↑
+SkillDesc: DEF of Grimm Fairy Tale Hero and Ludwig Grimm is increased by 100% in the Arena.
+SkillName: Grimm Fairy Tale Hero + Grimm HP↑
+SkillDesc: HP of Grimm Fairy Tale Hero and Ludwig Grimm is increased by 100% in the Arena.
+SkillName: Alice Hero + Lewis Attack↑
+SkillDesc: ATK of Alice Series Hero and Lewis Carroll is increased by 100% in the Arena.
+SkillName: Alice Hero + Lewis Defense↑
+SkillDesc: DEF of Alice Series Hero and Lewis Carroll is increased by 100% in the Arena.
+SkillName: Alice Hero + Lewis HP↑
+SkillDesc: HP of Alice Series Hero and Lewis Carroll is increased by 100% in the Arena.
+SkillName: Shakespeare Hero + Shakespeare Attack↑
+SkillDesc: ATK of Shakespeare Hero and William Shakespeare is increased by 100% in the Arena.
+SkillName: Shakespeare Hero + Shakespeare Defense↑
+SkillDesc: DEF of Shakespeare Hero and William Shakespeare is increased by 100% in the Arena.
+SkillName: Shakespeare Hero + Shakespeare HP↑
+SkillDesc: HP of Shakespeare Hero and William Shakespeare is increased by 100% in the Arena.
+SkillName: Pinch Attack lv00
+SkillDesc: When HP is below 30%， damage dealt is increased by ???STAY_V2%.
+SkillName: Pinch Defense lv00
+SkillDesc: When HP is below 30%， damage received is decreased by ???STAY_V2%.
+SkillName: Pinch Upgrade lv00!
+SkillDesc: When HP is below 30%， damage dealt is increased by ???STAY_V2%， and damage received is decreased by ???STAY_V2%.
+SkillName: Ultimate Skill lv00
+SkillDesc: Ultimate Skill effect is increased by 10%.
+SkillName: Wave Attack lv00
+SkillDesc: Damage dealt on each Wave is increased by ???STAY_V1%. (Max ???STAY_V2%)
+SkillName: Destruction Attack lv00$
+SkillDesc: Each time you kill an enemy， damage dealt is increased by ???STAY_V1%. (Max ???STAY_V2%)
+SkillName: Rear Attack lv00
+SkillDesc: When you attack from behind， damage dealt is increased by ???STAY_V2%.
+SkillName: Rear Defense lv00
+SkillDesc: When you are attacked from behind， damage received is decreased by 10%.
+SkillName: Recovery lv00
+SkillDesc: When receiving heal， recovery effect is increased by ???STAY_V2%.
+SkillName: Combo Attack lv00
+SkillDesc: When you reach over 20 Combos， damage dealt is increased by ???STAY_V2%.
+SkillName: First Attack lv00
+SkillDesc: When you attack an unharmed enemy， damage dealt is increased by ???STAY_V2%.
+SkillName: Deadly HP Recovery lv00
+SkillDesc: When you deal a killing blow， a !!!SIZEA_V2 amount of HP is recovered.
+SkillName: Ranged Attack lv00
+SkillDesc: When you attack a far away enemy， damage dealt is increased by ???STAY_V2%.
+SkillName: Extend Support lv00
+SkillDesc: Duration of Ultimate Skill · Swap Skill support effect is increased by ???STAY_V2% seconds.
+SkillName: Pinch Move lv00
+SkillDesc: When HP is below 30%、 Movement Speed is increased by ???STAY_V2%.
+SkillName: Bonus Attack lv00
+SkillDesc: When you attack an enemy with HP below 50%， damage dealt is increased by ???STAY_V2%.
+SkillName: Normal Attack lv00
+SkillDesc: Normal attack effect is increased by ???STAY_V2%.
+SkillName: Swap Skill lv00
+SkillDesc: Swap Skill effect is increased by 20%.
+SkillName: Melee Attack lv00
+SkillDesc: Melee attack damage is increased by ???STAY_V2%.
+SkillName: Melee Defense lv00
+SkillDesc: Damage received from a melee attack is decreased by ???STAY_V2%.
+SkillName: Bullet Attack lv00
+SkillDesc: Bullet attack damage is increased by ???STAY_V2%.
+SkillName: Bullet Defense lv00
+SkillDesc: Damage received from a bullet attack is decreased by ???STAY_V2%.
+SkillName: Blast Attack lv00
+SkillDesc: Blast attack damage is increased by ???STAY_V2%.
+SkillName: Blast Defense lv00
+SkillDesc: Damage received from a blast attack is decreased by ???STAY_V2%.
+SkillName: Combat Defense lv00
+SkillDesc: Damage received while attacking is decreased by ???STAY_V2%.
+SkillName: Poison Bonus Attack lv00
+SkillDesc: When you attack a Poisoned enemy， damage dealt is increased by ???STAY_V2%.
+SkillName: Stun Bonus Attack lv00
+SkillDesc: When you attack a Stunned enemy， damage dealt is increased by ???STAY_V2%.
+SkillName: Paralysis Bonus Attack lv00
+SkillDesc: When you attack a Paralyzed enemy， damage dealt is increased by ???STAY_V2%.
+SkillName: Burn Bonus Attack lv00
+SkillDesc: When you attack a Burning enemy， damage dealt is increased by ???STAY_V2%.
+SkillName: Freeze Bonus Attack lv00
+SkillDesc: When you attack a Frozen enemy， damage dealt is increased by ???STAY_V2%.
+SkillName: Stroke of Luck (Power) lv00
+SkillDesc: !!!!FREQ_V1， damage dealt is increased by ???STAY_V2%.
+SkillName: Stroke of Luck (Accuracy) lv00
+SkillDesc: !!!!FREQ_V1， damage dealt is increased by ???STAY_V2%.
+SkillName: Powerful Luck lv00
+SkillDesc: !!!!FREQ_V1， damage received is reduced to 1. (Does not activate when Stunned for Paralyzed.)
+SkillName: Max HP Attack lv00
+SkillDesc: When HP is 100%， damage dealt is increased by ???STAY_V2%.
+SkillName: Extend Combo lv00
+SkillDesc: Combo duration is increased by ???DEV10_V2 seconds.
+SkillName: Ultimate Skill (Attack) lv00
+SkillDesc: Offensive Ultimate Skill effect is increased by ???STAY_V2%.
+SkillName: Ultimate Skill (Recovery) lv00
+SkillDesc: Recovery Ultimate Skill effect is increased by ???STAY_V2%.
+SkillName: Wave Emergency Recovery lv00
+SkillDesc: After the second Wave， HP of the Hero with the lowest HP is restored by ???STAY_V2% at the start of the next Wave.
+SkillName: Charge Ultimate Skill lv00
+SkillDesc: Starts the quest with 1 Ultimate Skill Gauge charged.
+SkillName: Drop lv00
+SkillDesc: Material drop rate is increased by 5%.
+SkillName: Weapon EXP lv00
+SkillDesc: Acquired Weapon EXP is increased by 10%.
+SkillName: Charge Ultimate Skill (Wave) lv00
+SkillDesc: After the second Wave， a !!!SIZEB_V2 amount of Ultimate Skill Gauge is charged at the start of the next Wave.
+SkillName: Wave Recovery lv00
+SkillDesc: After the second Wave， HP is restored by 15% at the start of the next Wave.
+SkillName: EXP lv00
+SkillDesc: Acquired EXP is increased by 10%.
+SkillName: Gold lv00
+SkillDesc: Acquired Gold is increased by 10%.
+SkillName: Resist Poison lv00
+SkillDesc: Resists Poison. (Level ???STAY_V2)
+SkillName: Resist Stun lv00
+SkillDesc: Resists Stun. (Level ???STAY_V2)
+SkillName: Resist Paralysis lv00
+SkillDesc: Resists Paralysis. (Level ???STAY_V2)
+SkillName: Resist Debuff lv00
+SkillDesc: Resists status effect. (Level ???STAY_V2)
+SkillName: Resist Burn lv00
+SkillDesc: Resists Burn. (Level ???STAY_V2)
+SkillName: Resist Freeze lv00
+SkillDesc: Resists Freeze. (Level ???STAY_V2)
+SkillName: Poison lv00
+SkillDesc: Causes !!!AMOUNT_V2 Poison effect to the enemy attacked.
+SkillName: Stun lv00
+SkillDesc: Causes !!!AMOUNT_V2 Stun effect to the enemy attacked.
+SkillName: Paralysis lv00
+SkillDesc: Causes !!!AMOUNT_V2 Paralysis effect to the enemy attacked.
+SkillName: Burn lv00
+SkillDesc: Causes !!!AMOUNT_V2 Burn effect to the enemy attacked.
+SkillName: Freeze lv00@
+SkillDesc: Causes !!!AMOUNT_V2 Freeze effect to the enemy attacked.
+SkillName: Resist Darkness lv00
+SkillDesc: DEF against Darkness element attack is increased by ???STAY_V2%.
+SkillName: Resist Light lv00
+SkillDesc: DEF against Light element attack is increased by ???STAY_V2%.
+SkillName: Resist Thunder lv00
+SkillDesc: DEF against Thunder element attack is increased by ???STAY_V2%.
+SkillName: Resist Ice lv00
+SkillDesc: DEF against Ice element attack is increased by ???STAY_V2%.
+SkillName: Resist Fire lv00
+SkillDesc: DEF against Fire element attack is increased by ???STAY_V2%.
+SkillName: Darkness lv00
+SkillDesc: Darkness element ATK is increased by ???STAY_V2%.
+SkillName: Light lv00
+SkillDesc: Light element ATK is increased by ???STAY_V2%.
+SkillName: Thunder lv00
+SkillDesc: Thunder element ATK is increased by ???STAY_V2%.
+SkillName: Ice lv00
+SkillDesc: Ice element ATK is increased by ???STAY_V2%.
+SkillName: Fire lv00
+SkillDesc: Fire element ATK is increased by ???STAY_V2%.
+SkillName: Movement Speed lv00
+SkillDesc: Movement Speed is increased by ???STAY_V2%.
+SkillName: Defense lv00
+SkillDesc: DEF is increased by ???STAY_V2%.
+SkillName: Attack lv00
+SkillDesc: ATK is increased by ???STAY_V2%.
+SkillName: HP lv00
+SkillDesc: HP is increased by ???STAY_V2%.
+SkillName: PT Resist Darkness lv00
+SkillDesc: All party members' DEF against Darkness element attack is increased by ???STAY_V2%.
+SkillName: PT Resist Light lv00
+SkillDesc: All party members' DEF against Light element attack is increased by ???STAY_V2%.
+SkillName: PT Resist Thunder lv00
+SkillDesc: All party members' DEF against Thunder element attack is increased by ???STAY_V2%.
+SkillName: PT Resist Ice lv00
+SkillDesc: All party members' DEF against Ice element attack is increased by ???STAY_V2%.
+SkillName: PT Resist Fire lv00
+SkillDesc: All party members' DEF against Fire element attack is increased by ???STAY_V2%.
+SkillName: PT Darkness lv00
+SkillDesc: All party members' Darkness element ATK is increased by ???STAY_V2%.
+SkillName: PT Light lv00
+SkillDesc: All party members' Light element ATK is increased by ???STAY_V2%.
+SkillName: PT Thunder lv00
+SkillDesc: All party members' Thunder element ATK is increased by ???STAY_V2%.
+SkillName: PT Ice lv00
+SkillDesc: All party members' Ice element ATK is increased by ???STAY_V2%.
+SkillName: PT Fire lv00
+SkillDesc: All party members' Fire element ATK is increased by ???STAY_V2%.
+SkillName: PT Movement Speed lv00
+SkillDesc: All party members' Movement Speed is increased by ???STAY_V2%.
+SkillName: PT Defense lv00
+SkillDesc: All party members' DEF is increased by ???STAY_V2%.
+SkillName: PT Attack lv00
+SkillDesc: All party members' ATK is increased by ???STAY_V2%.
+SkillName: PT HP lv00
+SkillDesc: All party members' HP is increased by ???STAY_V2%.
+SkillName: Combo Sway lv00
+SkillDesc: Sway can be used ???STAY_V2 consecutive times.
+SkillName: Advanced Full Charge lv00
+SkillDesc: If a max charge attack is used with Cannon， damage is increased by ???STAY_V2%.
+SkillName: Advanced Regeneration lv00
+SkillDesc: Recovery from Regeneration is increased by ???STAY_V2%.
+SkillName: Area Regeneration lv00
+SkillDesc: Regeneration range is expanded by ???STAY_V2%.
+SkillName: Self Regeneration lv00
+SkillDesc: 25% of Regeneration effect is also applied to self.
+SkillName: Combat Regeneration lv00
+SkillDesc: ???STAY_V2% of Regeneration effect is also applied during a normal attack.
+SkillName: Advanced Guard lv00
+SkillDesc: If Guard is successful、 damage reduction from Guard is increased by ???STAY_V2%.
+SkillName: Boost Guard lv00
+SkillDesc: If Guard is successful、 damage dealt on the next attack is increased by 50%.
+SkillName: Ultimate Skill (Absorb) Guard lv00
+SkillDesc: If Guard is successful、 a !!!SIZEB_V1 amount of Ultimate Skill Gauge is charged.
+SkillName: Pre-Learned_Resist Darkness↓ (Ⅱ)
+SkillDesc: DEF against Darkness element is decreased by 5%.
+SkillName: Pre-Learned_Resist Light↓ (Ⅱ)
+SkillDesc: DEF against Light element is decreased by 5%.
+SkillName: Pre-Learned_Resist Thunder↓ (Ⅱ)
+SkillDesc: DEF against Thunder element is decreased by 5%.
+SkillName: Pre-Learned_Resist Ice↓ (Ⅱ)
+SkillDesc: DEF against Ice element is decreased by 5%.
+SkillName: Pre-Learned_Resist Fire↓ (Ⅱ)
+SkillDesc: DEF against Fire element is decreased by 5%.
+SkillName: Pre-Learned_Darkness↓ (Ⅱ)
+SkillDesc: Darkness element ATK is decreased by 5%.
+SkillName: Pre-Learned_Light↓ (Ⅱ)
+SkillDesc: Light element ATK is decreased by 5%.
+SkillName: Pre-Learned_Thunder↓ (Ⅱ)
+SkillDesc: Thunder element ATK is decreased by 5%.
+SkillName: Pre-Learned_Ice↓ (Ⅱ)
+SkillDesc: Ice element ATK is decreased by 5%.
+SkillName: Pre-Learned_Fire↓ (Ⅱ)
+SkillDesc: Fire element ATK is decreased by 5%.
+SkillName: Pre-Learned_Movement Speed↓ (Ⅱ)
+SkillDesc: Movement Speed is decreased by 5%.
+SkillName: Pre-Learned_Defense↓ (Ⅱ)
+SkillDesc: DEF is decreased by 5%.
+SkillName: Pre-Learned_Attack↓ (Ⅱ)
+SkillDesc: ATK is decreased by 5%.
+SkillName: Pre-Learned_HP↓ (Ⅱ)
+SkillDesc: HP is decreased by 5%.
+SkillName: Pre-Learned_Resist Darkness↑ (Ⅱ)
+SkillDesc: DEF against Darkness element attack is increased by 10%.
+SkillName: Pre-Learned_Resist Light↑ (Ⅱ)
+SkillDesc: DEF against Light element attack is increased by 10%.
+SkillName: Pre-Learned_Resist Thunder↑ (Ⅱ)
+SkillDesc: DEF against Thunder element attack is increased by 10%.
+SkillName: Pre-Learned_Resist Ice↑ (Ⅱ)
+SkillDesc: DEF against Ice element attack is increased by 10%.
+SkillName: Pre-Learned_Resist Fire↑ (Ⅱ)
+SkillDesc: DEF against Fire element attack is increased by 10%.
+SkillName: Pre-Learned_Darkness↑ (Ⅱ)
+SkillDesc: Darkness element ATK is increased by 5%.
+SkillName: Pre-Learned_Light↑ (Ⅱ)
+SkillDesc: Light element ATK is increased by 5%.
+SkillName: Pre-Learned_Thunder↑ (Ⅱ)
+SkillDesc: Thunder element ATK is increased by 5%.
+SkillName: Pre-Learned_Ice↑ (Ⅱ)
+SkillDesc: Ice element ATK is increased by 5%.
+SkillName: Pre-Learned_Fire↑ (Ⅱ)
+SkillDesc: Fire element ATK is increased by 5%.
+SkillName: Pre-Learned_Movement Speed+
+SkillDesc: Movement Speed is increased. (Stacks with Movement Speed↑.)
+SkillName: Pre-Learned_Defense+
+SkillDesc: DEF is increased by 50.
+SkillName: Pre-Learned_Attack+
+SkillDesc: ATK is increased by 50.
+SkillName: Pre-Learned_HP+
+SkillDesc: HP is increased by 50.
+SkillName: Pre-Learned_Movement Speed↑ (Ⅱ)
+SkillDesc: Movement Speed is increased by 5%.
+SkillName: Pre-Learned_Defense↑ (Ⅱ)
+SkillDesc: DEF is increased by 5%.
+SkillName: Pre-Learned_Attack↑ (Ⅱ)
+SkillDesc: ATK is increased by 5%.
+SkillName: Pre-Learned_HP↑ (Ⅱ)
+SkillDesc: HP is increased by 5%.
+SkillName: HL Pre-Learned_Resist Darkness↑ (Ⅱ)
+SkillDesc: All Healers' DEF against Darkness element attack is increased by 10%.
+SkillName: HL Pre-Learned_Resist Light↑ (Ⅱ)
+SkillDesc: All Healers' DEF against Light element attack is increased by 10%.
+SkillName: HL Pre-Learned_Resist Thunder↑ (Ⅱ)
+SkillDesc: All Healers' DEF against Thunder element attack is increased by 10%.
+SkillName: HL Pre-Learned_Resist Ice↑ (Ⅱ)
+SkillDesc: All Healers' DEF against Ice element attack is increased by 10%.
+SkillName: HL Pre-Learned_Resist Fire↑ (Ⅱ)
+SkillDesc: All Healers' DEF against Fire element attack is increased by 10%.
+SkillName: HL Pre-Learned_Darkness↑ (Ⅱ)
+SkillDesc: All Healers' Darkness element ATK is increased by 5%.
+SkillName: HL Pre-Learned_Light↑ (Ⅱ)
+SkillDesc: All Healers' Light element ATK is increased by 5%.
+SkillName: HL Pre-Learned_Thunder↑ (Ⅱ)
+SkillDesc: All Healers' Thunder element ATK is increased by 5%.
+SkillName: HL Pre-Learned_Ice↑ (Ⅱ)
+SkillDesc: All Healers' Ice element ATK is increased by 5%.
+SkillName: HL Pre-Learned_Fire↑ (Ⅱ)
+SkillDesc: All Healers' Fire element ATK is increased by 5%.
+SkillName: HL Pre-Learned_Movement Speed↑ (Ⅱ)
+SkillDesc: All Healers' Movement Speed is increased by 5%.
+SkillName: HL Pre-Learned_Defense↑ (Ⅱ)
+SkillDesc: All Healers' DEF is increased by 5%.
+SkillName: HL Pre-Learned_Attack↑ (Ⅱ)
+SkillDesc: All Healers' ATK is increased by 5%.
+SkillName: HL Pre-Learned_HP↑ (Ⅱ)
+SkillDesc: All Healers' HP is increased by 5%.
+SkillName: ST Pre-Learned_Resist Darkness↑ (Ⅱ)
+SkillDesc: All Shooters' DEF against Darkness element attack is increased by 10%.
+SkillName: ST Pre-Learned_Resist Light↑ (Ⅱ)
+SkillDesc: All Shooters' DEF against Light element attack is increased by 10%.
+SkillName: ST Pre-Learned_Resist Thunder↑ (Ⅱ)
+SkillDesc: All Shooters' DEF against Thunder element attack is increased by 10%.
+SkillName: ST Pre-Learned_Resist Ice↑ (Ⅱ)
+SkillDesc: All Shooters' DEF against Ice element attack is increased by 10%.
+SkillName: ST Pre-Learned_Resist Fire↑ (Ⅱ)
+SkillDesc: All Shooters' DEF against Fire element attack is increased by 10%.
+SkillName: ST Pre-Learned_Darkness↑ (Ⅱ)
+SkillDesc: All Shooters' Darkness element ATK is increased by 5%.
+SkillName: ST Pre-Learned_Light↑ (Ⅱ)
+SkillDesc: All Shooters' Light element ATK is increased by 5%.
+SkillName: ST Pre-Learned_Thunder↑ (Ⅱ)
+SkillDesc: All Shooters' Thunder element ATK is increased by 5%.
+SkillName: ST Pre-Learned_Ice↑ (Ⅱ)
+SkillDesc: All Shooters' Ice element ATK is increased by 5%.
+SkillName: ST Pre-Learned_Fire↑ (Ⅱ)
+SkillDesc: All Shooters' Fire element ATK is increased by 5%.
+SkillName: ST Pre-Learned_Movement Speed↑ (Ⅱ)
+SkillDesc: All Shooters' Movement Speed is increased by 5%.
+SkillName: ST Pre-Learned_Defense↑ (Ⅱ)
+SkillDesc: All Shooters' DEF is increased by 5%.
+SkillName: ST Pre-Learned_Attack↑ (Ⅱ)
+SkillDesc: All Shooters' ATK is increased by 5%.
+SkillName: ST Pre-Learned_HP↑ (Ⅱ)
+SkillDesc: All Shooters' HP is increased by 5%.
+SkillName: DF Pre-Learned_Resist Darkness↑ (Ⅱ)
+SkillDesc: All Defenders' DEF against Darkness element attack is increased by 10%.
+SkillName: DF Pre-Learned_Resist Light↑ (Ⅱ)
+SkillDesc: All Defenders' DEF against Light element attack is increased by 10%.
+SkillName: DF Pre-Learned_Resist Thunder↑ (Ⅱ)
+SkillDesc: All Defenders' DEF against Thunder element attack is increased by 10%.
+SkillName: DF Pre-Learned_Resist Ice↑ (Ⅱ)
+SkillDesc: All Defenders' DEF against Ice element attack is increased by 10%.
+SkillName: DF Pre-Learned_Resist Fire↑ (Ⅱ)
+SkillDesc: All Defenders' DEF against Fire element attack is increased by 10%.
+SkillName: DF Pre-Learned_Darkness↑ (Ⅱ)
+SkillDesc: All Defenders' Darkness element ATK is increased by 5%.
+SkillName: DF Pre-Learned_Light↑ (Ⅱ)
+SkillDesc: All Defenders' Light element ATK is increased by 5%.
+SkillName: DF Pre-Learned_Thunder↑ (Ⅱ)
+SkillDesc: All Defenders' Thunder element ATK is increased by 5%.
+SkillName: DF Pre-Learned_Ice↑ (Ⅱ)
+SkillDesc: All Defenders' Ice element ATK is increased by 5%.
+SkillName: DF Pre-Learned_Fire↑ (Ⅱ)
+SkillDesc: All Defenders' Fire element ATK is increased by 5%.
+SkillName: DF Pre-Learned_Movement Speed↑ (Ⅱ)
+SkillDesc: All Defenders' Movement Speed is increased by 5%.
+SkillName: DF Pre-Learned_Defense↑ (Ⅱ)
+SkillDesc: All Defenders' DEF is increased by 5%.
+SkillName: DF Pre-Learned_Attack↑ (Ⅱ)
+SkillDesc: All Defenders' ATK is increased by 5%.
+SkillName: DF Pre-Learned_HP↑ (Ⅱ)
+SkillDesc: All Defenders' HP is increased by 5%.
+SkillName: AT Pre-Learned_Resist Darkness↑ (Ⅱ)
+SkillDesc: All Attackers' DEF against Darkness element attack is increased by 10%.
+SkillName: AT Pre-Learned_Resist Light↑ (Ⅱ)
+SkillDesc: All Attackers' DEF against Light element attack is increased by 10%.
+SkillName: AT Pre-Learned_Resist Thunder↑ (Ⅱ)
+SkillDesc: All Attackers' DEF against Thunder element attack is increased by 10%.
+SkillName: AT Pre-Learned_Resist Ice↑ (Ⅱ)
+SkillDesc: All Attackers' DEF against Ice element attack is increased by 10%.
+SkillName: AT Pre-Learned_Resist Fire↑ (Ⅱ)
+SkillDesc: All Attackers' DEF against Fire element attack is increased by 10%.
+SkillName: AT Pre-Learned_Darkness↑ (Ⅱ)
+SkillDesc: All Attackers' Darkness element ATK is increased by 5%.
+SkillName: AT Pre-Learned_Light↑ (Ⅱ)
+SkillDesc: All Attackers' Light element ATK is increased by 5%.
+SkillName: AT Pre-Learned_Thunder↑ (Ⅱ)
+SkillDesc: All Attackers' Thunder element ATK is increased by 5%.
+SkillName: AT Pre-Learned_Ice↑ (Ⅱ)
+SkillDesc: All Attackers' Ice element ATK is increased by 5%.
+SkillName: AT Pre-Learned_Fire↑ (Ⅱ)
+SkillDesc: All Attackers' Fire element ATK is increased by 5%.
+SkillName: AT Pre-Learned_Movement Speed↑ (Ⅱ)
+SkillDesc: All Attackers' Movement Speed is increased by 5%.
+SkillName: AT Pre-Learned_Defense↑ (Ⅱ)
+SkillDesc: All Attackers' DEF is increased by 5%.
+SkillName: AT Pre-Learned_Attack↑ (Ⅱ)
+SkillDesc: All Attackers' ATK is increased by 5%.
+SkillName: AT Pre-Learned_HP↑ (Ⅱ)
+SkillDesc: All Attackers' HP is increased by 5%.
+SkillName: PT Pre-Learned_Resist Darkness↑ (Ⅱ)
+SkillDesc: All party members' DEF against Darkness element attack is increased by 10%.
+SkillName: PT Pre-Learned_Resist Light↑ (Ⅱ)
+SkillDesc: All party members' DEF against Light element attack is increased by 10%.
+SkillName: PT Pre-Learned_Resist Thunder↑ (Ⅱ)
+SkillDesc: All party members' DEF against Thunder element attack is increased by 10%.
+SkillName: PT Pre-Learned_Resist Ice↑ (Ⅱ)
+SkillDesc: All party members' DEF against Ice element attack is increased by 10%.
+SkillName: PT Pre-Learned_Resist Fire↑ (Ⅱ)
+SkillDesc: All party members' DEF against Fire element attack is increased by 10%.
+SkillName: GN Darkness↑
+SkillDesc: All party members' Darkness element ATK is increased by 20%. ※Only one GN skill is activated during battle.
+SkillName: GN Light↑
+SkillDesc: All party members' Light element ATK is increased by 20%. ※Only one GN skill is activated during battle.
+SkillName: GN Thunder↑
+SkillDesc: All party members' Thunder element ATK is increased by 20%. ※Only one GN skill is activated during battle.
+SkillName: PT Pre-Learned_Ice↑ (Ⅱ)
+SkillDesc: All pary members' Ice element ATK is increased by 5%.
+SkillName: PT Pre-Learned_Fire↑ (Ⅱ)
+SkillDesc: All pary members' Fire element ATK is increased by 5%.
+SkillName: PT Pre-Learned_Movement Speed↑ (Ⅱ)
+SkillDesc: All pary members' Movement Speed is increased by 5%.
+SkillName: PT Pre-Learned_Defense↑ (Ⅱ)
+SkillDesc: All pary members' DEF is increased by 5%.
+SkillName: PT Pre-Learned_Attack↑ (Ⅱ)
+SkillDesc: All pary members' ATK is increased by 5%.
+SkillName: GN HP↑
+SkillDesc: All party members' HP is increased by 20%. ※Only one GN skill is activated during battle.
+SkillName: Cannot Overlap_Value 1_132_Individual
+SkillDesc: Value1=1、Value2=3、Rare=2、Individual
+SkillName: Cannot Overlap_Value 1_123_Individual
+SkillDesc: Value1=1、Value2=2、Rare=3、Individual
+SkillName: Cannot Overlap_Value 1_211_Individual
+SkillDesc: Value1=2、Value2=1、Rare=1、Individual
+SkillName: Cannot Overlap_Value 2_312_Individual
+SkillDesc: Value1=3、Value2=1、Rare=2、Individual
+SkillName: Cannot Overlap_Value 2_213_Individual
+SkillDesc: Value1=2、Value2=1、Rare=3、Individual
+SkillName: Cannot Overlap_Value 2_121_Individual
+SkillDesc: Value1=1、Value2=2、Rare=1、Individual
+SkillName: Cannot Overlap_Rare_311_Individual
+SkillDesc: Value1=3、Value2=1、Rare=1、Individual
+SkillName: Cannot Overlap_Rare_222_Individual
+SkillDesc: Value1=2、Value2=2、Rare=2、Individual
+SkillName: Cannot Overlap_Value 1_132_Party
+SkillDesc: Value1=1、Value2=3、Rare=2、Party
+SkillName: Cannot Overlap_Value 1_123_Party
+SkillDesc: Value1=1、Value2=2、Rare=3、Party
+SkillName: Cannot Overlap_Value 1_211_Party
+SkillDesc: Value1=2、Value2=1、Rare=1、Party
+SkillName: Cannot Overlap_Value 2_312_Party
+SkillDesc: Value1=3、Value2=1、Rare=2、Party
+SkillName: Cannot Overlap_Value 2_213_Party
+SkillDesc: Value1=2、Value2=1、Rare=3、Party
+SkillName: Cannot Overlap_Value 2_121_Party
+SkillDesc: Value1=1、Value2=2、Rare=1、Party
+SkillName: Cannot Overlap_Rare_311_Party
+SkillDesc: Value1=3、Value2=1、Rare=1、Party
+SkillName: Cannot Overlap_Rare_222_Party
+SkillDesc: Value1=2、Value2=2、Rare=2、Party
+SkillName: C_Individual
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Party
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Attacker
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Defender
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Healer
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Shooter
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Male
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Female
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Rarity 3
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Rarity 4
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Rarity 5
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_One-Handed Sword
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Great Sword
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Knuckle
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Spear
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Hammer
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Grimoire
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_One-Handed Staff
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Bow
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Two-Handed Staff
+SkillDesc: Value1=0、Value2=100、Rare=1
+SkillName: C_Group 1
+SkillDesc: Value1=0、Value2=100、Rare=1、Grimms Notes
+SkillName: C_Group 2
+SkillDesc: Value1=0、Value2=100、Rare=1、Japan Folk Tales+Grimms Notes
