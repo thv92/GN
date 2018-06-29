@@ -39,6 +39,7 @@ module Transformer
 
         end
 
+
         def translatePartOne
             translationQueue = []
             totalCount = 0
@@ -112,7 +113,7 @@ module Transformer
         def categorizeSkills
             @rawData.each do |hero|
                 hero[@cf::PASSIVES].each do |passive|
-                    
+
 
 
                 end

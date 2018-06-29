@@ -40,4 +40,6 @@ module CommonFields
     IS_STATUS = 'isStatus'
     IS_ARENA = 'isArena'
     IS_DEBUFF = 'isDebuff'
+    STATUSTYPES = 'statusTypes'
+    ATTRIBUTES = 'attributes'
 end
