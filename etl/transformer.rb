@@ -36,10 +36,10 @@ module Transformer
 
 
         def transform
-            # translatePartOne
-            # translatePartTWo
-
-
+            restructureData
+            translatePartOne
+            translatePartTWo
+            # mergePassives
         end
 
         def restructureData
@@ -328,87 +328,6 @@ module Transformer
                 translatedFile = File.join('..', @passivesPrefix, "_#{pageNum}.json")
             end
         end
-
-        #Evolution Mats
-        def transPt2EvoMatsEvo(heroData, translated)
-            heroData[@cf::EVOS].each do |evo|
-                evo[@cf::MATS].each do |mat|
-                    if (mat[@cf::NAME].match(/\W+/))
-                        transName = translated[@cf::MATS][mat[@cf::MAT_ID]]
-
-                        if (transName  == nil)
-                            raise "TranslationPartTwo Error: Could not find for MAT_ID: #{mat[@cf::MAT_ID]}"
-                        end
-
-                        mat[@cf::NAME_JP] = mat[@cf::NAME]
-                        mat[@cf::NAME] = transName
-                        if (mat[@cf::SIZE])
-                            mat[@cf::FULLNAME_JP] = "#{mat[@cf::NAME_JP]} (#{mat[@cf::SIZE]})"
-                            transSize = translateMatSize(mat[@cf::SIZE])
-                            mat[@cf::FULLNAME] = "#{transName} (#{transSize})"
-                            mat[@cf::SIZE] = transSize
-                        else
-                            mat[@cf::NAME_JP] = mat[@cf::NAME]
-                            mat[@cf::FULLNAME_JP] = mat[@cf::NAME]
-                            mat[@cf::NAME] = transName
-                            mat[@cf::FULLNAME] = transName
-                        end
-                    end
-                end
-            end
-        end
-
-        #Evolution Mats Images
-        def transPt2EvoMatsImages(heroData, translated)
-            heroData[@cf::IMGS].each do |image|
-                if (image[@cf::MAT_ID] and image[@cf::NAME].match(/\W+/))
-                    transName = translated[@cf::MATS][image[@cf::MAT_ID]]
-
-                    if (transName  == nil)
-                        raise "TranslationPartTwo Error: Could not find for MAT_ID: #{mat[@cf::MAT_ID]}"
-                    end
-
-                    if (image[@cf::NAME].include? '(')
-                        matchData = image[@cf::NAME].match(/(.+)\((.)\)/)
-                        transSize = translateMatSize(matchData[2])
-                        image[@cf::NAME] = "#{transName} (#{transSize})"
-                    else
-                        image[@cf::NAME] = transName
-                    end
-                end
-            end
-        end
-
-       #Ult
-       def transPt2Ult(heroData, translated)
-            heroData[@cf::ULT][@cf::NAME] = translate[@cf::ULT][@cf::NAME]
-            heroData[@cf::ULT][@cf::DESC] = translate[@cf::ULT][@cf::DESC]
-       end
-
-       #Passives
-       def transPt2Passives(heroData, translated)
-            #Keep passive jp name for organizing?
-            index = 0
-            heroData[@cf::PASSIVES].each do |passive|
-                transPassive = translated[@cf::PASSIVES][index]
-                name = transPassive[@cf::NAME]
-                desc = transPassive[@cf::DESC]
-                fullname = transPassive[@cf::FULLNAME]
-
-                if (fullname)
-                    passive[@cf::FULLNAME] = fullname
-                    passive[@cf::NAME] = fullname
-                else
-                    passive[@cf::NAME] = name
-                    if (passive[@cf::TIER])
-                        passive[@cf::FULLNAME] = "#{name} (#{passive[@cf::TIER]})"
-                    else
-                        passive[@cf::FULLNAME] = name
-                    end
-                end
-                passive[@cf::DESC] = desc
-            end
-       end
 
         #------------Translation Methods--------------
         #------------Skills--------------
