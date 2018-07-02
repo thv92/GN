@@ -184,13 +184,14 @@ module Transformer
                     end
                     mat[@cf::NAME_JP] = mat[@cf::NAME]
                     mat[@cf::NAME] = transName
-                else 
+                else  #Cannot translate, must put into translation Queue
                     matQ.push({
                         @cf::MAT_ID => matID,
                         @cf::FULLNAME => mat[@cf::FULLNAME_JP]
                     })
                 end
             end
+            matQ
         end
         
         def writeToFilePartitioned(dataToWrite, fileNamePrefix)
