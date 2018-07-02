@@ -23,6 +23,9 @@ module Transformer
             @sf = StatFields
             @sfjp = StatFieldsJP
             @rawData = File.open(File.join('..', 'rawData', 'rawDataHeroes.json')
+            @heroesPrefix = 'ToTranslate_Heroes'
+            @passivesPrefix = 'ToTranslate_Passives'
+            @matsPrefix = 'ToTranslate_Mats'
             createDir
         end
 
@@ -33,51 +36,189 @@ module Transformer
 
 
         def transform
-            translatePartOne
-            translatePartTWo
+            # translatePartOne
+            # translatePartTWo
 
 
         end
 
+        def restructureData
+            heroes = {}
+            mats = {}
+            imgs = {}
+            passives = {}
+            passivesIDAsKey = {}
+            imgs[@cf::HEROES] = {}
+            imgs[@cf::MATS] = {}
 
-        def translatePartOne
-            translationQueue = []
-            totalCount = 0
-            pageNum = 1
-            toTranslateFileName = "toTranslate_#{pageNum}.json"
+            passiveIndex = 1
             @rawData.each do |heroData|
-                toAddToCount = 14 + (@cf::MATS).length + (@cf::PASSIVES).length + (@cf::ULT).length
-                #Setup block to translate
-                toTranslate = {}
-                toTranslate[@cf::MATS] = {}
-                toTranslate[@cf::PASSIVES] = []
-                toTranslate[@cf::ULT] = {}
-
-                transPt1MD(heroData, toTranslate)
-                transPt1Images(heroData, toTranslate)
-                toAddToCount += transPt1Name(heroData, toTranslate)
-                             + transPtEvoMats(heroData, toTranslate)
-                             + transPt1Passives(heroData, toTranslate)
-                             + transPt1Ult(heroData, toTranslate)
-                toTranslate[@cf::HERO_ID] = heroData[@cf::HERO_ID]
-                toAddToCount += (@cf::HERO_ID).length + heroData[@cf::HERO_ID].length + 4
-
-                #Write to File
-                if ((totalCount + toAddToCount) >= 4800)
-                    File.open(File.join('..', 'toTranslateData', toTranslateFileName), "w") do |f|
-                        f.write(JSON.generate(translationQueue))
+                heroID = heroData[@cf::HERO_ID]
+                #PASSIVES section
+                passiveRefs = []
+                heroData[@cf::PASSIVES].each do |passive|
+                    fullName = passive[@cf::FULLNAME]
+                    if (!passives.include?(fullName))
+                        passive[@cf::HERO_REFS] = [heroID]
+                        passives[fullName] = passive
+                        #Add in indexing as temp ID
+                        passives[@cf::PASSIVE_ID] = "SK%05d" % passiveIndex
+                        passivesIDAsKey[passives[@cf::PASSIVE_ID]] = passive.reject{|k| k == cf::PASSIVE_ID}
+                        passiveIndex += 1
+                    else
+                        # This should push it to the other map's array too since reference is same
+                        passives[fullName][@cf::HERO_REFS].push(heroID)
+                        # passiveID = passives[fullName][@cf::PASSIVE_ID]
+                        # passivesIDAsKey[passiveID][@cf:HERO_REFS].push(heroID)
                     end
-                    totalCount = toAddToCount
-                    pageNum += 1
-                    toTranslateFileName = "toTranslate_#{pageNum}.json"
-                    translationQueue = [toTranslate]
-                else
-                    totalCount += toAddToCount
-                    translationQueue.push(toTranslate)
+                    #Push temp indexed ID as reference to passive instead of fullName
+                    passiveRefs.push(passives[fullName][@cf::PASSIVE_ID])
+                end
+                heroData[@cf::PASSIVES] = passiveRefs
+
+                #ULTS section to get MATS
+                heroData[@cf::ULTS].each do |ult|
+                    matRefs = []
+                    ult[@cf::MATS].each do |mat|
+                        matID = mat[@cf::MAT_ID]
+                        matRefs.push({@cf::MAT_ID => matID, cf::AMT => mat[@cf::AMT]})
+                        if (!mats.include?(matID))
+                            mats[matID] = mat.reject{|k| k == @cf::AMT || k== @cf::MAT_ID}
+                        end
+                    end
+                    ult[@cf::MATS] = matRefs
+                end
+                
+                #IMAGES section
+                imgHeroes = imgs[@cf::HEROES]
+                imgMats = imgs[@cf::MATS]
+                heroData[@cf::IMGS].each do |image|
+                    if (image.include?(@cf::HERO_ID))
+                        if (!imgHeroes.include?(heroID))
+                            imgsHeroes[heroID] = []
+                        end
+                        imgsHeroes[heroID].push(image.reject{|k| k == @cf::HERO_ID || k == @imgf::CAT})
+                    else
+                        matID = image[@cf::MAT_ID]
+                        if (!imgMats.include?(matID))
+                            imgMats[matID] = []
+                        end
+                        found = false
+                        #If image same?
+                        imgMats[matID].map {|item| found == true if item[url] == image[url]}
+                        imgMats[matID].push(image.reject{|k| k == @cf::MAT_ID || k == @imgf::CAT || k == @imgf::NAME}) unless found
+                    end
+                end
+                heroData.delete(@cf::IMGS)
+                heroes[heroID] = heroData
+            end
+            @rawData = {@cf::HEROES => heroes, @cf::PASSIVES => passivesIDAsKey, @cf::MATS => mats, @cf::IMGS => imgs}
+        end
+
+
+        #------------TranslatePartOne--------------
+        def translatePartOne
+            #Translate Hero
+            #Translate MD
+            heroesQ = transPt1Heroes(@rawData[@cf::HEROES])
+            #Translate Passives
+            passivesQ = transPt1Passives(@rawData[@cf::PASSIVES])
+            #Translate Mats
+            matsQ = transPt1Mats(@rawData[@cf::MATS])
+
+            #WriteToFile
+            writeToFilePartitioned(heroesQ, @heroesPrefix)
+            writeToFilePartitioned(passivesQ, @passivesPrefix)
+            writeToFilePartitioned(matsQ, @matsPrefix)
+
+        end
+
+        #Add Heroes' ULT, NAME, and metadata to translation queue
+        def transPt1Heroes(heroes)
+            heroesQ = []
+            heroes.each do |heroID, heroData|
+                #Add ULT, NAME to translation Queue
+                heroesQ.push({
+                    @cf::HERO_ID => heroID,
+                    @cf::NAME => heroData[@cf::NAME]
+                    @cf::ULT => heroData[@cf::ULT]
+                })
+                #Translate metadata
+                heroData[@cf::MD] = {
+                    @cf::ROLE => translateRole(heroData[@cf::MD][@cf::ROLE]),
+                    @cf::WT => translateWeaponType(heroData[@cf::MD][@cf::WT]),
+                    @cf::SERIES => translateSeries(heroData[@cf::MD][@cf::SERIES])
+                }
+            end
+            heroesQ
+        end
+
+        #Passive Skills
+        #Passives: {PASSIVE_ID => "", FULLNAME => "", DESC => ""}
+        def transPt1Passives(passives)
+            passivesQ = []
+            passives.each do |passiveID, passive|
+                passivesQ.push({
+                    @cf::PASSIVE_ID => passiveID
+                    @cf::FULLNAME => passive[@cf::FULLNAME],
+                    @cf::DESC => passive[@cf::DESC]
+                })
+            end
+            passivesQ
+        end
+        
+
+        #Evo Orbs
+        #Mats: {MAT_ID => "", FULLNAME => ""}
+        def transPt1Mats(mats)
+            matQ = []
+            mats.each do |matID, mat|
+                mat[@cf::FULLNAME_JP] = mat[@cf::SIZE] == nil ? mat[@cf::NAME] : "#{mat[@cf::NAME]} (#{mat[@cf::SIZE]})"
+                transName = translateEvoOrb(mat[@cf::NAME])
+                transSize = translateMatSize(mat[@cf::SIZE])
+                if (transName)
+                    if (transSize)
+                        mat[@cf::FULLNAME] = "#{transName} (#{transSize})"
+                    else
+                        mat[@cf::FULLNAME] = transName
+                    end
+                    mat[@cf::NAME_JP] = mat[@cf::NAME]
+                    mat[@cf::NAME] = transName
+                else 
+                    matQ.push({
+                        @cf::MAT_ID => matID,
+                        @cf::FULLNAME => mat[@cf::FULLNAME_JP]
+                    })
                 end
             end
         end
-
+        
+        def writeToFilePartitioned(dataToWrite, fileNamePrefix)
+            pageNum = 0
+            charCount = 0
+            #Array of hero dicts
+            writeQueue = []
+            dataToWrite.each do |data|
+                charCountTemp = 0
+                sadfadfasf
+                data.map do |k, v|
+                    charCountTemp += k.length + 2 + v.length + 2 + 1
+                end
+                
+                if ((charCount + charCountTemp) <= 4600)
+                    writeQueue.push(data)
+                    charCount += charCountTemp
+                else
+                    File.open(fileNamePrefix + "_#{pageNum}.json", 'w') { |f| f.write(JSON.generate(writeQueue))}
+                    charCount = charCountTemp
+                    writeQueue = [data]
+                    pageNum += 1
+                end
+            end
+        end
+        
+        
+        #------------TranslatePartTwo--------------
         def translatePartTwo
             waitOnManualTranslation
 
@@ -122,7 +263,6 @@ module Transformer
 
 
 
-        #------------TranslatePartTwo--------------
         def waitOnManualTranslation
             answer = false
             while(!answer)
@@ -134,7 +274,7 @@ module Transformer
 
         #Evolution Mats
         def transPt2EvoMatsEvo(heroData, translated)
-            heroData[@cf::EVO].each do |evo|
+            heroData[@cf::EVOS].each do |evo|
                 evo[@cf::MATS].each do |mat|
                     if (mat[@cf::NAME].match(/\W+/))
                         transName = translated[@cf::MATS][mat[@cf::MAT_ID]]
@@ -213,104 +353,7 @@ module Transformer
             end
        end
 
-
-        #------------TranslatePartOne--------------
-
-        #Add hero name to translation queue
-        def transPt1Name(heroData, toTranslate)
-            toTranslate[@cf::NAME] = heroData[@cf::NAME]
-            heroData[@cf::NAME_JP] = heroData[@cf::NAME]
-            charCount = 4 + heroData[@cf::NAME].length + (@cf::NAME).length
-            heroData[@cf::NAME] = nil
-            charCount
-        end
-
-        #Translate Metadata
-        def transPt1MD(heroData, toTranslate)
-            heroData[@cf::MD] = {
-                @cf::ROLE => translateRole(heroData[@cf::MD][@cf::ROLE]),
-                @cf::WT => translateWeaponType(heroData[@cf::MD][@cf::WT]),
-                @cf::SERIES => translateSeries(heroData[@cf::MD][@cf::SERIES])
-            }
-        end
-
-        #Translate Evo Mats
-        def transPt1EvoMats(heroData, toTranslate)
-            toAddToCount = 0
-            heroData[@cf::EVO].each do |evo|
-                evo[@cf::MATS].each do |mat|
-                    translatedOrb = translateEvoOrb(mat[@cf::NAME])
-                    if (translatedOrb)
-                        mat[@cf::FULLNAME_JP] = "#{mat[@cf::NAME]} (#{mat[@cf::SIZE]})"
-                        mat[@cf::NAME] = translateEvoOrb(mat[@cf::NAME])
-                        mat[@cf::SIZE] = translateMatSize(mat[@cf::SIZE])
-                        mat[@cf::FULLNAME] = "#{mat[@cf::NAME]} (#{mat[@cf::SIZE]})"
-                    elsif (toTranslate[@cf::MATS][@cf::MAT_ID] == nil)
-                        toTranslate[@cf::MATS][@cf::MAT_ID] = mat[@cf::NAME]
-                        toAddToCount += mat[@cf::MAT_ID].length + mat[@cf::NAME].length + 4
-                    end
-                end
-            end
-            toAddToCount
-        end
-
-        #Translate Images
-        def transPt1Images(heroData, toTranslate)
-            #images (Should still be evo mats)
-            heroData[@cf::IMGS].each do |img|
-                if (img[@cf::MAT_ID] && toTranslate[@cf::MATS][img[@cf::MAT_ID]] == nil)
-                    if (img[@cf::NAME].include? "(")
-                        matchMatData = img[@cf::NAME].match(/(.+)\((.)\)/)
-                        img[@cf::NAME] = "#{translateEvoOrb(matchMatData[1])} (#{translateMatSize(matchMatData[2])})"
-                    else
-                        img[@cf::NAME] = translateEvoOrb(img[@cf::NAME])
-                    end
-                end
-            end #End images
-        end
-
-        #Translate Passives
-        def transPt1Passives(heroData, toTranslate)
-            toAddToCount = 0
-            #Add Passives to Translation Queue
-            heroData[@cf::PASSIVES].each do |passive|
-                if (passive[@cf::NAME])
-                    toTranslate[@cf::PASSIVES].push({
-                        @cf::NAME => passive[@cf::NAME],
-                        @cf::DESC => passive[@cf::DESC]
-                    })
-                    toAddToCount += (@cf::NAME).length + (@cf::DESC).length + 
-                                    passive[@cf::NAME].length + passive[@cf::DESC].length + 8 + 10
-
-                    passive[@cf::FULLNAME_JP] = passive[@cf::FULLNAME]
-                    passive[@cf::FULLNAME] = nil
-                    
-                    if (passive[@cf::TIER])
-                        passive[@cf::TIER] = translateSkillTier(passive[@cf::TIER])
-                    end
-                else #Only fullname is available
-                    toTranslate[@cf::PASSIVES].push({
-                        @cf::FULLNAME => passive[@cf::FULLNAME],
-                        @cf::DESC => passive[@cf::DESC]
-                    })
-                    toAddToCount += 8 + (@cf::FULLNAME).length + (@cf::DESC).length + passive[@cf::FULLNAME].length
-                                  + passive[@cf::DESC].length + 10
-                    passive[@cf::FULLNAME_JP] = passive[@cf::FULLNAME] 
-                end
-            end
-            toAddToCount
-        end
-
-        #Add Ultimate to Translation Queue
-        def transPt1Ult(heroData, toTranslate)
-            toTranslate[@cf::ULT] = {
-                @cf::NAME => heroData[@cf::ULT][@cf::NAME],
-                @cf::DESC => heroData[@cf::ULT][@cf::DESC]
-            }
-            return (@cf::NAME).length + (@cf::DESC).length + heroData[@cf::ULT][@cf::NAME].length 
-                + heroData[@cf::ULT][@cf::DESC].lenght + 8 + 10
-        end
-
+        #------------Translation Methods--------------
         #------------Skills--------------
         def translateSkillTier(t)
             case t
@@ -325,7 +368,8 @@ module Transformer
             when @sfjp::T_V
                 @sf::T_V
             else
-                raise 'HeroTransformerError: Could not find Skill Tier'
+                puts "HeroTransformerError: Could not find Skill Tier #{t}"
+                nil
             end
         end
 
@@ -343,7 +387,8 @@ module Transformer
             when @mat::XL
                 @mat::XL
             else
-                raise 'HeroTransformerError: Could not find MatSize'
+                puts "HeroTransformerError: Could not find MatSize #{size}"
+                nil
             end
         end
     
@@ -388,7 +433,7 @@ module Transformer
             when @cfp::R_SHOOTER
                 'Shooter'
             else
-                raise 'HeroTransformerError: Could not find correct role'
+                raise "HeroTransformerError: Could not find correct role: #{role}"
             end
         end
 
@@ -415,7 +460,7 @@ module Transformer
             when @cfp::WT_CANNON
                 'Cannon'
             else
-                raise 'HeroTransformerError: Could not find correct Weapon Type'
+                raise "HeroTransformerError: Could not find correct Weapon Type #{wt}"
             end
         end
 
@@ -426,7 +471,7 @@ module Transformer
             when @cfp::S_GN
                 'Grimm Notes'
             else
-                raise 'HeroTransformerError: Could not find correct Series'
+                raise "HeroTransformerError: Could not find correct Series #{s}"
             end
         end
 

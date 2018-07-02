@@ -44,7 +44,7 @@ module HeroScraper
             rawData[@cf::ULT] = scrapeUltimate
             rawData[@cf::ATTR] = scrapeAttributes
             rawData[@cf::PASSIVES] = scrapePassives
-            rawData[@cf::EVO] = evoData[0]
+            rawData[@cf::EVOS] = evoData[0]
             rawData[@cf::IMGS] = [scrapeBannerImageURL, *evoData[1]]
             
             if(@file)
@@ -59,8 +59,8 @@ module HeroScraper
             #Banner Image URL
             {
                 @imgf::HERO_ID => @heroID,
-                @imgf::CAT => "banner",
-                @cf::NAME => "banner",
+                @imgf::TYPE => "banner",
+                @imgf::NAME => "banner",
                 @imgf::URL => @doc.xpath("//div[@class='hero-bnr']/img/@src").text.strip
             }
         end
