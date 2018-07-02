@@ -133,7 +133,8 @@ module Transformer
 
         end
 
-        #Add Heroes' ULT, NAME, and metadata to translation queue
+        #Add Heroes' ULT and NAME to translation queue | translate heroMD
+        #Heroes: { HERO_ID => "", NAME => "", ULT => { NAME =>  "", DESC => "" } }
         def transPt1Heroes(heroes)
             heroesQ = []
             heroes.each do |heroID, heroData|
@@ -179,6 +180,7 @@ module Transformer
                 if (transName)
                     if (transSize)
                         mat[@cf::FULLNAME] = "#{transName} (#{transSize})"
+                        mat[@cf::SIZE] = transSize
                     else
                         mat[@cf::FULLNAME] = transName
                     end
@@ -194,8 +196,10 @@ module Transformer
             matQ
         end
         
+        #Write to files with goal of keeping character count under 5000
+        #Requires data to be partitioned
         def writeToFilePartitioned(dataToWrite, fileNamePrefix)
-            pageNum = 0
+            pageNum = 1
             charCount = 0
             #Array of hero dicts
             writeQueue = []
@@ -203,7 +207,13 @@ module Transformer
                 charCountTemp = 0
                 sadfadfasf
                 data.map do |k, v|
-                    charCountTemp += k.length + 2 + v.length + 2 + 1
+                    charCountTemp += k.length + 2 + v.length + 3
+                    #For Ult
+                    if (v.is_a?(Hash))
+                        v.map do |k2, v2|
+                            charCountTemp += k2.length + 2 + v2.length + 3
+                        end
+                    end
                 end
                 
                 if ((charCount + charCountTemp) <= 4600)
@@ -222,47 +232,10 @@ module Transformer
         #------------TranslatePartTwo--------------
         def translatePartTwo
             waitOnManualTranslation
-
-            pageNum = 1
-            rawDataIndex = 0
-            toTranslateFile = File.join('..', 'toTranslateData', 'manuallyTranslatedData', "toTranslate_#{pageNum}.json")
-            while (File.exist?(toTranslateFile))
-                dataFromFile = JSON.parse(File.read(toTranslateFile))
-
-                dataFromFile.each do |data|
-                    rawData = @rawData[rawDataIndex]
-                    
-                    if (data[@cf::HERO_ID] == rawData[@cf::HERO_ID])
-                        #Hero Name
-                        rawData[@cf::NAME] = data[@cf::NAME]
-                        #Evo Mats
-                        transPt2EvoMatEvos(rawData, data)
-                        #Evo Mats Images
-                        transPt2EvoMatsImages(rawData, data)
-                        #Ult
-                        transPt2Ult(rawData, data)
-                        #Passives
-                        transPt2Passives(rawData, data)
-                        rawDataIndex += 1
-                    end
-                end
-
-                pageNum += 1
-                toTranslateFile = File.join('..', 'toTranslateData', "toTranslate_#{pageNum}.json")
-            end
+            transPt2Heroes
+            transPt2Mats
+            transPt2Passives
         end
-
-        def categorizeSkills
-            @rawData.each do |hero|
-                hero[@cf::PASSIVES].each do |passive|
-
-
-
-                end
-            end
-        end
-
-
 
         def waitOnManualTranslation
             answer = false
@@ -271,6 +244,89 @@ module Transformer
                 answer = gets.chomp.strip.upcase == 'Y'
             end
             puts 'Proceeding with Translation Part Two'
+        end
+        
+        #Translate Hero Ults and Name
+        def transPt2Heroes
+            pageNum = 1
+            translatedFile = File.join('..', @heroesPrefix, "_#{pageNum}.json")
+            heroes = @rawData[@cf::HEROES]
+            while (File.exist?(translatedFile))
+                dataFromFile = JSON.parse(File.read(translatedFile))
+                dataFromFile.each do |heroTranslation|
+                    hero = heroes[heroTranslation[@cf::HERO_ID]]
+                    hero[@cf::NAME_JP] = hero[@cf::NAME]
+                    hero[@cf::NAME] = heroTranslation[@cf::NAME]
+                    
+                    heroUlt = hero[@cf::ULT]
+                    translatedUlt = heroTranslation[@cf::ULT]
+                    heroUlt[@cf::NAME_JP] = heroUlt[@cf::NAME]
+                    heroUlt[@cf::NAME] = translatedUlt[@cf::NAME]
+                    heroUlt[@cf::DESC] = translatedUlt[@cf::DESC]
+                end
+                pageNum += 1
+                translatedFile = File.join('..', @heroesPrefix, "_#{pageNum}.json")
+            end
+        end
+
+        #Translate Evo Mats
+        def transPt2EvoMats
+            pageNum = 1
+            translatedFile = File.join('..', @matsPrefix, "_#{pageNum}.json")
+            mats = @rawData[@cf::MATS]
+            while (File.exist?(translatedFile))
+                dataFromFile = JSON.parse(File.read(translatedFile))
+                dataFromFile.each do |matTranslation|
+                    mat = mats[matTranslation[@cf::MAT_ID]]
+                    if (mat[@cf::SIZE])
+                        matchData = matTranslation[@cf::FULLNAME].match(/(.+)\((.)\)/)
+                        translatedSize = translateMatSize(mat[@cf::SIZE])
+                        mat[@cf::FULLNAME] = "#{matchData[1]} (#{translatedSize})"
+                        mat[@cf::SIZE] = translatedSize
+                        mat[@cf::NAME_JP] = mat[@cf::NAME]
+                        mat[@cf::NAME] = matchData[1]
+                    else
+                        mat[@cf::FULLNAME] = matTranslation[@cf::FULLNAME]
+                        mat[@cf::NAME_JP] = mat[@cf::NAME]
+                        mat[@cf::NAME] = matTranslation[@cf::FULLNAME]
+                    end
+                end
+                pageNum += 1
+                translatedFile = File.join('..', @matsPrefix, "_#{pageNum}.json")
+            end
+        end
+
+        #Translate Passives
+        def transPt2Passives
+            pageNum = 1
+            translatedFile = File.join('..', @passivesPrefix, "_#{pageNum}.json")
+            passives = @rawData[@cf::PASSIVES]
+            while (File.exist?(translatedFile))
+                dataFromFile = JSON.parse(File.read(translatedFile))
+                dataFromFile.each do |passiveTranslation|
+                    passive = passives[passiveTranslation[@cf::PASSIVE_ID]]
+                    if (passive[@cf::TIER])
+                        matchData = passiveTranslation[@cf::FULLNAME].match(/(.{2,})(#{@cf::BUFF_SYMBOL}|#{@cf::DOT_SYMBOL})(.)/)
+                        translatedTier = translateSkillTier(passive[@cf::TIER])
+                        translatedName = matchData[1]
+                        symbol = passive[@cf::SYMBOL] == @cf::DOT_SYMBOL ? ' ' : @cf::BUFF_SYMBOL + ' '
+                        
+                        passive[@cf::FULLNAME_JP] = passive[@cf::FULLNAME]
+                        passive[@cf::FULLNAME] = "#{translatedName}#{symbol}(#{translatedTier})"
+                        passive[@cf::NAME_JP] = passive[@cf::NAME]
+                        passive[@cf::NAME] = transName 
+                        passive[@cf::DESC] = passiveTranslation[@cf::DESC]
+                    else
+                        passive[@cf::FULLNAME_JP] = passive[@cf::FULLNAME]
+                        passive[@cf::FULLNAME] = passiveTranslation[@cf::FULLNAME]
+                        passive[@cf::NAME_JP] = passiveTranslation[@cf::FULLNAME]
+                        passive[@cf::NAME] = passiveTranslation[@cf::FULLNAME]
+                        passive[@cf::DESC] = passiveTranslation[@cf::DESC]
+                    end
+                end
+                pageNum += 1
+                translatedFile = File.join('..', @passivesPrefix, "_#{pageNum}.json")
+            end
         end
 
         #Evolution Mats
