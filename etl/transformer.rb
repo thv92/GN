@@ -1,4 +1,5 @@
 require 'json'
+require 'fileutils'
 require './extractor'
 require '../constants/common_fields'
 require '../constants/common_fields_jp'
@@ -23,9 +24,6 @@ module Transformer
             @sf = StatFields
             @sfjp = StatFieldsJP
             @rawData = File.open(File.join('..', 'rawData', 'rawDataHeroes.json')
-            @heroesPrefix = 'ToTranslate_Heroes'
-            @passivesPrefix = 'ToTranslate_Passives'
-            @matsPrefix = 'ToTranslate_Mats'
             createDir
         end
 
@@ -81,7 +79,7 @@ module Transformer
                     matRefs = []
                     ult[@cf::MATS].each do |mat|
                         matID = mat[@cf::MAT_ID]
-                        matRefs.push({@cf::MAT_ID => matID, cf::AMT => mat[@cf::AMT]})
+                        matRefs.push({@cf::MAT_ID => matID, @cf::AMT => mat[@cf::AMT]})
                         if (!mats.include?(matID))
                             mats[matID] = mat.reject{|k| k == @cf::AMT || k== @cf::MAT_ID}
                         end
@@ -105,7 +103,7 @@ module Transformer
                         end
                         found = false
                         #If image same?
-                        imgMats[matID].map {|item| found == true if item[url] == image[url]}
+                        imgMats[matID].map {|item| found = true if item[url] == image[url]}
                         imgMats[matID].push(image.reject{|k| k == @cf::MAT_ID || k == @imgf::CAT || k == @imgf::NAME}) unless found
                     end
                 end
@@ -127,9 +125,9 @@ module Transformer
             matsQ = transPt1Mats(@rawData[@cf::MATS])
 
             #WriteToFile
-            writeToFilePartitioned(heroesQ, @heroesPrefix)
-            writeToFilePartitioned(passivesQ, @passivesPrefix)
-            writeToFilePartitioned(matsQ, @matsPrefix)
+            writeToFilePartitioned(heroesQ, 'ToTranslate_Heroes')
+            writeToFilePartitioned(passivesQ, 'ToTranslate_Passives')
+            writeToFilePartitioned(matsQ, 'ToTranslate_Mats')
 
         end
 
@@ -142,7 +140,7 @@ module Transformer
                 heroesQ.push({
                     @cf::HERO_ID => heroID,
                     @cf::NAME => heroData[@cf::NAME]
-                    @cf::ULT => heroData[@cf::ULT]
+                    @cf::ULT => {@cf::NAME => heroData[@cf::ULT][@cf::NAME], @cf::DESC => heroData[@cf::ULT][@cf::DESC]}
                 })
                 #Translate metadata
                 heroData[@cf::MD] = {
@@ -205,7 +203,6 @@ module Transformer
             writeQueue = []
             dataToWrite.each do |data|
                 charCountTemp = 0
-                sadfadfasf
                 data.map do |k, v|
                     charCountTemp += k.length + 2 + v.length + 3
                     #For Ult
@@ -220,7 +217,7 @@ module Transformer
                     writeQueue.push(data)
                     charCount += charCountTemp
                 else
-                    File.open(fileNamePrefix + "_#{pageNum}.json", 'w') { |f| f.write(JSON.generate(writeQueue))}
+                    File.open(File.join('..', 'toTranslateData', fileNamePrefix + "_#{pageNum}.json"), 'w') { |f| f.write(JSON.generate(writeQueue))}
                     charCount = charCountTemp
                     writeQueue = [data]
                     pageNum += 1
@@ -249,7 +246,7 @@ module Transformer
         #Translate Hero Ults and Name
         def transPt2Heroes
             pageNum = 1
-            translatedFile = File.join('..', @heroesPrefix, "_#{pageNum}.json")
+            translatedFile = File.join('..', 'translatedData', "Translated_Heroes_#{pageNum}.json")
             heroes = @rawData[@cf::HEROES]
             while (File.exist?(translatedFile))
                 dataFromFile = JSON.parse(File.read(translatedFile))
@@ -265,14 +262,14 @@ module Transformer
                     heroUlt[@cf::DESC] = translatedUlt[@cf::DESC]
                 end
                 pageNum += 1
-                translatedFile = File.join('..', @heroesPrefix, "_#{pageNum}.json")
+                translatedFile = File.join('..', 'translatedData', "Translated_Heroes_#{pageNum}.json")
             end
         end
 
         #Translate Evo Mats
         def transPt2EvoMats
             pageNum = 1
-            translatedFile = File.join('..', @matsPrefix, "_#{pageNum}.json")
+            translatedFile = File.join('..', 'translatedData', "Translated_Mats_#{pageNum}.json")
             mats = @rawData[@cf::MATS]
             while (File.exist?(translatedFile))
                 dataFromFile = JSON.parse(File.read(translatedFile))
@@ -281,7 +278,7 @@ module Transformer
                     if (mat[@cf::SIZE])
                         matchData = matTranslation[@cf::FULLNAME].match(/(.+)\((.)\)/)
                         translatedSize = translateMatSize(mat[@cf::SIZE])
-                        mat[@cf::FULLNAME] = "#{matchData[1]} (#{translatedSize})"
+                        mat[@cf::FULLNAME] = "#{matchData[1].strip} (#{translatedSize})"
                         mat[@cf::SIZE] = translatedSize
                         mat[@cf::NAME_JP] = mat[@cf::NAME]
                         mat[@cf::NAME] = matchData[1]
@@ -292,14 +289,14 @@ module Transformer
                     end
                 end
                 pageNum += 1
-                translatedFile = File.join('..', @matsPrefix, "_#{pageNum}.json")
+                translatedFile = File.join('..', 'translatedData', "Translated_Mats_#{pageNum}.json")
             end
         end
 
         #Translate Passives
         def transPt2Passives
             pageNum = 1
-            translatedFile = File.join('..', @passivesPrefix, "_#{pageNum}.json")
+            translatedFile = File.join('..', 'translatedData', "Translated_Passives_#{pageNum}.json")
             passives = @rawData[@cf::PASSIVES]
             while (File.exist?(translatedFile))
                 dataFromFile = JSON.parse(File.read(translatedFile))
@@ -308,7 +305,7 @@ module Transformer
                     if (passive[@cf::TIER])
                         matchData = passiveTranslation[@cf::FULLNAME].match(/(.{2,})(#{@cf::BUFF_SYMBOL}|#{@cf::DOT_SYMBOL})(.)/)
                         translatedTier = translateSkillTier(passive[@cf::TIER])
-                        translatedName = matchData[1]
+                        translatedName = matchData[1].strip
                         symbol = passive[@cf::SYMBOL] == @cf::DOT_SYMBOL ? ' ' : @cf::BUFF_SYMBOL + ' '
                         
                         passive[@cf::FULLNAME_JP] = passive[@cf::FULLNAME]
@@ -325,7 +322,7 @@ module Transformer
                     end
                 end
                 pageNum += 1
-                translatedFile = File.join('..', @passivesPrefix, "_#{pageNum}.json")
+                translatedFile = File.join('..', 'translatedData', "Translated_Passives_#{pageNum}.json")
             end
         end
 

@@ -223,7 +223,7 @@ File.open('./m_skill.bin') do |f|
             index += 1
         end
     end
-    File.open('./catPassives.json', 'w') do |f|
+    File.open(File.join('..', '')catPassives.json', 'w') do |f|
         f.write(JSON.pretty_generate(passives))
     end
 end
