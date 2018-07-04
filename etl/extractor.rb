@@ -2,12 +2,17 @@ require 'nokogiri'
 require 'open-uri'
 require 'json'
 require '../scrapers/hero_scraper'
+require '../scrapers/passive_skill_bin_scraper'
 require '../constants/image_fields'
 require '../constants/common_fields'
 
 module Extractor
     def self.extractHeroes(&block)
         HeroesExtractor.new.extractHeroes &block
+    end
+
+    def self.extractPassives(&block)
+        PassiveSkillScraper::scrape &block
     end
 
     class HeroesExtractor
@@ -39,7 +44,7 @@ module Extractor
                     rawData[cf::IS_ORIGIN] = isOrigin
                     rawData[cf::IMGS].push(thumbnail)
                     
-                    if(block_given?)
+                    if (block_given?)
                         yield rawData, i
                     else
                         heroes.push(rawData)
@@ -48,10 +53,10 @@ module Extractor
                 end
                 break
             end
-            if(!block_given?)
+            if (!block_given?)
                 createRawDataDir
-                File.open(File.join('..', 'rawData', 'rawDataHeroes.json') do |f|
-                    f.write JSON.generate heroes
+                File.open(File.join('..', 'rawData', 'rawDataHeroes.json'), 'w') do |f|
+                    f.write(JSON.generate(heroes))
                 end
                 heroes
             end
@@ -63,7 +68,7 @@ module Extractor
         end
 
         def createRawDataDir
-            dirPath = File.join('~', '..', 'rawData')
+            dirPath = File.join('..', 'rawData')
             if(!Dir.exist?(dirPath))
                 Dir.mkdir(dirPath)
             end

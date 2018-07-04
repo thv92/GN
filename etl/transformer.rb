@@ -1,6 +1,7 @@
 require 'json'
 require 'fileutils'
 require './extractor'
+require '../utils/skill_colorizer'
 require '../constants/common_fields'
 require '../constants/common_fields_jp'
 require '../constants/image_fields'
@@ -10,12 +11,12 @@ require '../constants/stat_fields'
 require '../constants/stat_fields_jp'
 
 module Transformer
-    def self.transformHeroes
-        HeroTransformer.new.transform
+    def self.transformHeroes(localizedPassives = nil)
+        HeroTransformer.new(localizedPassives).transform
     end
 
     class HeroTransformer
-        def initialize
+        def initialize(localizedPassives = nil)
             @cf = CommonFields
             @cfp = CommonFieldsJP
             @imgf = ImageFields
@@ -23,21 +24,15 @@ module Transformer
             @matjp = MaterialsJP
             @sf = StatFields
             @sfjp = StatFieldsJP
-            @rawData = File.open(File.join('..', 'rawData', 'rawDataHeroes.json')
+            @rawData = JSON.parse(File.read(File.join('..', 'rawData', 'rawDataHeroes.json')))
             createDir
+            @localizedPassives = localizedPassives
         end
-
-        def initialize(rawData)
-            initialize()
-            @rawData = rawData
-        end
-
 
         def transform
             restructureData
             translatePartOne
-            translatePartTWo
-            # mergePassives
+            translatePartTwo
         end
 
         def restructureData
@@ -60,8 +55,8 @@ module Transformer
                         passive[@cf::HERO_REFS] = [heroID]
                         passives[fullName] = passive
                         #Add in indexing as temp ID
-                        passives[@cf::PASSIVE_ID] = "SK%05d" % passiveIndex
-                        passivesIDAsKey[passives[@cf::PASSIVE_ID]] = passive.reject{|k| k == cf::PASSIVE_ID}
+                        passives[fullName][@cf::PASSIVE_ID] = "SK%05d" % passiveIndex
+                        passivesIDAsKey[passives[fullName][@cf::PASSIVE_ID]] = passive.reject{|k| k == @cf::PASSIVE_ID}
                         passiveIndex += 1
                     else
                         # This should push it to the other map's array too since reference is same
@@ -69,22 +64,23 @@ module Transformer
                         # passiveID = passives[fullName][@cf::PASSIVE_ID]
                         # passivesIDAsKey[passiveID][@cf:HERO_REFS].push(heroID)
                     end
+
                     #Push temp indexed ID as reference to passive instead of fullName
                     passiveRefs.push(passives[fullName][@cf::PASSIVE_ID])
                 end
                 heroData[@cf::PASSIVES] = passiveRefs
 
-                #ULTS section to get MATS
-                heroData[@cf::ULTS].each do |ult|
+                #EVOS section to get MATS
+                heroData[@cf::EVOS].each do |evo|
                     matRefs = []
-                    ult[@cf::MATS].each do |mat|
+                    evo[@cf::MATS].each do |mat|
                         matID = mat[@cf::MAT_ID]
                         matRefs.push({@cf::MAT_ID => matID, @cf::AMT => mat[@cf::AMT]})
                         if (!mats.include?(matID))
                             mats[matID] = mat.reject{|k| k == @cf::AMT || k== @cf::MAT_ID}
                         end
                     end
-                    ult[@cf::MATS] = matRefs
+                    evo[@cf::MATS] = matRefs
                 end
                 
                 #IMAGES section
@@ -93,9 +89,9 @@ module Transformer
                 heroData[@cf::IMGS].each do |image|
                     if (image.include?(@cf::HERO_ID))
                         if (!imgHeroes.include?(heroID))
-                            imgsHeroes[heroID] = []
+                            imgHeroes[heroID] = []
                         end
-                        imgsHeroes[heroID].push(image.reject{|k| k == @cf::HERO_ID || k == @imgf::CAT})
+                        imgHeroes[heroID].push(image.reject{|k| k == @cf::HERO_ID || k == @imgf::CAT})
                     else
                         matID = image[@cf::MAT_ID]
                         if (!imgMats.include?(matID))
@@ -139,7 +135,7 @@ module Transformer
                 #Add ULT, NAME to translation Queue
                 heroesQ.push({
                     @cf::HERO_ID => heroID,
-                    @cf::NAME => heroData[@cf::NAME]
+                    @cf::NAME => heroData[@cf::NAME],
                     @cf::ULT => {@cf::NAME => heroData[@cf::ULT][@cf::NAME], @cf::DESC => heroData[@cf::ULT][@cf::DESC]}
                 })
                 #Translate metadata
@@ -158,7 +154,7 @@ module Transformer
             passivesQ = []
             passives.each do |passiveID, passive|
                 passivesQ.push({
-                    @cf::PASSIVE_ID => passiveID
+                    @cf::PASSIVE_ID => passiveID,
                     @cf::FULLNAME => passive[@cf::FULLNAME],
                     @cf::DESC => passive[@cf::DESC]
                 })
@@ -232,6 +228,7 @@ module Transformer
             transPt2Heroes
             transPt2Mats
             transPt2Passives
+            File.open('../finalizedData/finalizedHeroes.json', 'w') {|f| f.write(JSON.generate(@rawData))}
         end
 
         def waitOnManualTranslation
@@ -298,12 +295,22 @@ module Transformer
             pageNum = 1
             translatedFile = File.join('..', 'translatedData', "Translated_Passives_#{pageNum}.json")
             passives = @rawData[@cf::PASSIVES]
+            effectPattern = /(?<=\s)(effect)/
             while (File.exist?(translatedFile))
                 dataFromFile = JSON.parse(File.read(translatedFile))
                 dataFromFile.each do |passiveTranslation|
                     passive = passives[passiveTranslation[@cf::PASSIVE_ID]]
+                    translatedFullName = passiveTranslation[@cf::FULLNAME]
+                    #Remove 'effect' from translated
+                    if (effectPattern.match(translatedFullName))
+                        lastMatch = Regexp.last_match
+                        idxB = lastMatch.begin(0)
+                        idxE = lastMatch.end(0)
+                        translatedFullName = "#{translatedFullName[0..(idxB-1)].strip} #{translatedFullName[(idxE+1)..-1].strip}"
+                    end
+                    #If passive has a tier, then fullname has tier/symbol
                     if (passive[@cf::TIER])
-                        matchData = passiveTranslation[@cf::FULLNAME].match(/(.{2,})(#{@cf::BUFF_SYMBOL}|#{@cf::DOT_SYMBOL})(.)/)
+                        matchData = translatedFullName.match(/(.{2,})(#{@cf::BUFF_SYMBOL}|#{@cf::DOT_SYMBOL})(.)/)
                         translatedTier = translateSkillTier(passive[@cf::TIER])
                         translatedName = matchData[1].strip
                         symbol = passive[@cf::SYMBOL] == @cf::DOT_SYMBOL ? ' ' : @cf::BUFF_SYMBOL + ' '
@@ -315,11 +322,12 @@ module Transformer
                         passive[@cf::DESC] = passiveTranslation[@cf::DESC]
                     else
                         passive[@cf::FULLNAME_JP] = passive[@cf::FULLNAME]
-                        passive[@cf::FULLNAME] = passiveTranslation[@cf::FULLNAME]
-                        passive[@cf::NAME_JP] = passiveTranslation[@cf::FULLNAME]
-                        passive[@cf::NAME] = passiveTranslation[@cf::FULLNAME]
+                        passive[@cf::FULLNAME] = translatedFullName
+                        passive[@cf::NAME_JP] = translatedFullName
+                        passive[@cf::NAME] = translatedFullName
                         passive[@cf::DESC] = passiveTranslation[@cf::DESC]
                     end
+                    passives[@cf::PASSIVE_ID] = passive.merge(SkillColorizer::categorizePassiveSkill(passive[@cf::DESC]))
                 end
                 pageNum += 1
                 translatedFile = File.join('..', 'translatedData', "Translated_Passives_#{pageNum}.json")
@@ -357,7 +365,7 @@ module Transformer
                 @mat::M
             when @matjp::L
                 @mat::L
-            when @mat::XL
+            when @matjp::XL
                 @mat::XL
             else
                 puts "HeroTransformerError: Could not find MatSize #{size}"
@@ -366,7 +374,7 @@ module Transformer
         end
     
         def translateEvoOrb(orb)
-            case size
+            case orb
             when @matjp::ORB_PATIENCE
                 @mat::ORB_PATIENCE
             when @matjp::ORB_JUSTICE
@@ -463,4 +471,10 @@ module Transformer
             end
         end
     end #End class
+
+
+
 end #End module
+
+
+Transformer::transformHeroes
