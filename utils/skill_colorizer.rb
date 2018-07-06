@@ -3,6 +3,9 @@ require '../constants/common_fields'
 
 module SkillColorizer
     def self.categorizeSkillDesc(skillDesc)
+        if (skillDesc == nil)
+            raise 'Skill is nil'
+        end
         #Check skillName for + and split on .
         #Passive Skill Fields
         isDamage = false

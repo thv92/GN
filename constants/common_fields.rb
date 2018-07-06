@@ -51,4 +51,5 @@ module CommonFields
     IS_DEBUFF = 'isDebuff'
     STATUSTYPES = 'statusTypes'
     ATTRIBUTES = 'attributes'
+    FILTERS = 'filters'
 end

@@ -31,18 +31,18 @@ module Transformer
         end
 
         def transform
-            puts LogUtill::printMethodStatus('transform', false)
-            puts LogUtill::printMethodStatus('restructureData', false)
+            puts LogUtil::printMethodStatus('transform', false)
+            puts LogUtil::printMethodStatus('restructureData', false)
             restructureData
-            puts LogUtill::printMethodStatus('restructureData', true)
-            puts LogUtill::printMethodStatus('translatePartOne', false)
+            puts LogUtil::printMethodStatus('restructureData', true)
+            puts LogUtil::printMethodStatus('translatePartOne', false)
             translatePartOne
-            puts LogUtill::printMethodStatus('translatePartOne', true)
-            puts LogUtill::printMethodStatus('translatePartTwo', false)
+            puts LogUtil::printMethodStatus('translatePartOne', true)
+            puts LogUtil::printMethodStatus('translatePartTwo', false)
             translatePartTwo
-            puts LogUtill::printMethodStatus('translatePartTwo', true)
+            puts LogUtil::printMethodStatus('translatePartTwo', true)
             File.open('../finalizedData/finalizedHeroes.json', 'w') {|f| f.write(JSON.generate(@rawData))}
-            puts LogUtill::printMethodStatus('transform', true)
+            puts LogUtil::printMethodStatus('transform', true)
         end
 
         def restructureData
@@ -163,11 +163,19 @@ module Transformer
         def transPt1Passives(passives)
             passivesQ = []
             passives.each do |passiveID, passive|
-                passivesQ.push({
-                    @cf::PASSIVE_ID => passiveID,
-                    @cf::FULLNAME => passive[@cf::FULLNAME],
-                    @cf::DESC => passive[@cf::DESC]
-                })
+                if (passive[@cf::TIER])
+                    passivesQ.push({
+                        @cf::PASSIVE_ID => passiveID,
+                        @cf::NAME => passive[@cf::NAME],
+                        @cf::DESC => passive[@cf::DESC]
+                    })
+                else
+                    passivesQ.push({
+                        @cf::PASSIVE_ID => passiveID,
+                        @cf::FULLNAME => passive[@cf::FULLNAME],
+                        @cf::DESC => passive[@cf::DESC]
+                    })
+                 end
             end
             passivesQ
         end
@@ -214,12 +222,12 @@ module Transformer
                     #For Ult
                     if (v.is_a?(Hash))
                         v.map do |k2, v2|
-                            charCountTemp += k2.length + 3 + v2.length + k.length
-                            writeQueueTemp += "#{k}|#{k2}|#{v2}\n"
+                            charCountTemp += k2.length + 5 + v2.length + k.length
+                            writeQueueTemp += "[#{k}][#{k2}]#{v2}\n"
                         end
                     else
-                        charCountTemp += k.length + v.length + 2
-                        writeQueueTemp += "#{k}|#{v}\n"
+                        charCountTemp += k.length + v.length + 3
+                        writeQueueTemp += "[#{k}]#{v}\n"
                     end
                 end
                 writeQueueTemp += "---\n"
@@ -317,27 +325,28 @@ module Transformer
                 dataFromFile = readPartitionedFile(File.read(translatedFile))
                 dataFromFile.each do |passiveTranslation|
                     passive = passives[passiveTranslation[@cf::PASSIVE_ID]]
-                    translatedFullName = passiveTranslation[@cf::FULLNAME]
                     #If passive has a tier, then fullname has tier/symbol
                     if (passive[@cf::TIER])
-                        matchData = translatedFullName.match(/(.{2,})(#{@cf::BUFF_SYMBOL}|#{@cf::DOT_SYMBOL})(.)/)
                         translatedTier = translateSkillTier(passive[@cf::TIER])
-                        translatedName = matchData[1].strip
+                        translatedName = passiveTranslation[@cf::NAME]
                         symbol = passive[@cf::SYMBOL] == @cf::DOT_SYMBOL ? ' ' : @cf::BUFF_SYMBOL + ' '
                         
                         passive[@cf::FULLNAME_JP] = passive[@cf::FULLNAME]
                         passive[@cf::FULLNAME] = "#{translatedName}#{symbol}(#{translatedTier})"
                         passive[@cf::NAME_JP] = passive[@cf::NAME]
-                        passive[@cf::NAME] = transName 
+                        passive[@cf::NAME] = translatedName 
                         passive[@cf::DESC] = passiveTranslation[@cf::DESC]
                     else
+                        translatedFullName = passiveTranslation[@cf::FULLNAME]
                         passive[@cf::FULLNAME_JP] = passive[@cf::FULLNAME]
                         passive[@cf::FULLNAME] = translatedFullName
-                        passive[@cf::NAME_JP] = translatedFullName
+                        passive[@cf::NAME_JP] = passive[@cf::FULLNAME_JP]
                         passive[@cf::NAME] = translatedFullName
                         passive[@cf::DESC] = passiveTranslation[@cf::DESC]
                     end
-                    passives[@cf::PASSIVE_ID] = passive.merge(SkillColorizer::categorizePassiveSkill(passive[@cf::DESC]))
+                    # puts passive.inspect
+                    passive[@cf::FILTERS] = SkillColorizer::categorizeSkillDesc(passive[@cf::DESC])
+                    passives[@cf::PASSIVE_ID] = passive
                 end
                 pageNum += 1
                 translatedFile = File.join('..', 'translatedData', "ToTranslate_Passives_#{pageNum}.txt")
@@ -484,36 +493,39 @@ module Transformer
         #Read nontranslated/translated partitions
         def readPartitionedFile(readData)
             result = []
+            keyValuePattern = /(?:(?:\[(.+)\]\s*\[(.+)\]\s*(.+))|(?:\[(.+)\]\s*(.+)))/
             readData.split(/(?:\-\-\-)|(?:\-\s\-)/).each do |block|
                 blockData = {}
                 block.split(/\n/).each do |line|
-                    splitLine = line.split(/\|/)
-                    if (splitLine.size > 2)
-                        key_1 = splitLine[0].strip
-                        key_2 = splitLine[1].strip
-                        value = splitLine[2].strip
-                        if (!blockData.include?(key_1))
-                            blockData[key_1] = {}
-                        end
+                    matchData = keyValuePattern.match(line)
+                    if (matchData)
+                        #Matches key - value
+                        if (matchData[4] && matchData[5]) 
+                            key_1 = matchData[4].strip
+                            value = matchData[5].strip
+                            
+                            if (key_1 == @cf::NAME || key_1 == @cf::FULLNAME)
+                                value = localizeSkillName(value)
+                            elsif (key_1 == @cf::DESC)
+                                value = localizeSkillDescription(value.capitalize)
+                            end
+                            blockData[key_1] = value
+                        elsif (matchData[1] && matchData[2] && matchData[3]) #Matches key - key - value
+                            key_1 = matchData[1].strip
+                            key_2 = matchData[2].strip
+                            value = matchData[3].strip
+                            if (!blockData[key_1])
+                                blockData[key_1] = {}
+                            end
 
-                        if (key_2 == @cf::NAME)
-                            value = localizeSkillName(value)
-                        elsif (key_2 == @cf::DESC)
-                            value = localizeSkillDescription(value)
+                            if (key_2 == @cf::NAME || key_2 == @cf::FULLNAME)
+                                value = localizeSkillName(value)
+                            elsif (key_2 == @cf::DESC)
+                                value = localizeSkillDescription(value.capitalize)
+                            end
+                            blockData[key_1][key_2] = value
                         end
-
-                        blockData[key_1][key_2] = value
-                    elsif (splitLine.size > 0)
-                        key_1 = splitLine[0].strip
-                        value = splitLine[1].strip
-
-                        if (key_1 == @cf::NAME)
-                            value = localizeSkillName(value)
-                        elsif (key_1 == @cf::DESC)
-                            value = localizeSkillDescription(value)
-                        end
-                        blockData[key_1] = value
-                    end
+                    end #if matchData
                 end #end split \n
                 result.push(blockData) unless blockData.size == 0
             end #end split ---
@@ -536,8 +548,8 @@ module Transformer
             desc = desc.gsub(/(?:E|e)xplosion/, 'Blast')
 
             #Capitalize every attribute and status
-            attributesPattern = /light|darkness|dark|ice|fire/
-            statusesPattern = /paraly(?:zed|sis|ze)|poison(?:ed)?|freeze|frozen|burn(?:ed|t|ing)?|stun(?:ned)?|curse(?:d)?/
+            attributesPattern = /light|darkness|dark|ice|fire|thunder/
+            statusesPattern = /paraly(?:zed|sis|ze)|poison(?:ed)?|freez(?:e|ing)|frozen|burn(?:ed|t|ing)?|stun(?:ned)?|curse(?:d)?/
             desc.scan(/#{attributesPattern.source}|#{statusesPattern.source}/) do |m|
                 desc = desc.gsub(m, m.capitalize)
             end
@@ -552,12 +564,7 @@ module Transformer
         def localizeSkillName(name)
             #Remove 'effect' from translated
             effectPattern = /(?<=\s)((?:E|e)ffect)/
-            if (effectPattern.match(name))
-                lastMatch = Regexp.last_match
-                idxB = lastMatch.begin(0)
-                idxE = lastMatch.end(0)
-                name = "#{name[0..(idxB-1)].strip} #{name[(idxE+1)..-1].strip}"
-            end
+            name = name.gsub(effectPattern, '')
 
             #Remove space between arrow symbol
             arrowPattern = /(\s+)(#{CommonFields::BUFF_SYMBOL})/
@@ -569,8 +576,8 @@ module Transformer
             end
 
             #Replacement for localization (lightning, blast)
-            desc = desc.gsub( /(?:L|l)ightning/, 'Thunder')
-            desc = desc.gsub(/(?:E|e)xplosion/, 'Blast')
+            name = name.gsub( /(?:L|l)ightning/, 'Thunder')
+            name = name.gsub(/(?:E|e)xplosion/, 'Blast')
 
             #Capitalize every word inside parenthesis
             nameArray = name.split(/\s+/)
@@ -587,3 +594,6 @@ module Transformer
 
     end #End class
 end #End module
+
+
+Transformer::transformHeroes
