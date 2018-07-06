@@ -2,6 +2,7 @@ require 'json'
 require 'fileutils'
 require './extractor'
 require '../utils/skill_colorizer'
+require '../utils/log_util'
 require '../constants/common_fields'
 require '../constants/common_fields_jp'
 require '../constants/image_fields'
@@ -100,7 +101,7 @@ module Transformer
                         end
                         found = false
                         #If image same?
-                        imgMats[matID].map {|item| found = true if item[url] == image[url]}
+                        imgMats[matID].map {|item| found = true if item[@imgf::URL] == image[@imgf::URL]}
                         imgMats[matID].push(image.reject{|k| k == @cf::MAT_ID || k == @imgf::CAT || k == @imgf::NAME}) unless found
                     end
                 end
@@ -578,6 +579,3 @@ module Transformer
 
     end #End class
 end #End module
-
-
-Transformer::transformHeroes
