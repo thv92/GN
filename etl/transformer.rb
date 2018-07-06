@@ -33,6 +33,7 @@ module Transformer
             restructureData
             translatePartOne
             translatePartTwo
+            File.open('../finalizedData/finalizedHeroes.json', 'w') {|f| f.write(JSON.generate(@rawData))}
         end
 
         def restructureData
@@ -196,28 +197,37 @@ module Transformer
             pageNum = 1
             charCount = 0
             #Array of hero dicts
-            writeQueue = []
+            writeQueue = ''
             dataToWrite.each do |data|
-                charCountTemp = 0
+                writeQueueTemp = ''
+                charCountTemp = 4
                 data.map do |k, v|
-                    charCountTemp += k.length + 2 + v.length + 3
                     #For Ult
                     if (v.is_a?(Hash))
                         v.map do |k2, v2|
-                            charCountTemp += k2.length + 2 + v2.length + 3
+                            charCountTemp += k2.length + 3 + v2.length + k.length
+                            writeQueueTemp += "#{k}|#{k2}|#{v2}\n"
                         end
+                    else
+                        charCountTemp += k.length + v.length + 2
+                        writeQueueTemp += "#{k}|#{v}\n"
                     end
                 end
+                writeQueueTemp += "---\n"
                 
-                if ((charCount + charCountTemp) <= 4600)
-                    writeQueue.push(data)
+                if ((charCount + charCountTemp) <= 4800)
+                    writeQueue += writeQueueTemp
                     charCount += charCountTemp
                 else
-                    File.open(File.join('..', 'toTranslateData', fileNamePrefix + "_#{pageNum}.json"), 'w') { |f| f.write(JSON.generate(writeQueue))}
+                    File.open(File.join('..', 'toTranslateData', fileNamePrefix + "_#{pageNum}.txt"), 'w') { |f| f.write(writeQueue)}
                     charCount = charCountTemp
-                    writeQueue = [data]
+                    writeQueue = writeQueueTemp
                     pageNum += 1
                 end
+            end
+
+            if (charCount != 0)
+                File.open(File.join('..', 'toTranslateData', "#{fileNamePrefix}_#{pageNum}.txt"), 'w') {|f| f.write(writeQueue)}
             end
         end
         
@@ -226,9 +236,8 @@ module Transformer
         def translatePartTwo
             waitOnManualTranslation
             transPt2Heroes
-            transPt2Mats
+            transPt2EvoMats
             transPt2Passives
-            File.open('../finalizedData/finalizedHeroes.json', 'w') {|f| f.write(JSON.generate(@rawData))}
         end
 
         def waitOnManualTranslation
@@ -243,10 +252,10 @@ module Transformer
         #Translate Hero Ults and Name
         def transPt2Heroes
             pageNum = 1
-            translatedFile = File.join('..', 'translatedData', "Translated_Heroes_#{pageNum}.json")
+            translatedFile = File.join('..', 'translatedData', "ToTranslate_Heroes_#{pageNum}.txt")
             heroes = @rawData[@cf::HEROES]
             while (File.exist?(translatedFile))
-                dataFromFile = JSON.parse(File.read(translatedFile))
+                dataFromFile = readPartitionedFile(File.read(translatedFile))
                 dataFromFile.each do |heroTranslation|
                     hero = heroes[heroTranslation[@cf::HERO_ID]]
                     hero[@cf::NAME_JP] = hero[@cf::NAME]
@@ -259,17 +268,17 @@ module Transformer
                     heroUlt[@cf::DESC] = translatedUlt[@cf::DESC]
                 end
                 pageNum += 1
-                translatedFile = File.join('..', 'translatedData', "Translated_Heroes_#{pageNum}.json")
+                translatedFile = File.join('..', 'translatedData', "ToTranslate_Heroes_#{pageNum}.txt")
             end
         end
 
         #Translate Evo Mats
         def transPt2EvoMats
             pageNum = 1
-            translatedFile = File.join('..', 'translatedData', "Translated_Mats_#{pageNum}.json")
+            translatedFile = File.join('..', 'translatedData', "ToTranslate_Mats_#{pageNum}.txt")
             mats = @rawData[@cf::MATS]
             while (File.exist?(translatedFile))
-                dataFromFile = JSON.parse(File.read(translatedFile))
+                dataFromFile = readPartitionedFile(File.read(translatedFile))
                 dataFromFile.each do |matTranslation|
                     mat = mats[matTranslation[@cf::MAT_ID]]
                     if (mat[@cf::SIZE])
@@ -286,28 +295,20 @@ module Transformer
                     end
                 end
                 pageNum += 1
-                translatedFile = File.join('..', 'translatedData', "Translated_Mats_#{pageNum}.json")
+                translatedFile = File.join('..', 'translatedData', "ToTranslate_Mats_#{pageNum}.txt")
             end
         end
 
         #Translate Passives
         def transPt2Passives
             pageNum = 1
-            translatedFile = File.join('..', 'translatedData', "Translated_Passives_#{pageNum}.json")
+            translatedFile = File.join('..', 'translatedData', "ToTranslate_Passives_#{pageNum}.txt")
             passives = @rawData[@cf::PASSIVES]
-            effectPattern = /(?<=\s)(effect)/
             while (File.exist?(translatedFile))
-                dataFromFile = JSON.parse(File.read(translatedFile))
+                dataFromFile = readPartitionedFile(File.read(translatedFile))
                 dataFromFile.each do |passiveTranslation|
                     passive = passives[passiveTranslation[@cf::PASSIVE_ID]]
                     translatedFullName = passiveTranslation[@cf::FULLNAME]
-                    #Remove 'effect' from translated
-                    if (effectPattern.match(translatedFullName))
-                        lastMatch = Regexp.last_match
-                        idxB = lastMatch.begin(0)
-                        idxE = lastMatch.end(0)
-                        translatedFullName = "#{translatedFullName[0..(idxB-1)].strip} #{translatedFullName[(idxE+1)..-1].strip}"
-                    end
                     #If passive has a tier, then fullname has tier/symbol
                     if (passive[@cf::TIER])
                         matchData = translatedFullName.match(/(.{2,})(#{@cf::BUFF_SYMBOL}|#{@cf::DOT_SYMBOL})(.)/)
@@ -330,7 +331,7 @@ module Transformer
                     passives[@cf::PASSIVE_ID] = passive.merge(SkillColorizer::categorizePassiveSkill(passive[@cf::DESC]))
                 end
                 pageNum += 1
-                translatedFile = File.join('..', 'translatedData', "Translated_Passives_#{pageNum}.json")
+                translatedFile = File.join('..', 'translatedData', "ToTranslate_Passives_#{pageNum}.txt")
             end
         end
 
@@ -470,10 +471,112 @@ module Transformer
                 Dir.mkdir(File.join('..', 'finalizedData'))
             end
         end
+
+        #Read nontranslated/translated partitions
+        def readPartitionedFile(readData)
+            result = []
+            readData.split(/(?:\-\-\-)|(?:\-\s\-)/).each do |block|
+                blockData = {}
+                block.split(/\n/).each do |line|
+                    splitLine = line.split(/\|/)
+                    if (splitLine.size > 2)
+                        key_1 = splitLine[0].strip
+                        key_2 = splitLine[1].strip
+                        value = splitLine[2].strip
+                        if (!blockData.include?(key_1))
+                            blockData[key_1] = {}
+                        end
+
+                        if (key_2 == @cf::NAME)
+                            value = localizeSkillName(value)
+                        elsif (key_2 == @cf::DESC)
+                            value = localizeSkillDescription(value)
+                        end
+
+                        blockData[key_1][key_2] = value
+                    elsif (splitLine.size > 0)
+                        key_1 = splitLine[0].strip
+                        value = splitLine[1].strip
+
+                        if (key_1 == @cf::NAME)
+                            value = localizeSkillName(value)
+                        elsif (key_1 == @cf::DESC)
+                            value = localizeSkillDescription(value)
+                        end
+                        blockData[key_1] = value
+                    end
+                end #end split \n
+                result.push(blockData) unless blockData.size == 0
+            end #end split ---
+            result
+        end
+
+
+        #Replace asterisk with GN's asterisk and remove space
+        #Capitalize every attribute and status
+        def localizeSkillDescription(desc)
+            #Replace asterisk
+            starPattern = /(\s\*)/
+            if (starPattern.match(desc))
+                matchData = Regexp.last_match
+                desc = "#{desc[0..(matchData.begin(1)-1)]} \u203b#{desc[(matchData.end(1)+1)..-1]}"
+            end
+
+            #Replacement for localization (lightning, blast)
+            desc = desc.gsub( /(?:L|l)ightning/, 'Thunder')
+            desc = desc.gsub(/(?:E|e)xplosion/, 'Blast')
+
+            #Capitalize every attribute and status
+            attributesPattern = /light|darkness|dark|ice|fire/
+            statusesPattern = /paraly(?:zed|sis|ze)|poison(?:ed)?|freeze|frozen|burn(?:ed|t|ing)?|stun(?:ned)?|curse(?:d)?/
+            desc.scan(/#{attributesPattern.source}|#{statusesPattern.source}/) do |m|
+                desc = desc.gsub(m, m.capitalize)
+            end
+
+            desc.gsub(/\r|\R|\n/, '').strip
+        end
+
+        #Sub Up Arrow to have no space
+        #Capitalize every word inside parenthesis
+        #Remove Effect
+        #Fix Lightning to be Thunder
+        def localizeSkillName(name)
+            #Remove 'effect' from translated
+            effectPattern = /(?<=\s)((?:E|e)ffect)/
+            if (effectPattern.match(name))
+                lastMatch = Regexp.last_match
+                idxB = lastMatch.begin(0)
+                idxE = lastMatch.end(0)
+                name = "#{name[0..(idxB-1)].strip} #{name[(idxE+1)..-1].strip}"
+            end
+
+            #Remove space between arrow symbol
+            arrowPattern = /(\s+)(#{CommonFields::BUFF_SYMBOL})/
+            if (arrowPattern.match(name))
+                lastMatch = Regexp.last_match
+                spaceIdxB = lastMatch.begin(1)
+                spaceIdxE = lastMatch.end(1)
+                name = "#{name[0..(spaceIdxB-1)]}#{name[lastMatch.begin(2)]}"
+            end
+
+            #Replacement for localization (lightning, blast)
+            desc = desc.gsub( /(?:L|l)ightning/, 'Thunder')
+            desc = desc.gsub(/(?:E|e)xplosion/, 'Blast')
+
+            #Capitalize every word inside parenthesis
+            nameArray = name.split(/\s+/)
+            (nameArray.map do |v| 
+                if v.length > 2 
+                    v.capitalize
+                else
+                    v 
+                end
+            end).join(' ').gsub(/\r|\R|\n/, '').strip
+        end
+
+
+
     end #End class
-
-
-
 end #End module
 
 

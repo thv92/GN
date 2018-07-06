@@ -49,7 +49,6 @@ module Extractor
                     else
                         heroes.push(rawData)
                     end
-                    break
                 end
                 break
             end

@@ -154,7 +154,7 @@
     "statusTypes": null
   },
   {
-    "fullName": "Pinch Upgrade↑(Ⅱ)",
+    "fullName": "Pinch Upgrade↑ (Ⅱ)",
     "description": "When HP is below 30%， damage dealt is increased by 10%， and damage received is decreased by 10%.",
     "isDamage": true,
     "isDefense": true,
@@ -6057,7 +6057,7 @@
     "statusTypes": null
   },
   {
-    "fullName": "Darkness↑(Ⅴ)",
+    "fullName": "Darkness↑ (Ⅴ)",
     "description": "Darkness element ATK is increased by 20%.",
     "isDamage": true,
     "isDefense": false,

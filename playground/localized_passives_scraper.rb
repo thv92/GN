@@ -200,7 +200,7 @@ File.open('./m_skill.bin') do |f|
         index = 1
 
         # puts "SplitLine #{splitLine}"
-        scanned = splitLine.scan(/(?>\x00{3,})(?:(?:[A-Z](?=\s*[\_A-Za-z]\s*)|\d{2,})|\!{3}|\?{3}|\d\u2606)/) do |scan|
+        splitLine.scan(/(?>\x00{3,})(?:(?:[A-Z](?=\s*[\_A-Za-z]\s*)|\d{2,})|\!{3}|\?{3}|\d\u2606)/) do |scan|
             matchIndexBegin = Regexp.last_match.begin(0)
             while (splitLine[matchIndexBegin].match(/\x00/) != nil)
                 matchIndexBegin += 1
@@ -218,12 +218,15 @@ File.open('./m_skill.bin') do |f|
                 skillName = matchedLine
                 if (skillName.match(/Combo Tactics/))
                     skillName = 'Combo Tactics'
+                elsif (skillName.match(/(?<!\s)(\([\u2160-\u2167]\))/))
+                    idxForSkillName = Regexp.last_match.begin(0)
+                    skillName = "#{skillName[0..(idxForSkillName-1)]} #{skillName[idxForSkillName..-1]}"
                 end
             end
             index += 1
         end
     end
-    File.open(File.join('..', '')catPassives.json', 'w') do |f|
+    File.open('./catPassives.json', 'w') do |f|
         f.write(JSON.pretty_generate(passives))
     end
 end

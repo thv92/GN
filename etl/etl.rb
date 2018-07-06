@@ -6,7 +6,7 @@ module ETL
     def self.etlHeroes
         Extractor.extractHeroes
         # Transformer.transformHeroes(Extractor.extractPassives)
-        Transformer.transformHeroes
+        Transformer.transformHeroes(Extractor.extractPassives)
     end
 end
 
