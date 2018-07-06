@@ -31,10 +31,18 @@ module Transformer
         end
 
         def transform
+            puts LogUtill::printMethodStatus('transform', false)
+            puts LogUtill::printMethodStatus('restructureData', false)
             restructureData
+            puts LogUtill::printMethodStatus('restructureData', true)
+            puts LogUtill::printMethodStatus('translatePartOne', false)
             translatePartOne
+            puts LogUtill::printMethodStatus('translatePartOne', true)
+            puts LogUtill::printMethodStatus('translatePartTwo', false)
             translatePartTwo
+            puts LogUtill::printMethodStatus('translatePartTwo', true)
             File.open('../finalizedData/finalizedHeroes.json', 'w') {|f| f.write(JSON.generate(@rawData))}
+            puts LogUtill::printMethodStatus('transform', true)
         end
 
         def restructureData
