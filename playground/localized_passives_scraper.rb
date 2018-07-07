@@ -2,7 +2,7 @@ require '../constants/stat_fields'
 require '../constants/common_fields'
 require 'json'
 
-def categorizeSkill(skillName, skillDesc)
+def categorizeSkill(skillDesc)
     #Check skillName for + and split on .
     #Passive Skill Fields
     isDamage = false
@@ -148,8 +148,6 @@ def categorizeSkill(skillName, skillDesc)
     # end
 
     {
-        CommonFields::FULLNAME => skillName,
-        CommonFields::DESC => skillDesc,
         CommonFields::IS_DAMAGE => isDamage,
         CommonFields::IS_DEFENSE => isDefense,
         CommonFields::IS_SUPPORT => isSupport,
@@ -213,7 +211,11 @@ File.open('./m_skill.bin') do |f|
 
             matchedLine = splitLine[matchIndexBegin..(matchIndexEnd-1)].strip
             if (index % 2 == 0)
-                passives.push categorizeSkill(skillName.gsub(/\x7f/, ''), matchedLine)
+                passives.push({
+                    CommonFields::FULLNAME => skillName.gsub(/\x7f/, ''),
+                    CommonFields::DESC => matchedLine,
+                    CommonFields::FILTERS => categorizeSkill(matchedLine)
+                })
             else
                 skillName = matchedLine
                 if (skillName.match(/Combo Tactics/))

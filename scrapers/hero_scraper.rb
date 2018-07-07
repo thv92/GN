@@ -186,7 +186,7 @@ module HeroScraper
                 level = table.xpath('./caption').text.strip.match(/\d+/)[0].to_i
                 passiveFullName = table.xpath('./tbody/tr/th').text.strip.gsub(/\n/, "")
                 passiveDesc = table.xpath('./tbody/tr/td').text.strip.gsub(/\n/, "")
-                matchData = passiveFullName.match(/(.{2,})(#{@cf::BUFF_SYMBOL}|#{@cf::DOT_SYMBOL})(.)/)
+                matchData = passiveFullName.match(/(.{2,})(#{@cf::BUFF_SYMBOL}|#{@cf::DOT_SYMBOL})(?:(.)(?!.))/)
                 symbol = nil
                 tier = nil
                 if (matchData != nil)

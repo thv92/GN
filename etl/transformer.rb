@@ -201,7 +201,7 @@ module Transformer
                 else  #Cannot translate, must put into translation Queue
                     matQ.push({
                         @cf::MAT_ID => matID,
-                        @cf::FULLNAME => mat[@cf::FULLNAME_JP]
+                        @cf::NAME => mat[@cf::NAME]
                     })
                 end
             end
@@ -222,12 +222,12 @@ module Transformer
                     #For Ult
                     if (v.is_a?(Hash))
                         v.map do |k2, v2|
-                            charCountTemp += k2.length + 5 + v2.length + k.length
-                            writeQueueTemp += "[#{k}][#{k2}]#{v2}\n"
+                            charCountTemp += v2.length + 1
+                            writeQueueTemp += "#{v2}\n"
                         end
                     else
-                        charCountTemp += k.length + v.length + 3
-                        writeQueueTemp += "[#{k}]#{v}\n"
+                        charCountTemp += v.length + 1
+                        writeQueueTemp += "#{v}\n"
                     end
                 end
                 writeQueueTemp += "---\n"
@@ -272,7 +272,7 @@ module Transformer
             translatedFile = File.join('..', 'translatedData', "ToTranslate_Heroes_#{pageNum}.txt")
             heroes = @rawData[@cf::HEROES]
             while (File.exist?(translatedFile))
-                dataFromFile = readPartitionedFile(File.read(translatedFile))
+                dataFromFile = readPartitionedFile(translatedFile, File.read(translatedFile))
                 dataFromFile.each do |heroTranslation|
                     hero = heroes[heroTranslation[@cf::HERO_ID]]
                     hero[@cf::NAME_JP] = hero[@cf::NAME]
@@ -295,7 +295,7 @@ module Transformer
             translatedFile = File.join('..', 'translatedData', "ToTranslate_Mats_#{pageNum}.txt")
             mats = @rawData[@cf::MATS]
             while (File.exist?(translatedFile))
-                dataFromFile = readPartitionedFile(File.read(translatedFile))
+                dataFromFile = readPartitionedFile(translatedFile, File.read(translatedFile))
                 dataFromFile.each do |matTranslation|
                     mat = mats[matTranslation[@cf::MAT_ID]]
                     if (mat[@cf::SIZE])
@@ -322,7 +322,7 @@ module Transformer
             translatedFile = File.join('..', 'translatedData', "ToTranslate_Passives_#{pageNum}.txt")
             passives = @rawData[@cf::PASSIVES]
             while (File.exist?(translatedFile))
-                dataFromFile = readPartitionedFile(File.read(translatedFile))
+                dataFromFile = readPartitionedFile(translatedFile, File.read(translatedFile))
                 dataFromFile.each do |passiveTranslation|
                     passive = passives[passiveTranslation[@cf::PASSIVE_ID]]
                     #If passive has a tier, then fullname has tier/symbol
@@ -336,8 +336,9 @@ module Transformer
                         passive[@cf::NAME_JP] = passive[@cf::NAME]
                         passive[@cf::NAME] = translatedName 
                         passive[@cf::DESC] = passiveTranslation[@cf::DESC]
+                        passive[@cf::TIER] = translatedTier
                     else
-                        translatedFullName = passiveTranslation[@cf::FULLNAME]
+                        translatedFullName = passiveTranslation[@cf::NAME]
                         passive[@cf::FULLNAME_JP] = passive[@cf::FULLNAME]
                         passive[@cf::FULLNAME] = translatedFullName
                         passive[@cf::NAME_JP] = passive[@cf::FULLNAME_JP]
@@ -491,43 +492,41 @@ module Transformer
         end
 
         #Read nontranslated/translated partitions
-        def readPartitionedFile(readData)
+        def readPartitionedFile(filePath, readData)
+            fileName = File.split(filePath)[1]
             result = []
-            keyValuePattern = /(?:(?:\[(.+)\]\s*\[(.+)\]\s*(.+))|(?:\[(.+)\]\s*(.+)))/
             readData.split(/(?:\-\-\-)|(?:\-\s\-)/).each do |block|
                 blockData = {}
-                block.split(/\n/).each do |line|
-                    matchData = keyValuePattern.match(line)
-                    if (matchData)
-                        #Matches key - value
-                        if (matchData[4] && matchData[5]) 
-                            key_1 = matchData[4].strip
-                            value = matchData[5].strip
-                            
-                            if (key_1 == @cf::NAME || key_1 == @cf::FULLNAME)
-                                value = localizeSkillName(value)
-                            elsif (key_1 == @cf::DESC)
-                                value = localizeSkillDescription(value.capitalize)
-                            end
-                            blockData[key_1] = value
-                        elsif (matchData[1] && matchData[2] && matchData[3]) #Matches key - key - value
-                            key_1 = matchData[1].strip
-                            key_2 = matchData[2].strip
-                            value = matchData[3].strip
-                            if (!blockData[key_1])
-                                blockData[key_1] = {}
-                            end
+                splitted = block.split(/\n/)
+                index = 0
+                if (splitted[0] == "")
+                    index += 1
+                end
 
-                            if (key_2 == @cf::NAME || key_2 == @cf::FULLNAME)
-                                value = localizeSkillName(value)
-                            elsif (key_2 == @cf::DESC)
-                                value = localizeSkillDescription(value.capitalize)
-                            end
-                            blockData[key_1][key_2] = value
-                        end
-                    end #if matchData
-                end #end split \n
-                result.push(blockData) unless blockData.size == 0
+
+                if (splitted.size > 0) 
+                    if (fileName.include?('Passives'))
+                        result.push({
+                            @cf::PASSIVE_ID => splitted[index].gsub(' ', ''),
+                            @cf::NAME => localizeSkillName(splitted[index+1]),
+                            @cf::DESC => localizeSkillDesc(splitted[index+2])
+                        })
+                    elsif (fileName.upcase.include?('Heroes'))
+                        result.push({
+                            @cf::HERO_ID => splitted[index].gsub(' ', ''),
+                            @cf::NAME => splitted[index+1],
+                            @cf::ULT => {
+                                @cf::NAME => localizeSkillName(splitted[index+2]),
+                                @cf::DESC => localizeSkillDesc(splitted[index+3])
+                            }
+                        })
+                    elsif (fileName.upcase.include?('Mats'))
+                        result.push({
+                            @cf::MAT_ID => splitted[index].gsub(' ', ''),
+                            @cf::NAME => splitted[index+1]
+                        })
+                    end
+                end
             end #end split ---
             result
         end
@@ -535,7 +534,7 @@ module Transformer
 
         #Replace asterisk with GN's asterisk and remove space
         #Capitalize every attribute and status
-        def localizeSkillDescription(desc)
+        def localizeSkillDesc(desc)
             #Replace asterisk
             starPattern = /(\s\*)/
             if (starPattern.match(desc))
@@ -589,11 +588,8 @@ module Transformer
                 end
             end).join(' ').gsub(/\r|\R|\n/, '').strip
         end
-
-
-
     end #End class
 end #End module
 
 
-Transformer::transformHeroes
+# Transformer::transformHeroes

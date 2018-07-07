@@ -50,7 +50,6 @@ module Extractor
                         heroes.push(rawData)
                     end
                 end
-                break
             end
             if (!block_given?)
                 createRawDataDir

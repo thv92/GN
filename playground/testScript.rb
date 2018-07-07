@@ -56,12 +56,7 @@ require 'json'
         def localizeSkillName(name)
             #Remove 'effect' from translated
             effectPattern = /(?<=\s)((?:E|e)ffect)/
-            if (effectPattern.match(name))
-                lastMatch = Regexp.last_match
-                idxB = lastMatch.begin(0)
-                idxE = lastMatch.end(0)
-                name = "#{name[0..(idxB-1)].strip} #{name[(idxE+1)..-1].strip}"
-            end
+            name = name.gsub(effectPattern, '')
 
             #Remove space between arrow symbol
             arrowPattern = /(\s+)(#{CommonFields::BUFF_SYMBOL})/
@@ -91,26 +86,24 @@ require 'json'
         #Read nontranslated/translated partitions
         def readPartitionedFile(readData)
             result = []
-            keyValuePattern = /(?:(?:\[(.+)\]\s*\[(.+)\]\s*(.+))|(?:\[(.+)\]\s*(.+)))/
+            keyValuePattern = /(?:(?:\[(.+)\]\s*\[(.+)\]\s*\|\|\|\s*(.+))|(?:\[(.+)\]\s*\|\|\|\s*(.+)))/
             readData.split(/(?:\-\-\-)|(?:\-\s\-)/).each do |block|
-                puts "Block: \n#{block}"
                 blockData = {}
                 block.split(/\n/).each do |line|
-                    puts "Line: #{line}"
                     matchData = keyValuePattern.match(line)
-                    
                     if (matchData)
                         #Matches key - value
                         if (matchData[4] && matchData[5]) 
                             key_1 = matchData[4].strip
                             value = matchData[5].strip
                             
-                            if (key_1 == @cf::NAME)
+                            if (key_1 == @cf::NAME || key_1 == @cf::FULLNAME)
                                 value = localizeSkillName(value)
                             elsif (key_1 == @cf::DESC)
                                 value = localizeSkillDescription(value.capitalize)
+                            elsif (key_1.include? 'ID')
+                                value = value.gsub(' ', '')
                             end
-                            
                             blockData[key_1] = value
                         elsif (matchData[1] && matchData[2] && matchData[3]) #Matches key - key - value
                             key_1 = matchData[1].strip
@@ -120,7 +113,7 @@ require 'json'
                                 blockData[key_1] = {}
                             end
 
-                            if (key_2 == @cf::NAME)
+                            if (key_2 == @cf::NAME || key_2 == @cf::FULLNAME)
                                 value = localizeSkillName(value)
                             elsif (key_2 == @cf::DESC)
                                 value = localizeSkillDescription(value.capitalize)
@@ -131,7 +124,6 @@ require 'json'
                 end #end split \n
                 result.push(blockData) unless blockData.size == 0
             end #end split ---
-            puts JSON.pretty_generate(result)
             result
         end
 
